@@ -1,0 +1,47 @@
+file 128201 1452681550                                          
+version 2
+run General-0-20160113-21:38:44-2976
+attr configname General
+attr datetime 20160113-21:38:44
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network P2P_Wireless_Wifi
+attr processid 2976
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 8  P2P_Wireless_Wifi.node[0].batteryStats  capacity  ETV
+attr unit  mW-s
+vector 15  P2P_Wireless_Wifi.node[1].batteryStats  capacity  ETV
+attr unit  mW-s
+vector 22  P2P_Wireless_Wifi.node[2].batteryStats  capacity  ETV
+attr unit  mW-s
+vector 3  P2P_Wireless_Wifi.node[1].appl  latency:vector  ETV
+attr interpolationmode  none
+attr source  reply
+attr title  "laytency, vector"
+vector 5  P2P_Wireless_Wifi.node[2].appl  latency:vector  ETV
+attr interpolationmode  none
+attr source  reply
+attr title  "laytency, vector"
+vector 1  P2P_Wireless_Wifi.node[0].appl  latency:vector  ETV
+attr interpolationmode  none
+attr source  reply
+attr title  "laytency, vector"
+vector 0  P2P_Wireless_Wifi.node[0].appl  processingTime:vector  ETV
+attr interpolationmode  none
+attr source  finish
+attr title  "query processing time, vector"
+0	1200 14975 216 116430 0.572749758255 70.638371088789 417 0.000150794932 0.027151983796 3.880050596379 0.040932624089868
+1	16175 20644 102 116256 0.569861758255 70.633519088789 584 0.001186 0.015074001 2.364346484 0.013045383332045
+3	36819 19403 28 116197 0.567775757255 70.632035088789 584 0.000646 0.015382 1.100366731649 0.0039143512933984
+5	56222 19390 35 116316 0.567775757255 70.635403088789 584 0.000646 0.013578 1.070624726649 0.0036075523478904
+8	75612 17134 0 122796 0 599 600 1800777.9668153 2160000 1188277153.2035 2.3598145011246e+15
+15	92746 17730 0 122797 0 599 600 1800701.5606075 2160000 1188235438.5501 2.3596506201309e+15
+22	110476 17725 0 122798 0 599 600 1800702.5577595 2160000 1188235990.7625 2.3596527921161e+15
