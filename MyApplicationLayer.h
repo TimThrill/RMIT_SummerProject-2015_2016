@@ -53,7 +53,7 @@ public:
     long destAdress;
 
     // Extract message class
-    ExtractDataset extractMessage;
+    static ExtractDataset extractMessage;
 
     // We use poisson process to distribute query rounds of each peer node
     int queryTimes; // how many query rounds
