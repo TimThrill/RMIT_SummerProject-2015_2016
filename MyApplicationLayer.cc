@@ -82,13 +82,14 @@ void MyApplicationLayer::initialize(int stage) {
             if(querySendRounds < queryTimes) {  // query send round is not reached query times, send beacon to query
                 delayTimer = new cMessage( "delay-timer", SEND_BEACON_TIMER );
                 scheduleAt(simTime() + uniform(0, 1) * QUERY_FREQUENCY, delayTimer);
-                querySendRounds++;
                 queryNodeNumber++;
             }
         }
         // Register the finish signal
         finishSignal = registerSignal("finish");
         reply = registerSignal("reply");
+
+        successfulQuery = 0;
     }
     else if(stage==1) {
         //scheduleAt(simTime() + dblrand() * 10, delayTimer);
@@ -107,15 +108,33 @@ void MyApplicationLayer::handleQueryExpiredTimer() {
     EV<<"Cancel and delete query timer"<<std::endl;
     cancelAndDelete(queryExpiredTimer);
     queryExpiredTimer = NULL;
-    m.lock();
-    unsigned int n = 0;
-    unsigned int listSize = queryPeerList->size();
-    for(; n < listSize; n++) {
-        LAddress::L3Type address = queryPeerList->front();  // Get the first peer address
-        sendQuery(address);
-        EV<<"Resend query message to peer: "<<address<<std::endl;
+
+    if(querySendRounds < queryTimes)
+    {
+// Delete start: Do not want to resend query
+//        m.lock();
+//        unsigned int n = 0;
+//        unsigned int listSize = queryPeerList->size();
+//
+//        // Resend the query messages
+//        for(; n < listSize; n++) {
+//            LAddress::L3Type address = queryPeerList->front();  // Get the first peer address
+//            sendQuery(address);
+//            EV<<"Resend query message to peer: "<<address<<std::endl;
+//        }
+//        m.unlock();
+// Delete end
+
+        if(queryPeerList)
+        {
+            delete(queryPeerList);
+        }
+        queryPeerList = new std::queue<LAddress::L3Type>();
+
+        // This round has been finished, start next query round
+        delayTimer = new cMessage( "delay-timer", SEND_BEACON_TIMER );
+        scheduleAt(simTime() + QUERY_FREQUENCY * uniform(0, 1), delayTimer);
     }
-    m.unlock();
 }
 
 /**
@@ -185,6 +204,9 @@ void MyApplicationLayer::sendBeacon() {
     startTime = simTime();
     // Set send time stamp
     beaconMessage->setTimeStamp(simTime());
+
+    // Add one round
+    querySendRounds++;
 
     sendDown( beaconMessage );
 }
@@ -286,14 +308,6 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
     simtime_t latency = simTime() - msg->getTimeStamp();
     emit(reply, latency);
 
-    if(queryExpiredTimer) {
-        cancelAndDelete(queryExpiredTimer); // Existed previous timer, cancle and delete because receive one beacon reply message
-        queryExpiredTimer = NULL;   // Restore pointer to null
-        EV<<"After delete query expired timer, point to: "<<queryExpiredTimer<<std::endl;
-    } else {
-        EV<<"Already delete previous send query expired timer"<<std::endl;
-    }
-
     // Test for print result
     std::vector<QueryReplyMessage>::iterator it = msg->getReplyBusinesses().begin();
     for(; it != msg->getReplyBusinesses().end(); it++) {
@@ -316,6 +330,14 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
         EV<<"Pop peer from the peer list, query peer list size: "<<queryPeerList->size()<<std::endl;
 
         if((queryPeerList->size() == 0) && (querySendRounds == queryTimes)) {
+            if(queryExpiredTimer) {
+                cancelAndDelete(queryExpiredTimer); // Existed previous timer, cancle and delete because receive one beacon reply message
+                queryExpiredTimer = NULL;   // Restore pointer to null
+                EV<<"After delete query expired timer, point to: "<<queryExpiredTimer<<std::endl;
+            } else {
+                EV<<"Already delete previous send query expired timer"<<std::endl;
+            }
+
             // This query node receive all the peers' query reply messages and finish its query round
             queryNodeNumber--;  // Reduce number of query node
 
@@ -328,6 +350,14 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
                 // Finish the simulation
             }
         } else if(queryPeerList->size() == 0 && querySendRounds < queryTimes){
+            if(queryExpiredTimer) {
+                cancelAndDelete(queryExpiredTimer); // Existed previous timer, cancle and delete because receive one beacon reply message
+                queryExpiredTimer = NULL;   // Restore pointer to null
+                EV<<"After delete query expired timer, point to: "<<queryExpiredTimer<<std::endl;
+            } else {
+                EV<<"Already delete previous send query expired timer"<<std::endl;
+            }
+
             // This round has been finished, start next query round
             delayTimer = new cMessage( "delay-timer", SEND_BEACON_TIMER );
             scheduleAt(simTime() + QUERY_FREQUENCY * uniform(0, 1), delayTimer);
@@ -335,8 +365,6 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
             // All the query node finish their query, recording the simulation time
             simtime_t processingTime = simTime()- startTime;
             emit(finishSignal, processingTime);
-
-            querySendRounds++;
         }
     } else {
         EV<<"Error: query peer list is null!"<<std::endl;

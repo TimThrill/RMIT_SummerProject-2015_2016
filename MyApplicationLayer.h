@@ -60,6 +60,8 @@ public:
     double lamda;   // parameter of poisson formula
     int querySendRounds; // Counter for how many query rounds
 
+    int successfulQuery;
+
 
     // Initial number of peers that send query
     static const int INITIAL_BEACON_NODES_NUMBER;
