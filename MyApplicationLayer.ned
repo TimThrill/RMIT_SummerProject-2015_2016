@@ -39,6 +39,7 @@ simple MyApplicationLayer like IBaseApplLayer
         double latitude;	// Latitude of the node
         int initial_beacon_nodes_number;	// Number of nodes that send beacon messages
         double lamda;	// Parameter for poisson formula
+	string dataset_file_path;
         // string businessId;	// The id of query business
 
     gates:

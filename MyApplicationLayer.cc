@@ -45,7 +45,7 @@ void MyApplicationLayer::initialize(int stage) {
         srcAddress = getNode()->getId();
 
         // Read dataset
-        extractMessage.readDataset("/home/cheetah/Desktop/Sub_of_Ports_in_Las_Vegas_new.txt");
+        extractMessage.readDataset(par("dataset_file_path"));
 
         // Initial beacon message rules
         querySendRounds = 0;
