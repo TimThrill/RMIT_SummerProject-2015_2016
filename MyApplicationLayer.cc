@@ -19,6 +19,7 @@
 Define_Module(MyApplicationLayer);
 
 const int MyApplicationLayer::INITIAL_BEACON_NODES_NUMBER = 1;
+ExtractDataset MyApplicationLayer::extractMessage;
 
 // Constructor
 MyApplicationLayer::MyApplicationLayer() : BaseApplLayer(), delayTimer(NULL), beaconExpiredTimer(NULL), queryExpiredTimer(NULL) {
@@ -45,7 +46,7 @@ void MyApplicationLayer::initialize(int stage) {
         srcAddress = getNode()->getId();
 
         // Read dataset
-        extractMessage.readDataset(par("dataset_file_path"));
+        MyApplicationLayer::extractMessage.readDataset(par("dataset_file_path"));
 
         // Initial beacon message rules
         querySendRounds = 0;
@@ -283,7 +284,7 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
 
     // Record the latency time
     simtime_t latency = simTime() - msg->getTimeStamp();
-    //emit(reply, latency);
+    emit(reply, latency);
 
     if(queryExpiredTimer) {
         cancelAndDelete(queryExpiredTimer); // Existed previous timer, cancle and delete because receive one beacon reply message
@@ -464,30 +465,30 @@ QueryReply* MyApplicationLayer::setQueryReplyMessage(QueryReply* queryReplyMessa
     QueryReplyMessage mQueryReply = {};
     //for(; it != queryReplyMessage->getReplyBusinesses().end(); it++)
     //{
-    mQueryReply.businessId = (extractMessage.businessList.begin()->second).businessId;
-    mQueryReply.businessName = (extractMessage.businessList.begin()->second).businessName;
-    mQueryReply.businessLocation.x = (extractMessage.businessList.begin()->second).longitude;
-    mQueryReply.businessLocation.y = (extractMessage.businessList.begin()->second).latitude;
-    mQueryReply.distance = getDistance((extractMessage.businessList.begin()->second).longitude,
+    mQueryReply.businessId = (MyApplicationLayer::extractMessage.businessList.begin()->second).businessId;
+    mQueryReply.businessName = (MyApplicationLayer::extractMessage.businessList.begin()->second).businessName;
+    mQueryReply.businessLocation.x = (MyApplicationLayer::extractMessage.businessList.begin()->second).longitude;
+    mQueryReply.businessLocation.y = (MyApplicationLayer::extractMessage.businessList.begin()->second).latitude;
+    mQueryReply.distance = getDistance((MyApplicationLayer::extractMessage.businessList.begin()->second).longitude,
             queryMessage->getLongitude(),
-            (extractMessage.businessList.begin()->second).latitude,
+            (MyApplicationLayer::extractMessage.businessList.begin()->second).latitude,
             queryMessage->getLatitude());
     mQueryReply.businessType = "Restaurant";
-    mQueryReply.businessAddress = (extractMessage.businessList.begin()->second).address;
-    mQueryReply.rate = (extractMessage.businessList.begin()->second).rating;
-    mQueryReply.textReview = (extractMessage.businessList.begin()->second).textReview;
+    mQueryReply.businessAddress = (MyApplicationLayer::extractMessage.businessList.begin()->second).address;
+    mQueryReply.rate = (MyApplicationLayer::extractMessage.businessList.begin()->second).rating;
+    mQueryReply.textReview = (MyApplicationLayer::extractMessage.businessList.begin()->second).textReview;
     //}
     queryReplyMessage->getReplyBusinesses().push_back(mQueryReply);
 
     // Test attributes and categories
-    std::map<std::string, std::string>::iterator it = (extractMessage.businessList.begin()->second).attributes.begin();
+    std::map<std::string, std::string>::iterator it = (MyApplicationLayer::extractMessage.businessList.begin()->second).attributes.begin();
     EV<<"######attributes start######"<<std::endl;
-    while(it != (extractMessage.businessList.begin()->second).attributes.end()) {
+    while(it != (MyApplicationLayer::extractMessage.businessList.begin()->second).attributes.end()) {
         EV<<it->first<<": "<<it->second<<std::endl;
         it++;
     }
     EV<<"######attributes end######"<<std::endl;
-    EV<<"Categories: "<<(extractMessage.businessList.begin()->second).categories.at(0)<<std::endl;
+    EV<<"Categories: "<<(MyApplicationLayer::extractMessage.businessList.begin()->second).categories.at(0)<<std::endl;
     EV<<"Set query reply message end"<<std::endl;
     return queryReplyMessage;
 }
