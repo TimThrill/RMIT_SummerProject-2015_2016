@@ -160,7 +160,7 @@ void MyApplicationLayer::handleSelfMsg(cMessage *msg) {
         handleQueryExpiredTimer();
     default:
         EV << "Unknown selfmessage! ->, kind: "<<msg->getKind()<<std::endl;
-        delete msg;
+        //delete msg;
         break;
     }
 }
