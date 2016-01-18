@@ -85,6 +85,9 @@ private:
     simsignal_t reply;
     simtime_t startTime;
 
+    // std::string node_id;    // Node id for the node, this is corresponding to the node id in the dataset
+    std::string business_id; // Business id in the dataset
+
 protected:
     /** @brief Timer message for scheduling next message.*/
     cMessage *delayTimer;

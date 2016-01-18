@@ -18,11 +18,12 @@
 
 Define_Module(MyApplicationLayer);
 
-const int MyApplicationLayer::INITIAL_BEACON_NODES_NUMBER = 1;
+const int MyApplicationLayer::INITIAL_BEACON_NODES_NUMBER = 3;
 ExtractDataset MyApplicationLayer::extractMessage;
 
 // Constructor
-MyApplicationLayer::MyApplicationLayer() : BaseApplLayer(), delayTimer(NULL), beaconExpiredTimer(NULL), queryExpiredTimer(NULL) {
+MyApplicationLayer::MyApplicationLayer() : BaseApplLayer(), delayTimer(NULL),
+        beaconExpiredTimer(NULL), queryExpiredTimer(NULL) {
     m.lock();
     queryPeerList = new std::queue<LAddress::L3Type>();
     m.unlock();
@@ -90,6 +91,9 @@ void MyApplicationLayer::initialize(int stage) {
         reply = registerSignal("reply");
 
         successfulQuery = 0;
+
+        // node_id = par("node_id");
+        // business_id = par("businessId").str();
     }
     else if(stage==1) {
         //scheduleAt(simTime() + dblrand() * 10, delayTimer);
@@ -401,7 +405,7 @@ void MyApplicationLayer::sendQuery(LAddress::L3Type& destAddr) {
     (queryMessage->getKeyWords()).keywords.push_back(keyword1);
     (queryMessage->getKeyWords()).keywords.push_back(keyword2);
 
-    // Set business location
+    // Set query node location
     // Read position from omnetpp.ini file
     queryMessage->setLongitude(par("longitude"));
     queryMessage->setLatitude(par("latitude"));
