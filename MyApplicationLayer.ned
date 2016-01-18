@@ -35,8 +35,8 @@ simple MyApplicationLayer like IBaseApplLayer
         bool coreDebug = default(false); //debug switch for base class (TestApplLayer)
         bool debug = default(false); // debug switch
         int headerLength @unit("bit"); // length of the application message header (in bits)
-        double longitude;	// Longitude of the node
-        double latitude;	// Latitude of the node
+        //double longitude;	// Longitude of the node
+        //double latitude;	// Latitude of the node
         double lamda;	// Parameter for poisson formula
 		string dataset_file_path;	// Path for dataset path
 		// string node_id;	// Node id

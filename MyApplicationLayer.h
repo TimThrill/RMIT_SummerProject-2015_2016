@@ -22,6 +22,7 @@
 #include "Query_m.h"
 #include "QueryReply_m.h"
 #include "ExtractDataset.h"
+#include "LinearMobility.h"
 
 extern int queryNodeNumber;
 

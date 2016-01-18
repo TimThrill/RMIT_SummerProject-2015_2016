@@ -407,8 +407,8 @@ void MyApplicationLayer::sendQuery(LAddress::L3Type& destAddr) {
 
     // Set query node location
     // Read position from omnetpp.ini file
-    queryMessage->setLongitude(par("longitude"));
-    queryMessage->setLatitude(par("latitude"));
+    queryMessage->setPeerLocation(FindModule<LinearMobility*>::findSubModule(getParentModule())->getCurrentPosition());
+    //queryMessage->setLatitude(par("latitude"));
 
     // Set src address
     queryMessage->setSrcAddr(srcAddress);
@@ -501,10 +501,11 @@ QueryReply* MyApplicationLayer::setQueryReplyMessage(QueryReply* queryReplyMessa
     mQueryReply.businessName = (MyApplicationLayer::extractMessage.businessList.begin()->second).businessName;
     mQueryReply.businessLocation.x = (MyApplicationLayer::extractMessage.businessList.begin()->second).longitude;
     mQueryReply.businessLocation.y = (MyApplicationLayer::extractMessage.businessList.begin()->second).latitude;
-    mQueryReply.distance = getDistance((MyApplicationLayer::extractMessage.businessList.begin()->second).longitude,
+    /* mQueryReply.distance = getDistance((MyApplicationLayer::extractMessage.businessList.begin()->second).longitude,
             queryMessage->getLongitude(),
             (MyApplicationLayer::extractMessage.businessList.begin()->second).latitude,
             queryMessage->getLatitude());
+    */
     mQueryReply.businessType = "Restaurant";
     mQueryReply.businessAddress = (MyApplicationLayer::extractMessage.businessList.begin()->second).address;
     mQueryReply.rate = (MyApplicationLayer::extractMessage.businessList.begin()->second).rating;
@@ -537,7 +538,7 @@ void MyApplicationLayer::printReceivedQueryMessage(Query* msg) {
         it++;
     }
     EV<<std::endl;
-    EV<<"Longitude: "<<msg->getLongitude()<<" Latitude: "<<msg->getLatitude()<<std::endl;
+    EV<<"X position: "<<msg->getPeerLocation().x<<" Y position: "<<msg->getPeerLocation().y<<std::endl;
     EV<<"Max range: "<<msg->getMaxRange()<<"m"<<std::endl;
     EV<<"Received query message end"<<std::endl;
     return;

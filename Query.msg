@@ -17,10 +17,12 @@ cplusplus {{
 #include <vector>
 #include "KeyWords.h"
 #include "ApplPkt_m.h"
+#include "Coord.h"
 }}
 
 packet ApplPkt;
 class noncobject Keywords;
+class Coord;
 
 //
 // TODO generated message class
@@ -29,8 +31,10 @@ packet Query extends ApplPkt {
     string businessName;
     string businessType;
     Keywords keyWords;	// key words of the query search
-    double longitude;
-    double latitude;
+    // In omnet++ we use coord instead of longitude and latitude
+    //double longitude;
+    //double latitude;
+    Coord peerLocation;
     double maxRange;	// Max range distance of the business (unit@m)
     simtime_t timeStamp;	// Time stamp
 }
