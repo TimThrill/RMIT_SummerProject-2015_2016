@@ -116,6 +116,15 @@ void MyApplicationLayer::handleQueryExpiredTimer() {
     cancelAndDelete(queryExpiredTimer);
     queryExpiredTimer = NULL;
 
+    // Query time expired, abort this query, record the data
+    // Record processing time
+    simtime_t processingTime = simTime() - startTime;
+    emit(finishSignal, processingTime);
+
+    // Record query successful rate
+    double querySuccessfulRate = numReceivePackage / numSendPackage;
+    emit(roundFinish, querySuccessfulRate);
+
     if(querySendRounds < queryTimes)
     {
 // Delete start: Do not want to resend query
@@ -139,8 +148,23 @@ void MyApplicationLayer::handleQueryExpiredTimer() {
         queryPeerList = new std::queue<LAddress::L3Type>();
 
         // This round has been finished, start next query round
-        delayTimer = new cMessage( "delay-timer", SEND_BEACON_TIMER );
-        scheduleAt(simTime() + QUERY_FREQUENCY * uniform(0, 1), delayTimer);
+        if(!delayTimer)
+        {
+            delayTimer = new cMessage( "delay-timer", SEND_BEACON_TIMER );
+            scheduleAt(simTime() + QUERY_FREQUENCY * uniform(0, 1), delayTimer);
+        }
+        else
+        {
+            cancelAndDelete(delayTimer);
+            delayTimer = new cMessage();
+            delayTimer = new cMessage( "delay-timer", SEND_BEACON_TIMER );
+            scheduleAt(simTime() + QUERY_FREQUENCY * uniform(0, 1), delayTimer);
+        }
+    }
+    else
+    {
+        // This query node receive all the peers' query reply messages and finish its query round
+        queryNodeNumber--;
     }
 }
 
@@ -353,6 +377,7 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
             simtime_t processingTime = simTime()- startTime;
             emit(finishSignal, processingTime);
 
+            // Record query successful rate
             double querySuccessfulRate = numReceivePackage / numSendPackage;
             emit(roundFinish, querySuccessfulRate);
 
@@ -371,12 +396,25 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
             }
 
             // This round has been finished, start next query round
-            delayTimer = new cMessage( "delay-timer", SEND_BEACON_TIMER );
-            scheduleAt(simTime() + QUERY_FREQUENCY * uniform(0, 1), delayTimer);
+            if(!delayTimer)
+            {
+                delayTimer = new cMessage( "delay-timer", SEND_BEACON_TIMER );
+                scheduleAt(simTime() + QUERY_FREQUENCY * uniform(0, 1), delayTimer);
+            }
+            else
+            {
+                cancelAndDelete(delayTimer);
+                delayTimer = new cMessage( "delay-timer", SEND_BEACON_TIMER );
+                scheduleAt(simTime() + QUERY_FREQUENCY * uniform(0, 1), delayTimer);
+            }
 
             // All the query node finish their query, recording the simulation time
             simtime_t processingTime = simTime()- startTime;
             emit(finishSignal, processingTime);
+
+            // Record query successful rate
+            double querySuccessfulRate = numReceivePackage / numSendPackage;
+            emit(roundFinish, querySuccessfulRate);
         }
     } else {
         EV<<"Error: query peer list is null!"<<std::endl;
