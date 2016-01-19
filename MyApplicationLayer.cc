@@ -122,8 +122,16 @@ void MyApplicationLayer::handleQueryExpiredTimer() {
     emit(finishSignal, processingTime);
 
     // Record query successful rate
-    double querySuccessfulRate = numReceivePackage / numSendPackage;
-    emit(roundFinish, querySuccessfulRate);
+    if(numSendPackage != 0)
+    {
+        double querySuccessfulRate = numReceivePackage / numSendPackage;
+        emit(roundFinish, querySuccessfulRate);
+    }
+    else
+    {
+        double querySuccessfulRate = -1;
+        emit(roundFinish, querySuccessfulRate);
+    }
 
     if(querySendRounds < queryTimes)
     {
