@@ -183,6 +183,7 @@ void MyApplicationLayer::handleQueryExpiredTimer() {
  * sendPeerQuery
  **/
 void MyApplicationLayer::handleSelfMsg(cMessage *msg) {
+    EV<<msg->getFullName()<<std::endl;
     switch( msg->getKind() ) {
     case SEND_BEACON_TIMER:
         EV<<"Receive send beacon signal"<<std::endl;
@@ -193,9 +194,11 @@ void MyApplicationLayer::handleSelfMsg(cMessage *msg) {
     case SEND_BEACON_EXPIRED_TIMER:
         EV<<"Receive send beacon expired timer signal"<<std::endl;
         handleBeaconExpiredTimer();
+        break;
     case SEND_QUERY_EXPIRED_TIMER:
         EV<<"Receive send query expired timer signal"<<std::endl;
         handleQueryExpiredTimer();
+        break;
     default:
         EV << "Unknown selfmessage! ->, kind: "<<msg->getKind()<<std::endl;
         //delete msg;
