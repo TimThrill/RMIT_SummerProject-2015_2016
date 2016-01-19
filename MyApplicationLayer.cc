@@ -164,7 +164,6 @@ void MyApplicationLayer::handleQueryExpiredTimer() {
         else
         {
             cancelAndDelete(delayTimer);
-            delayTimer = new cMessage();
             delayTimer = new cMessage( "delay-timer", SEND_BEACON_TIMER );
             scheduleAt(simTime() + QUERY_FREQUENCY * uniform(0, 1), delayTimer);
         }
