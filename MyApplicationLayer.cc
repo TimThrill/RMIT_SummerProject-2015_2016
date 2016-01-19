@@ -188,10 +188,6 @@ void MyApplicationLayer::handleSelfMsg(cMessage *msg) {
         EV<<"Receive send beacon signal"<<std::endl;
         sendBeacon();
         delete msg;
-        if(delayTimer)
-        {
-            cancelAndDelete(delayTimer);
-        }
         delayTimer = NULL;
         break;
     case SEND_BEACON_EXPIRED_TIMER:
