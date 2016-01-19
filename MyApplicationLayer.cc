@@ -18,7 +18,7 @@
 
 Define_Module(MyApplicationLayer);
 
-const int MyApplicationLayer::INITIAL_BEACON_NODES_NUMBER = 3;
+const int MyApplicationLayer::INITIAL_BEACON_NODES_NUMBER = 30;
 ExtractDataset MyApplicationLayer::extractMessage;
 
 // Constructor
@@ -422,6 +422,14 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
             // Record query successful rate
             double querySuccessfulRate = numReceivePackage / numSendPackage;
             emit(roundFinish, querySuccessfulRate);
+        }
+        else
+        {
+            if(queryExpiredTimer)   // Receive the query reply, we extend the timer
+            {
+                cancelAndDelete(queryExpiredTimer);
+                queryExpiredTimer = new cMessage("Expired Timer", SEND_QUERY_EXPIRED_TIMER);
+            }
         }
     } else {
         EV<<"Error: query peer list is null!"<<std::endl;
