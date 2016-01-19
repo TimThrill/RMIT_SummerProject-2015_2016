@@ -18,7 +18,7 @@
 
 Define_Module(MyApplicationLayer);
 
-const int MyApplicationLayer::INITIAL_BEACON_NODES_NUMBER = 30;
+const int MyApplicationLayer::INITIAL_BEACON_NODES_NUMBER = 10;
 ExtractDataset MyApplicationLayer::extractMessage;
 
 // Constructor
@@ -482,6 +482,8 @@ void MyApplicationLayer::sendQuery(LAddress::L3Type& destAddr) {
     // address;
     NetwControlInfo::setControlInfo(queryMessage, queryMessage->getDestAddr() );
 
+    numSendPackage++;
+
     // Set expired timer for send message
     if(!queryExpiredTimer) { // No previous expired timer, create new one
         queryExpiredTimer = new cMessage("Expired Timer", SEND_QUERY_EXPIRED_TIMER);
@@ -501,7 +503,6 @@ void MyApplicationLayer::sendQuery(LAddress::L3Type& destAddr) {
 
     EV<<"Node: "<<queryMessage->getSrcAddr()<<" send query message to node: "<<queryMessage->getDestAddr()<<std::endl;
     coreEV << "Sending Query packet!" << endl;
-    numSendPackage++;
     sendDown( queryMessage );
     //delete(queryMessage);
 }
