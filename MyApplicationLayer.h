@@ -55,6 +55,10 @@ public:
 
     // Extract message class
     static ExtractDataset extractMessage;
+    // beacon send number for all nodes
+    static int beaconSendNumber;
+    // beacon receiving number for all nodes
+    static int beaconReceiveNumber;
 
     // We use poisson process to distribute query rounds of each peer node
     int queryTimes; // how many query rounds
@@ -81,10 +85,18 @@ private:
     // signal for recording latency
     simsignal_t reply;
     simtime_t startTime;
+    // Signal for beacon send
+    simsignal_t beaconSend;
+    // Signal for beacon receiving
+    simsignal_t beaconReceive;
+    // Signal for query send
+    simsignal_t querySend;
+    // Signal for query reply receive
+    simsignal_t queryReplyReceive;
     // Signal for recording query successful rate, record after each round finish
     simsignal_t roundFinish;
 
-    // Counter for calculating drop rate
+    // Counter for calculating query successful rate
     int numSendPackage;
     int numReceivePackage;
 

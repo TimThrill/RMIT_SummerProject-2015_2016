@@ -25,14 +25,26 @@ simple MyApplicationLayer like IBaseApplLayer
 {
     parameters:
         // Parameter to record processing time
-        @signal[finish](type="simtime_t");
-        @statistic[processingTime](title="query processing time"; source="finish"; record=mean; interpolationmode=none);
+        @signal[finish](type=simtime_t);
+        @statistic[processingTime](title=query processing time; source=finish; record=mean; interpolationmode=none);
         // Parameter to record latency
-        @signal[reply](type="simtime_t");
-        @statistic[latency](title="laytency"; source="reply"; record=mean; interpolationmode=none);
-        // Parameter to record drop package rate
-        @signal[roundFinish](type="double");
-        @statistic[querySuccessfulRate](title="QueryRate"; source="roundFinish"; record=last; interpolationmode=none);
+        @signal[reply](type=simtime_t);
+        @statistic[latency](title=laytency; source=reply; record=mean; interpolationmode=none);
+        // Parameter to record beacon send
+        @signal[beaconSend](int);
+        @statistic[beaconSendNumber](title=beaconSendNumber; source=beaconSend; record=last);
+        // Parameter to record beacon receiving
+        @signal[beaconReceive](int);
+        @statistic[beaconReceiveNumber](title=beaconReceiveNumber; source=beaconReceive; record=last);
+        // Parameter to record query send number
+        @signal[querySend](int);
+        @statistic[querySendNumber](title=querySendNumber; source=querySend; record=last);
+        // Paramter to recor query reply number
+        @signal[queryReply](int);
+        @statistic[queryReplyNumber](title=queryReplyNumber; source=queryReply; record=last);
+        // Parameter to record query successful rate
+        @signal[roundFinish](type=double);
+        @statistic[querySuccessfulRate](title=QueryRate; source=roundFinish; record=last; interpolationmode=none);
         
         //Declareation for the cpp file
         @class(MyApplicationLayer);

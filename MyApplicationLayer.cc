@@ -19,6 +19,8 @@
 Define_Module(MyApplicationLayer);
 
 ExtractDataset MyApplicationLayer::extractMessage;
+int MyApplicationLayer::beaconSendNumber = 0;
+int MyApplicationLayer::beaconReceiveNumber = 0;
 
 // Constructor
 MyApplicationLayer::MyApplicationLayer() : BaseApplLayer(), delayTimer(NULL),
@@ -89,6 +91,10 @@ void MyApplicationLayer::initialize(int stage) {
         finishSignal = registerSignal("finish");
         reply = registerSignal("reply");
         roundFinish = registerSignal("roundFinish");
+        beaconSend = registerSignal("beaconSend");
+        beaconReceive = registerSignal("beaconReceive");
+        querySend = registerSignal("querySend");
+        queryReplyReceive = registerSignal("queryReply");
 
         successfulQuery = 0;
         numSendPackage = 0;
@@ -247,6 +253,10 @@ void MyApplicationLayer::sendBeacon() {
 
     // Add one round
     querySendRounds++;
+    // Record beacon send number
+    beaconSendNumber++;
+    emit(beaconSend, beaconSendNumber);
+
     sendDown( beaconMessage );
 }
 
@@ -293,9 +303,13 @@ void MyApplicationLayer::handleBeaconReplyMessage(BeaconReply* msg) {
     emit(reply, latency);
 
     if(beaconExpiredTimer) {
-        cancelAndDelete(beaconExpiredTimer); // Existed previous timer, cancle and delete because receive one beacon reply message
+        cancelAndDelete(beaconExpiredTimer); // Existed previous timer, cancle and delete because receive at least one beacon reply message
         beaconExpiredTimer = NULL;  // Restore pointer to NULL
         EV<<"After delete beacon expired timer, point to: "<<beaconExpiredTimer<<std::endl;
+
+        // Record beacon reply receive
+        beaconReceiveNumber++;
+        emit(beaconReceive, beaconReceiveNumber);
     } else {
         EV<<"Already delete previous send beacon expired timer"<<std::endl;
     }
@@ -344,6 +358,7 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
     EV<<"Node: "<<srcAddress<<" receive query reply message from node: "<<msg->getSrcAddr()<<std::endl;
 
     numReceivePackage++;
+    emit(queryReplyReceive, numReceivePackage);
 
     // Record the latency time
     simtime_t latency = simTime() - msg->getTimeStamp();
@@ -485,6 +500,7 @@ void MyApplicationLayer::sendQuery(LAddress::L3Type& destAddr) {
     NetwControlInfo::setControlInfo(queryMessage, queryMessage->getDestAddr() );
 
     numSendPackage++;
+    emit(querySend, numSendPackage);
 
     // Set expired timer for send message
     if(!queryExpiredTimer) { // No previous expired timer, create new one
