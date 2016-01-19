@@ -85,6 +85,12 @@ private:
     // signal for recording latency
     simsignal_t reply;
     simtime_t startTime;
+    // Signal for recording query successful rate, record after each round finish
+    simsignal_t roundFinish;
+
+    // Counter for calculating drop rate
+    int numSendPackage;
+    int numReceivePackage;
 
     // std::string node_id;    // Node id for the node, this is corresponding to the node id in the dataset
     std::string business_id; // Business id in the dataset

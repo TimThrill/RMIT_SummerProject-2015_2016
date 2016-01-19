@@ -26,9 +26,13 @@ simple MyApplicationLayer like IBaseApplLayer
     parameters:
         // Parameter to record processing time
         @signal[finish](type="simtime_t");
-        @statistic[processingTime](title="query processing time"; source="finish"; record=vector,stats; interpolationmode=none);
+        @statistic[processingTime](title="query processing time"; source="finish"; record=mean; interpolationmode=none);
+        // Parameter to record latency
         @signal[reply](type="simtime_t");
-        @statistic[latency](title="laytency"; source="reply"; record=vector,stats; interpolationmode=none);
+        @statistic[latency](title="laytency"; source="reply"; record=mean; interpolationmode=none);
+        // Parameter to record drop package rate
+        @signal[roundFinish](type="double");
+        @statistic[querySuccessfulRate](title="QueryRate"; source="roundFinish"; record=last; interpolationmode=none);
         
         //Declareation for the cpp file
         @class(MyApplicationLayer);

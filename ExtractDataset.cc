@@ -31,7 +31,6 @@ int ExtractDataset::readDataset(std::string path) {
                     attributes.insert(std::pair<std::string, std::string>(key, root["attributes"][key].asString()));
                     cnt++;
                 }
-
             }
 
             // Extract categories of business into memory

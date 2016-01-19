@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for P2P_Wireless_Wifi
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -O out -I../MiXiM/src/base/modules -I../MiXiM/src/inet_stub/networklayer/common -I../MiXiM/src -I../MiXiM/src/base/utils -I../MiXiM/src/inet_stub/mobility/models -I../MiXiM/src/base -I../MiXiM/src/base/phyLayer -I../MiXiM/src/inet_stub/mobility -I../MiXiM/src/inet_stub/util -I../MiXiM/src/base/connectionManager -I../MiXiM/src/inet_stub/linklayer/contract -I../MiXiM/src/inet_stub/base -I../MiXiM/src/base/messages -L../MiXiM/out/$$\(CONFIGNAME\)/src -lmixim -KMIXIM_PROJ=../MiXiM
+#  opp_makemake -f --deep -O out -I../MiXiM/src/base/phyLayer -I../MiXiM/src/base/modules -I../MiXiM/src/inet_stub/mobility -I../MiXiM/src/inet_stub/util -I../MiXiM/src/inet_stub/linklayer/contract -I../MiXiM/src/base/connectionManager -I../MiXiM/src/inet_stub/networklayer/common -I../MiXiM/src -I../MiXiM/src/inet_stub/base -I../MiXiM/src/base/messages -I../MiXiM/src/base/utils -I../MiXiM/src/base -I../MiXiM/src/inet_stub/mobility/models -L../MiXiM/out/$$\(CONFIGNAME\)/src -lmixim -KMIXIM_PROJ=../MiXiM
 #
 
 # Name of target to be created (-o option)
@@ -15,19 +15,19 @@ USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(CMDENV_LIBS)
 
 # C++ include paths (with -I)
 INCLUDE_PATH = \
-    -I../MiXiM/src/base/modules \
-    -I../MiXiM/src/inet_stub/networklayer/common \
-    -I../MiXiM/src \
-    -I../MiXiM/src/base/utils \
-    -I../MiXiM/src/inet_stub/mobility/models \
-    -I../MiXiM/src/base \
     -I../MiXiM/src/base/phyLayer \
+    -I../MiXiM/src/base/modules \
     -I../MiXiM/src/inet_stub/mobility \
     -I../MiXiM/src/inet_stub/util \
-    -I../MiXiM/src/base/connectionManager \
     -I../MiXiM/src/inet_stub/linklayer/contract \
+    -I../MiXiM/src/base/connectionManager \
+    -I../MiXiM/src/inet_stub/networklayer/common \
+    -I../MiXiM/src \
     -I../MiXiM/src/inet_stub/base \
     -I../MiXiM/src/base/messages \
+    -I../MiXiM/src/base/utils \
+    -I../MiXiM/src/base \
+    -I../MiXiM/src/inet_stub/mobility/models \
     -I. \
     -Ijson \
     -Iresults
@@ -50,6 +50,7 @@ OBJS = \
     $O/Util.o \
     $O/MyApplicationLayer.o \
     $O/ExtractDataset.o \
+    $O/QueryScore.o \
     $O/BeaconReply_m.o \
     $O/QueryReply_m.o \
     $O/Beacon_m.o \
@@ -187,9 +188,18 @@ $O/MyApplicationLayer.o: MyApplicationLayer.cc \
 	$(MIXIM_PROJ)/src/base/utils/PassedMessage.h \
 	$(MIXIM_PROJ)/src/base/utils/SimpleAddress.h \
 	$(MIXIM_PROJ)/src/base/utils/miximkerneldefs.h \
+	$(MIXIM_PROJ)/src/inet_stub/base/BasicModule.h \
 	$(MIXIM_PROJ)/src/inet_stub/base/Coord.h \
 	$(MIXIM_PROJ)/src/inet_stub/base/INETDefs.h \
+	$(MIXIM_PROJ)/src/inet_stub/base/INotifiable.h \
+	$(MIXIM_PROJ)/src/inet_stub/base/ModuleAccess.h \
+	$(MIXIM_PROJ)/src/inet_stub/base/NotificationBoard.h \
+	$(MIXIM_PROJ)/src/inet_stub/base/NotifierConsts.h \
 	$(MIXIM_PROJ)/src/inet_stub/linklayer/contract/MACAddress.h \
+	$(MIXIM_PROJ)/src/inet_stub/mobility/IMobility.h \
+	$(MIXIM_PROJ)/src/inet_stub/mobility/models/LinearMobility.h \
+	$(MIXIM_PROJ)/src/inet_stub/mobility/models/MobilityBase.h \
+	$(MIXIM_PROJ)/src/inet_stub/mobility/models/MovingMobilityBase.h \
 	$(MIXIM_PROJ)/src/inet_stub/util/FWMath.h \
 	BeaconReply_m.h \
 	Beacon_m.h \
@@ -213,13 +223,50 @@ $O/QueryReply_m.o: QueryReply_m.cc \
 	$(MIXIM_PROJ)/src/inet_stub/util/FWMath.h \
 	QueryReplyMessage.h \
 	QueryReply_m.h
+$O/QueryScore.o: QueryScore.cc \
+	$(MIXIM_PROJ)/src/base/messages/ApplPkt_m.h \
+	$(MIXIM_PROJ)/src/base/modules/BaseApplLayer.h \
+	$(MIXIM_PROJ)/src/base/modules/BaseBattery.h \
+	$(MIXIM_PROJ)/src/base/modules/BaseLayer.h \
+	$(MIXIM_PROJ)/src/base/modules/BaseModule.h \
+	$(MIXIM_PROJ)/src/base/modules/MiximBatteryAccess.h \
+	$(MIXIM_PROJ)/src/base/utils/HostState.h \
+	$(MIXIM_PROJ)/src/base/utils/MiXiMDefs.h \
+	$(MIXIM_PROJ)/src/base/utils/PassedMessage.h \
+	$(MIXIM_PROJ)/src/base/utils/SimpleAddress.h \
+	$(MIXIM_PROJ)/src/base/utils/miximkerneldefs.h \
+	$(MIXIM_PROJ)/src/inet_stub/base/BasicModule.h \
+	$(MIXIM_PROJ)/src/inet_stub/base/Coord.h \
+	$(MIXIM_PROJ)/src/inet_stub/base/INETDefs.h \
+	$(MIXIM_PROJ)/src/inet_stub/base/INotifiable.h \
+	$(MIXIM_PROJ)/src/inet_stub/base/ModuleAccess.h \
+	$(MIXIM_PROJ)/src/inet_stub/base/NotificationBoard.h \
+	$(MIXIM_PROJ)/src/inet_stub/base/NotifierConsts.h \
+	$(MIXIM_PROJ)/src/inet_stub/linklayer/contract/MACAddress.h \
+	$(MIXIM_PROJ)/src/inet_stub/mobility/IMobility.h \
+	$(MIXIM_PROJ)/src/inet_stub/mobility/models/LinearMobility.h \
+	$(MIXIM_PROJ)/src/inet_stub/mobility/models/MobilityBase.h \
+	$(MIXIM_PROJ)/src/inet_stub/mobility/models/MovingMobilityBase.h \
+	$(MIXIM_PROJ)/src/inet_stub/util/FWMath.h \
+	BeaconReply_m.h \
+	Beacon_m.h \
+	Business.h \
+	ExtractDataset.h \
+	KeyWords.h \
+	MyApplicationLayer.h \
+	QueryReplyMessage.h \
+	QueryReply_m.h \
+	QueryScore.h \
+	Query_m.h
 $O/Query_m.o: Query_m.cc \
 	$(MIXIM_PROJ)/src/base/messages/ApplPkt_m.h \
 	$(MIXIM_PROJ)/src/base/utils/MiXiMDefs.h \
 	$(MIXIM_PROJ)/src/base/utils/SimpleAddress.h \
 	$(MIXIM_PROJ)/src/base/utils/miximkerneldefs.h \
+	$(MIXIM_PROJ)/src/inet_stub/base/Coord.h \
 	$(MIXIM_PROJ)/src/inet_stub/base/INETDefs.h \
 	$(MIXIM_PROJ)/src/inet_stub/linklayer/contract/MACAddress.h \
+	$(MIXIM_PROJ)/src/inet_stub/util/FWMath.h \
 	KeyWords.h \
 	Query_m.h
 $O/Util.o: Util.cc \

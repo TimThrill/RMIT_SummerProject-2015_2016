@@ -59,19 +59,20 @@ Query::Query(const char *name, int kind) : ::ApplPkt(name,kind)
 {
     this->businessName_var = 0;
     this->businessType_var = 0;
-    this->longitude_var = 0;
-    this->latitude_var = 0;
+    //take(&(this->peerLocation_var));
     this->maxRange_var = 0;
     this->timeStamp_var = 0;
 }
 
 Query::Query(const Query& other) : ::ApplPkt(other)
 {
+    //take(&(this->peerLocation_var));
     copy(other);
 }
 
 Query::~Query()
 {
+    //drop(&(this->peerLocation_var));
 }
 
 Query& Query::operator=(const Query& other)
@@ -87,8 +88,8 @@ void Query::copy(const Query& other)
     this->businessName_var = other.businessName_var;
     this->businessType_var = other.businessType_var;
     this->keyWords_var = other.keyWords_var;
-    this->longitude_var = other.longitude_var;
-    this->latitude_var = other.latitude_var;
+    this->peerLocation_var = other.peerLocation_var;
+    //this->peerLocation_var.setName(other.peerLocation_var.getName());
     this->maxRange_var = other.maxRange_var;
     this->timeStamp_var = other.timeStamp_var;
 }
@@ -99,8 +100,7 @@ void Query::parsimPack(cCommBuffer *b)
     doPacking(b,this->businessName_var);
     doPacking(b,this->businessType_var);
     doPacking(b,this->keyWords_var);
-    doPacking(b,this->longitude_var);
-    doPacking(b,this->latitude_var);
+    doPacking(b,this->peerLocation_var);
     doPacking(b,this->maxRange_var);
     doPacking(b,this->timeStamp_var);
 }
@@ -111,8 +111,7 @@ void Query::parsimUnpack(cCommBuffer *b)
     doUnpacking(b,this->businessName_var);
     doUnpacking(b,this->businessType_var);
     doUnpacking(b,this->keyWords_var);
-    doUnpacking(b,this->longitude_var);
-    doUnpacking(b,this->latitude_var);
+    doUnpacking(b,this->peerLocation_var);
     doUnpacking(b,this->maxRange_var);
     doUnpacking(b,this->timeStamp_var);
 }
@@ -147,24 +146,14 @@ void Query::setKeyWords(const Keywords& keyWords)
     this->keyWords_var = keyWords;
 }
 
-double Query::getLongitude() const
+Coord& Query::getPeerLocation()
 {
-    return longitude_var;
+    return peerLocation_var;
 }
 
-void Query::setLongitude(double longitude)
+void Query::setPeerLocation(const Coord& peerLocation)
 {
-    this->longitude_var = longitude;
-}
-
-double Query::getLatitude() const
-{
-    return latitude_var;
-}
-
-void Query::setLatitude(double latitude)
-{
-    this->latitude_var = latitude;
+    this->peerLocation_var = peerLocation;
 }
 
 double Query::getMaxRange() const
@@ -234,7 +223,7 @@ const char *QueryDescriptor::getProperty(const char *propertyname) const
 int QueryDescriptor::getFieldCount(void *object) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 7+basedesc->getFieldCount(object) : 7;
+    return basedesc ? 6+basedesc->getFieldCount(object) : 6;
 }
 
 unsigned int QueryDescriptor::getFieldTypeFlags(void *object, int field) const
@@ -249,12 +238,11 @@ unsigned int QueryDescriptor::getFieldTypeFlags(void *object, int field) const
         FD_ISEDITABLE,
         FD_ISEDITABLE,
         FD_ISCOMPOUND,
-        FD_ISEDITABLE,
-        FD_ISEDITABLE,
+        FD_ISCOMPOUND | FD_ISCOBJECT | FD_ISCOWNEDOBJECT,
         FD_ISEDITABLE,
         FD_ISEDITABLE,
     };
-    return (field>=0 && field<7) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<6) ? fieldTypeFlags[field] : 0;
 }
 
 const char *QueryDescriptor::getFieldName(void *object, int field) const
@@ -269,12 +257,11 @@ const char *QueryDescriptor::getFieldName(void *object, int field) const
         "businessName",
         "businessType",
         "keyWords",
-        "longitude",
-        "latitude",
+        "peerLocation",
         "maxRange",
         "timeStamp",
     };
-    return (field>=0 && field<7) ? fieldNames[field] : NULL;
+    return (field>=0 && field<6) ? fieldNames[field] : NULL;
 }
 
 int QueryDescriptor::findField(void *object, const char *fieldName) const
@@ -284,10 +271,9 @@ int QueryDescriptor::findField(void *object, const char *fieldName) const
     if (fieldName[0]=='b' && strcmp(fieldName, "businessName")==0) return base+0;
     if (fieldName[0]=='b' && strcmp(fieldName, "businessType")==0) return base+1;
     if (fieldName[0]=='k' && strcmp(fieldName, "keyWords")==0) return base+2;
-    if (fieldName[0]=='l' && strcmp(fieldName, "longitude")==0) return base+3;
-    if (fieldName[0]=='l' && strcmp(fieldName, "latitude")==0) return base+4;
-    if (fieldName[0]=='m' && strcmp(fieldName, "maxRange")==0) return base+5;
-    if (fieldName[0]=='t' && strcmp(fieldName, "timeStamp")==0) return base+6;
+    if (fieldName[0]=='p' && strcmp(fieldName, "peerLocation")==0) return base+3;
+    if (fieldName[0]=='m' && strcmp(fieldName, "maxRange")==0) return base+4;
+    if (fieldName[0]=='t' && strcmp(fieldName, "timeStamp")==0) return base+5;
     return basedesc ? basedesc->findField(object, fieldName) : -1;
 }
 
@@ -303,12 +289,11 @@ const char *QueryDescriptor::getFieldTypeString(void *object, int field) const
         "string",
         "string",
         "Keywords",
-        "double",
-        "double",
+        "Coord",
         "double",
         "simtime_t",
     };
-    return (field>=0 && field<7) ? fieldTypeStrings[field] : NULL;
+    return (field>=0 && field<6) ? fieldTypeStrings[field] : NULL;
 }
 
 const char *QueryDescriptor::getFieldProperty(void *object, int field, const char *propertyname) const
@@ -351,10 +336,9 @@ std::string QueryDescriptor::getFieldAsString(void *object, int field, int i) co
         case 0: return oppstring2string(pp->getBusinessName());
         case 1: return oppstring2string(pp->getBusinessType());
         case 2: {std::stringstream out; out << pp->getKeyWords(); return out.str();}
-        case 3: return double2string(pp->getLongitude());
-        case 4: return double2string(pp->getLatitude());
-        case 5: return double2string(pp->getMaxRange());
-        case 6: return double2string(pp->getTimeStamp());
+        case 3: {std::stringstream out; out << pp->getPeerLocation(); return out.str();}
+        case 4: return double2string(pp->getMaxRange());
+        case 5: return double2string(pp->getTimeStamp());
         default: return "";
     }
 }
@@ -371,10 +355,8 @@ bool QueryDescriptor::setFieldAsString(void *object, int field, int i, const cha
     switch (field) {
         case 0: pp->setBusinessName((value)); return true;
         case 1: pp->setBusinessType((value)); return true;
-        case 3: pp->setLongitude(string2double(value)); return true;
-        case 4: pp->setLatitude(string2double(value)); return true;
-        case 5: pp->setMaxRange(string2double(value)); return true;
-        case 6: pp->setTimeStamp(string2double(value)); return true;
+        case 4: pp->setMaxRange(string2double(value)); return true;
+        case 5: pp->setTimeStamp(string2double(value)); return true;
         default: return false;
     }
 }
@@ -389,6 +371,7 @@ const char *QueryDescriptor::getFieldStructName(void *object, int field) const
     }
     switch (field) {
         case 2: return opp_typename(typeid(Keywords));
+        case 3: return opp_typename(typeid(Coord));
         default: return NULL;
     };
 }
@@ -404,6 +387,7 @@ void *QueryDescriptor::getFieldStructPointer(void *object, int field, int i) con
     Query *pp = (Query *)object; (void)pp;
     switch (field) {
         case 2: return (void *)(&pp->getKeyWords()); break;
+        case 3: return (void *)static_cast<cObject *>(&pp->getPeerLocation()); break;
         default: return NULL;
     }
 }

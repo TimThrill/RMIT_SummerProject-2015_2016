@@ -89,8 +89,11 @@ void MyApplicationLayer::initialize(int stage) {
         // Register the finish signal
         finishSignal = registerSignal("finish");
         reply = registerSignal("reply");
+        roundFinish = registerSignal("roundFinish");
 
         successfulQuery = 0;
+        numSendPackage = 0;
+        numReceivePackage = 0;
 
         // node_id = par("node_id");
         // business_id = par("businessId").str();
@@ -211,7 +214,6 @@ void MyApplicationLayer::sendBeacon() {
 
     // Add one round
     querySendRounds++;
-
     sendDown( beaconMessage );
 }
 
@@ -308,6 +310,8 @@ void MyApplicationLayer::handleQueryMessage(Query* msg) {
 void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
     EV<<"Node: "<<srcAddress<<" receive query reply message from node: "<<msg->getSrcAddr()<<std::endl;
 
+    numReceivePackage++;
+
     // Record the latency time
     simtime_t latency = simTime() - msg->getTimeStamp();
     emit(reply, latency);
@@ -349,9 +353,13 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
             simtime_t processingTime = simTime()- startTime;
             emit(finishSignal, processingTime);
 
+            double querySuccessfulRate = numReceivePackage / numSendPackage;
+            emit(roundFinish, querySuccessfulRate);
+
             EV<<"After received query reply: Initial query node number: "<<queryNodeNumber<<std::endl;
             if(queryNodeNumber == 0) {
                 // Finish the simulation
+                // endSimulation();
             }
         } else if(queryPeerList->size() == 0 && querySendRounds < queryTimes){
             if(queryExpiredTimer) {
@@ -440,6 +448,7 @@ void MyApplicationLayer::sendQuery(LAddress::L3Type& destAddr) {
 
     EV<<"Node: "<<queryMessage->getSrcAddr()<<" send query message to node: "<<queryMessage->getDestAddr()<<std::endl;
     coreEV << "Sending Query packet!" << endl;
+    numSendPackage++;
     sendDown( queryMessage );
     //delete(queryMessage);
 }

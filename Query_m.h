@@ -19,10 +19,11 @@
 #include <vector>
 #include "KeyWords.h"
 #include "ApplPkt_m.h"
+#include "Coord.h"
 // }}
 
 /**
- * Class generated from <tt>Query.msg:28</tt> by nedtool.
+ * Class generated from <tt>Query.msg:30</tt> by nedtool.
  * <pre>
  * //
  * // TODO generated message class
@@ -32,8 +33,10 @@
  *     string businessName;
  *     string businessType;
  *     Keywords keyWords;	// key words of the query search
- *     double longitude;
- *     double latitude;
+ *     // In omnet++ we use coord instead of longitude and latitude
+ *     //double longitude;
+ *     //double latitude;
+ *     Coord peerLocation;
  *     double maxRange;	// Max range distance of the business (unit@m)
  *     simtime_t timeStamp;	// Time stamp
  * }
@@ -45,8 +48,7 @@ class Query : public ::ApplPkt
     opp_string businessName_var;
     opp_string businessType_var;
     Keywords keyWords_var;
-    double longitude_var;
-    double latitude_var;
+    Coord peerLocation_var;
     double maxRange_var;
     simtime_t timeStamp_var;
 
@@ -74,10 +76,9 @@ class Query : public ::ApplPkt
     virtual Keywords& getKeyWords();
     virtual const Keywords& getKeyWords() const {return const_cast<Query*>(this)->getKeyWords();}
     virtual void setKeyWords(const Keywords& keyWords);
-    virtual double getLongitude() const;
-    virtual void setLongitude(double longitude);
-    virtual double getLatitude() const;
-    virtual void setLatitude(double latitude);
+    virtual Coord& getPeerLocation();
+    virtual const Coord& getPeerLocation() const {return const_cast<Query*>(this)->getPeerLocation();}
+    virtual void setPeerLocation(const Coord& peerLocation);
     virtual double getMaxRange() const;
     virtual void setMaxRange(double maxRange);
     virtual simtime_t getTimeStamp() const;
