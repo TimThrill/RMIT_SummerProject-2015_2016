@@ -11,6 +11,7 @@
 const int MESSAGE_EXPIRE_TIME = 5; // Expiration time of send message
 const int MAX_SIM_TIME = 10;    // Max simulation time @unit(s)
 const int QUERY_FREQUENCY = 10;   // Query interval of each query round
+const int INITIAL_BEACON_NODES_NUMBER = 10; // Initial number of node who send beacon messages
 
 
 #endif /* CONSTANT_H_ */

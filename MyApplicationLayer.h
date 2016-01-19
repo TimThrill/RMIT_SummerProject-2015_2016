@@ -63,10 +63,6 @@ public:
 
     int successfulQuery;
 
-
-    // Initial number of peers that send query
-    static const int INITIAL_BEACON_NODES_NUMBER;
-
 private:
 
     /** @brief Copy constructor is not allowed.

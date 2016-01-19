@@ -18,7 +18,6 @@
 
 Define_Module(MyApplicationLayer);
 
-const int MyApplicationLayer::INITIAL_BEACON_NODES_NUMBER = 30;
 ExtractDataset MyApplicationLayer::extractMessage;
 
 // Constructor
