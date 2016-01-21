@@ -15,6 +15,7 @@
 #include "ExtractDataset.h"
 #include "Constant.h"
 #include "Util.h"
+#include "QueryScore.h"
 
 Define_Module(MyApplicationLayer);
 
@@ -49,6 +50,9 @@ void MyApplicationLayer::initialize(int stage) {
 
         // Read dataset
         MyApplicationLayer::extractMessage.readDataset(par("dataset_file_path"));
+        // Get my review list
+        getMyBusiness(myReviews, MyApplicationLayer::extractMessage.businessList, node_id);
+        EV<<"Get my review seize: "<<myReviews.size()<<std::endl;
 
         // Initial beacon message rules
         querySendRounds = 0;
@@ -100,13 +104,22 @@ void MyApplicationLayer::initialize(int stage) {
         numSendPackage = 0;
         numReceivePackage = 0;
 
-        // node_id = par("node_id");
-        // business_id = par("businessId").str();
+        node_id = par("node_id");
     }
     else if(stage==1) {
         //scheduleAt(simTime() + dblrand() * 10, delayTimer);
     }
     EV<<"Finish initialized"<<std::endl;
+}
+
+void MyApplicationLayer::getMyBusiness(std::vector<Business>& myReviews,
+        std::multimap<int, Business>& businessList,
+        int nodeId) {
+    std::pair<std::multimap<int, Business>::iterator, std::multimap<int, Business>::iterator> it;
+    it = businessList.equal_range(nodeId);
+    for(std::multimap<int, Business>::iterator itt = it.first; itt != it.second; ++itt) {
+        myReviews.push_back(itt->second);
+    }
 }
 
 void MyApplicationLayer::handleBeaconExpiredTimer() {
@@ -373,7 +386,7 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
         EV<<"Business type: "<<it->businessType<<std::endl;
         EV<<"Business address: "<<it->businessAddress<<std::endl;
         EV<<"Business location latitude: "<<it->businessLocation.y<<" longitude: "<<it->businessLocation.x<<std::endl;
-        EV<<"Business distance"<<it->distance<<std::endl;
+        EV<<"Business distance: "<<it->distance<<std::endl;
         EV<<"rate: "<<it->rate<<std::endl;
         EV<<"Text review: "<<it->textReview<<std::endl;
         EV<<"Result end"<<std::endl;
@@ -575,34 +588,32 @@ void MyApplicationLayer::handleLowerMsg(cMessage* msg) {
  * */
 QueryReply* MyApplicationLayer::setQueryReplyMessage(QueryReply* queryReplyMessage, Query* queryMessage) {
     EV<<"Set query reply message start"<<std::endl;
-    QueryReplyMessage mQueryReply = {};
+
+    QueryScore score;
+    score.getRankingResult(queryReplyMessage, queryMessage, myReviews);
+
+    EV<<"After set query reply: "<<queryReplyMessage->getReplyBusinesses().size()<<std::endl;
+
+//    QueryReplyMessage mQueryReply = {};
+
     //for(; it != queryReplyMessage->getReplyBusinesses().end(); it++)
     //{
-    mQueryReply.businessId = (MyApplicationLayer::extractMessage.businessList.begin()->second).businessId;
-    mQueryReply.businessName = (MyApplicationLayer::extractMessage.businessList.begin()->second).businessName;
-    mQueryReply.businessLocation.x = (MyApplicationLayer::extractMessage.businessList.begin()->second).longitude;
-    mQueryReply.businessLocation.y = (MyApplicationLayer::extractMessage.businessList.begin()->second).latitude;
+//    mQueryReply.businessId = (MyApplicationLayer::extractMessage.businessList.begin()->second).businessId;
+//    mQueryReply.businessName = (MyApplicationLayer::extractMessage.businessList.begin()->second).businessName;
+//    mQueryReply.businessLocation.x = (MyApplicationLayer::extractMessage.businessList.begin()->second).longitude;
+//    mQueryReply.businessLocation.y = (MyApplicationLayer::extractMessage.businessList.begin()->second).latitude;
     /* mQueryReply.distance = getDistance((MyApplicationLayer::extractMessage.businessList.begin()->second).longitude,
             queryMessage->getLongitude(),
             (MyApplicationLayer::extractMessage.businessList.begin()->second).latitude,
             queryMessage->getLatitude());
     */
-    mQueryReply.businessType = "Restaurant";
-    mQueryReply.businessAddress = (MyApplicationLayer::extractMessage.businessList.begin()->second).address;
-    mQueryReply.rate = (MyApplicationLayer::extractMessage.businessList.begin()->second).rating;
-    mQueryReply.textReview = (MyApplicationLayer::extractMessage.businessList.begin()->second).textReview;
+//    mQueryReply.businessType = "Restaurant";
+//    mQueryReply.businessAddress = (MyApplicationLayer::extractMessage.businessList.begin()->second).address;
+//    mQueryReply.rate = (MyApplicationLayer::extractMessage.businessList.begin()->second).rating;
+//    mQueryReply.textReview = (MyApplicationLayer::extractMessage.businessList.begin()->second).textReview;
     //}
-    queryReplyMessage->getReplyBusinesses().push_back(mQueryReply);
+//    queryReplyMessage->getReplyBusinesses().push_back(mQueryReply);
 
-    // Test attributes and categories
-    std::map<std::string, std::string>::iterator it = (MyApplicationLayer::extractMessage.businessList.begin()->second).attributes.begin();
-    EV<<"######attributes start######"<<std::endl;
-    while(it != (MyApplicationLayer::extractMessage.businessList.begin()->second).attributes.end()) {
-        EV<<it->first<<": "<<it->second<<std::endl;
-        it++;
-    }
-    EV<<"######attributes end######"<<std::endl;
-    EV<<"Categories: "<<(MyApplicationLayer::extractMessage.businessList.begin()->second).categories.at(0)<<std::endl;
     EV<<"Set query reply message end"<<std::endl;
     return queryReplyMessage;
 }
@@ -610,7 +621,7 @@ QueryReply* MyApplicationLayer::setQueryReplyMessage(QueryReply* queryReplyMessa
 void MyApplicationLayer::printReceivedQueryMessage(Query* msg) {
     EV<<"Received query message start:"<<std::endl;
     EV<<"Business name: "<<msg->getBusinessName()<<std::endl;
-    EV<<"Business type: "<<msg->getBusinessType();
+    EV<<"Business type: "<<msg->getBusinessType()<<std::endl;
     Keywords &keywords = msg->getKeyWords();
     EV<<"Query keywords: ";
     std::vector<std::string>::iterator it = keywords.keywords.begin();

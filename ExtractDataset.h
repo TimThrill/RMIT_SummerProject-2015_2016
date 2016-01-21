@@ -18,10 +18,9 @@ class ExtractDataset {
 public:
     /*
      * Map for business list, include their review.
-     * The key is: businessId?userId
-     * which is combined with business id and user id connected with symbol '?'
+     * The key is: userId
      * */
-    std::map<std::string, Business> businessList;
+    std::multimap<int, Business> businessList;
 
     int readDataset(std::string path);
 };

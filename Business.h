@@ -18,7 +18,7 @@ public:
     std::string businessName;
     std::map<std::string, std::string> attributes;  // Attributes of the business
     std::vector<std::string> categories;    // Categories of the business
-    std::string userId;
+    int userId;
     double longitude;
     double latitude;
     std::string address;
@@ -32,7 +32,7 @@ public:
             std::string iBusinessName,
             std::map<std::string, std::string> iAttributes,
             std::vector<std::string> iCategories,
-            std::string iUserId,
+            int iUserId,
             double iLongitude = 0,
             double iLatitude = 0,
             std::string iAddress = "",

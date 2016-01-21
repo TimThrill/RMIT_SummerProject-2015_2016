@@ -9,17 +9,20 @@
 #define QUERYSCORE_H_
 
 #include "QueryReply_m.h"
+#include "Query_m.h"
 #include "ExtractDataset.h"
 #include "MyApplicationLayer.h"
+#include "Coord.h"
 
 class QueryScore {
 public:
-std::vector<Business> getRankingResult(QueryReply* queryReplyMessage,
-        std::string business_id,
-        std::vector<std::string> keyWords,
-        std::string business_name);
+void getRankingResult(QueryReply* queryReplyMessage,
+        Query* queryMessage,
+        std::vector<Business>& myReviews);
 
 float rankingScore(Business&, std::vector<std::string>, std::string);
+
+double getDistanceScore(Coord& a, Coord&b);
 };
 
 

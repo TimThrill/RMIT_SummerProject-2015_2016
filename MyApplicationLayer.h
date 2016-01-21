@@ -78,6 +78,8 @@ private:
 
     std::queue<LAddress::L3Type> *queryPeerList;  // Address list of peers that return beacon reply message and shoudl send query message to
 
+    void getMyBusiness(std::vector<Business>&, std::multimap<int, Business>&, int);
+
     std::mutex m;   // Mutex lock to ensure thread safe
 
     // Signal for recording the processing time of each simulation
@@ -100,8 +102,8 @@ private:
     int numSendPackage;
     int numReceivePackage;
 
-    // std::string node_id;    // Node id for the node, this is corresponding to the node id in the dataset
-    std::string business_id; // Business id in the dataset
+    int node_id;    // Node id for the node, this is corresponding to the node id in the dataset
+    std::vector<Business> myReviews;    // Reviews belong to this node
 
 protected:
     /** @brief Timer message for scheduling next message.*/

@@ -6,24 +6,54 @@
  */
 #include "QueryScore.h"
 
-std::vector<Business> QueryScore::getRankingResult(QueryReply* queryReplyMessage,
-        std::string business_id,
-        std::vector<std::string> keyWords,
-        std::string business_name) {
-    std::vector<Business> businesses;
-
-    std::map<std::string, Business>::iterator it = MyApplicationLayer::extractMessage.businessList.begin();
-
-    while(it != MyApplicationLayer::extractMessage.businessList.end())
-    {
-        Business& business = it->second;
-        if(business_id.compare(business.businessId) == 0)   // Are same business id
+void QueryScore::getRankingResult(QueryReply* queryReplyMessage,
+        Query* queryMessage,
+        std::vector<Business>& myReviews)
+{
+    // Return value
+    std::vector<std::pair<double, Business> > businessScore;
+    std::vector<Business>::iterator it = myReviews.begin();
+    while(it != myReviews.end()) {
+        Coord businessCoord(it->longitude, it->latitude);
+        double distanceScore = getDistanceScore(queryMessage->getPeerLocation(), businessCoord);
+        double ratingScore = it->rating;
+        double score = distanceScore + ratingScore;
+        EV<<"business id: "<<it->businessId<<"  Score: "<<score<<std::endl;
+        if(businessScore.size() < 3) {
+            businessScore.push_back(std::pair<double, Business>(score, *it));
+        }
+        else
         {
-            int score = rankingScore(business, keyWords, business_name);
+            std::vector<std::pair<double, Business> >::iterator min_it = businessScore.begin();
+            for(std::vector<std::pair<double, Business> >::iterator it_b = businessScore.begin(); it_b != businessScore.end(); it_b++) {
+                if(min_it->first > it_b->first)
+                {
+                    min_it = it_b;
+                }
+            }
+
+            if(score > min_it->first)   // Remove the lowest score review from the result
+            {
+                businessScore.erase(min_it);
+                businessScore.push_back(std::pair<double, Business>(score, *it));
+            }
         }
         it++;
     }
-    return businesses;
+
+
+    for(std::vector<std::pair<double, Business> >::iterator it_b = businessScore.begin(); it_b != businessScore.end(); it_b++) {
+        QueryReplyMessage message = {it_b->second.businessId,
+                it_b->second.businessName,
+                std::string("type"),
+                Coord(it_b->second.longitude, it_b->second.latitude),
+                queryMessage->getPeerLocation().distance(Coord(it_b->second.longitude, it_b->second.latitude)),
+                it_b->second.address,
+                it_b->second.rating,
+                it_b->second.textReview};
+        queryReplyMessage->getReplyBusinesses().push_back(message);
+    }
+    return;
 }
 
 float QueryScore::rankingScore(Business& business, std::vector<std::string> keyWords, std::string business_name)
@@ -42,5 +72,9 @@ float QueryScore::rankingScore(Business& business, std::vector<std::string> keyW
     return value;
 }
 
+
+double QueryScore::getDistanceScore(Coord& a, Coord& b) {
+    return a.distance(b);
+}
 
 

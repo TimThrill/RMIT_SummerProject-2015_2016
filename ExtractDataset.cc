@@ -45,16 +45,16 @@ int ExtractDataset::readDataset(std::string path) {
                             root["business_name"].asString(),
                             attributes,
                             categories,
-                            root["user_id"].asString(),
+                            root["user_id"].asInt(),
                             root["longitude"].asDouble(),
                             root["latitude"].asDouble(),
                             root["address"].asString(),
                             root["text_review"].asString(),
                             root["rate"].asDouble());
-            std::string key = business.businessId + "?" + business.userId;
+            int key = root["user_id"].asInt();
 
             // Put the parsed json data into business list
-            businessList.insert(std::pair<std::string, Business>(key, business));
+            businessList.insert(std::pair<int, Business>(key, business));
         }
     } while (success);
     return 0;
