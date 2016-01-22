@@ -32,14 +32,17 @@ INCLUDE_PATH = \
     -Ijson \
     -Iresults \
     -Iresults/100 \
+    -Iresults/1000 \
     -Iresults/200 \
     -Iresults/300 \
     -Iresults/400 \
     -Iresults/50 \
     -Iresults/500 \
     -Iresults/600 \
+    -Iresults/600_2 \
     -Iresults/700 \
-    -Iresults/800
+    -Iresults/800 \
+    -Iresults/900
 
 # Additional object and library files to link with
 EXTRA_OBJS =
@@ -150,21 +153,24 @@ clean:
 	$(Q)-rm -f json/*_m.cc json/*_m.h
 	$(Q)-rm -f results/*_m.cc results/*_m.h
 	$(Q)-rm -f results/100/*_m.cc results/100/*_m.h
+	$(Q)-rm -f results/1000/*_m.cc results/1000/*_m.h
 	$(Q)-rm -f results/200/*_m.cc results/200/*_m.h
 	$(Q)-rm -f results/300/*_m.cc results/300/*_m.h
 	$(Q)-rm -f results/400/*_m.cc results/400/*_m.h
 	$(Q)-rm -f results/50/*_m.cc results/50/*_m.h
 	$(Q)-rm -f results/500/*_m.cc results/500/*_m.h
 	$(Q)-rm -f results/600/*_m.cc results/600/*_m.h
+	$(Q)-rm -f results/600_2/*_m.cc results/600_2/*_m.h
 	$(Q)-rm -f results/700/*_m.cc results/700/*_m.h
 	$(Q)-rm -f results/800/*_m.cc results/800/*_m.h
+	$(Q)-rm -f results/900/*_m.cc results/900/*_m.h
 
 cleanall: clean
 	$(Q)-rm -rf $(PROJECT_OUTPUT_DIR)
 
 depend:
 	$(qecho) Creating dependencies...
-	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc json/*.cc results/*.cc results/100/*.cc results/200/*.cc results/300/*.cc results/400/*.cc results/50/*.cc results/500/*.cc results/600/*.cc results/700/*.cc results/800/*.cc
+	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc json/*.cc results/*.cc results/100/*.cc results/1000/*.cc results/200/*.cc results/300/*.cc results/400/*.cc results/50/*.cc results/500/*.cc results/600/*.cc results/600_2/*.cc results/700/*.cc results/800/*.cc results/900/*.cc
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 $O/BeaconReply_m.o: BeaconReply_m.cc \

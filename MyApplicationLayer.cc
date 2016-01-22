@@ -19,7 +19,8 @@
 
 Define_Module(MyApplicationLayer);
 
-ExtractDataset MyApplicationLayer::extractMessage;
+// Read dataset
+ExtractDataset MyApplicationLayer::extractMessage = ExtractDataset(DATASET_PATH);
 int MyApplicationLayer::beaconSendNumber = 0;
 int MyApplicationLayer::beaconReceiveNumber = 0;
 
@@ -35,6 +36,16 @@ MyApplicationLayer::MyApplicationLayer() : BaseApplLayer(), delayTimer(NULL),
 MyApplicationLayer::~MyApplicationLayer() {
     // TODO Auto-generated destructor stub
     delete queryPeerList;
+    if(delayTimer)
+    {
+        delete delayTimer;
+    }
+    if(beaconExpiredTimer) {
+        delete beaconExpiredTimer;
+    }
+    if(queryExpiredTimer) {
+        delete queryExpiredTimer;
+    }
 }
 
 void MyApplicationLayer::initialize(int stage) {
@@ -48,8 +59,7 @@ void MyApplicationLayer::initialize(int stage) {
         // Set source ip address
         srcAddress = getNode()->getId();
 
-        // Read dataset
-        MyApplicationLayer::extractMessage.readDataset(par("dataset_file_path"));
+        node_id = par("node_id");
         // Get my review list
         getMyBusiness(myReviews, MyApplicationLayer::extractMessage.businessList, node_id);
         EV<<"Get my review seize: "<<myReviews.size()<<std::endl;
@@ -70,7 +80,7 @@ void MyApplicationLayer::initialize(int stage) {
                 strncpy(secondNo, s, strlen(s) - 1);
                 secondNo[strlen(s) - 1]='\0';
                 simulationTime = atoi(secondNo);
-                EV<<"simulation time: "<<simulationTime;
+                EV<<"simulation time: "<<simulationTime<<std::endl;
 
             } // otherwise use the default MAX_SIM_TIME value
 
@@ -103,8 +113,6 @@ void MyApplicationLayer::initialize(int stage) {
         successfulQuery = 0;
         numSendPackage = 0;
         numReceivePackage = 0;
-
-        node_id = par("node_id");
     }
     else if(stage==1) {
         //scheduleAt(simTime() + dblrand() * 10, delayTimer);
@@ -117,6 +125,7 @@ void MyApplicationLayer::getMyBusiness(std::vector<Business>& myReviews,
         int nodeId) {
     std::pair<std::multimap<int, Business>::iterator, std::multimap<int, Business>::iterator> it;
     it = businessList.equal_range(nodeId);
+    EV<<"Nodes in multiset: "<<businessList.count(nodeId)<<std::endl;
     for(std::multimap<int, Business>::iterator itt = it.first; itt != it.second; ++itt) {
         myReviews.push_back(itt->second);
     }

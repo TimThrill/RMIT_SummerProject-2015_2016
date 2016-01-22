@@ -10,6 +10,10 @@
 #include "ExtractDataset.h"
 #include "json/json.h"
 
+ExtractDataset::ExtractDataset(std::string path) {
+    readDataset(path);
+}
+
 int ExtractDataset::readDataset(std::string path) {
     Json::Value root;
     Json::Reader reader;
@@ -52,7 +56,6 @@ int ExtractDataset::readDataset(std::string path) {
                             root["text_review"].asString(),
                             root["rate"].asDouble());
             int key = root["user_id"].asInt();
-
             // Put the parsed json data into business list
             businessList.insert(std::pair<int, Business>(key, business));
         }

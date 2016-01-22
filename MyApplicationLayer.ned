@@ -54,8 +54,7 @@ simple MyApplicationLayer like IBaseApplLayer
         //double longitude;	// Longitude of the node
         //double latitude;	// Latitude of the node
         double lamda;	// Parameter for poisson formula
-		string dataset_file_path;	// Path for dataset path
-		// string node_id;	// Node id
+		int node_id;	// Node id
         // string businessId;	// The id of query business, this is for first stage test
 
     gates:

@@ -16,6 +16,9 @@
 
 class ExtractDataset {
 public:
+
+    ExtractDataset(std::string path);
+
     /*
      * Map for business list, include their review.
      * The key is: userId
