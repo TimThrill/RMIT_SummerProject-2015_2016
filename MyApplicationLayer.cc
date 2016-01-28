@@ -60,9 +60,6 @@ void MyApplicationLayer::initialize(int stage) {
         srcAddress = getNode()->getId();
 
         node_id = par("node_id");
-        // Get my review list
-        getMyBusiness(myReviews, MyApplicationLayer::extractMessage.businessList, node_id);
-        EV<<"Get my review seize: "<<myReviews.size()<<std::endl;
 
         // Initial beacon message rules
         querySendRounds = 0;
@@ -459,7 +456,7 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
             emit(finishSignal, processingTime);
 
             // Record query successful rate
-            double querySuccessfulRate = numReceivePackage / numSendPackage;
+            double querySuccessfulRate = (double)numReceivePackage / numSendPackage;
             emit(roundFinish, querySuccessfulRate);
         }
         else
@@ -500,8 +497,8 @@ void MyApplicationLayer::sendQuery(LAddress::L3Type& destAddr) {
     queryMessage->setBusinessType("Restaurant");
 
     // Set query key words
-    std::string keyword1 = "good";
-    std::string keyword2 = "credit";
+    std::string keyword1 = "affordable";
+    std::string keyword2 = "alcohol";
     (queryMessage->getKeyWords()).keywords.push_back(keyword1);
     (queryMessage->getKeyWords()).keywords.push_back(keyword2);
 
@@ -599,7 +596,7 @@ QueryReply* MyApplicationLayer::setQueryReplyMessage(QueryReply* queryReplyMessa
     EV<<"Set query reply message start"<<std::endl;
 
     QueryScore score;
-    score.getRankingResult(queryReplyMessage, queryMessage, myReviews);
+    score.getRankingResult(queryReplyMessage, queryMessage);
 
     EV<<"After set query reply: "<<queryReplyMessage->getReplyBusinesses().size()<<std::endl;
 

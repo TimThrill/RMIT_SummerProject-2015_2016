@@ -103,7 +103,6 @@ private:
     int numReceivePackage;
 
     int node_id;    // Node id for the node, this is corresponding to the node id in the dataset
-    std::vector<Business> myReviews;    // Reviews belong to this node
 
 protected:
     /** @brief Timer message for scheduling next message.*/

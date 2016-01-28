@@ -33,13 +33,16 @@ INCLUDE_PATH = \
     -Iresults \
     -Iresults/100 \
     -Iresults/1000 \
+    -Iresults/100r \
     -Iresults/200 \
     -Iresults/300 \
     -Iresults/400 \
     -Iresults/50 \
     -Iresults/500 \
+    -Iresults/50r \
     -Iresults/600 \
     -Iresults/600_2 \
+    -Iresults/600r \
     -Iresults/700 \
     -Iresults/800 \
     -Iresults/900
@@ -58,6 +61,7 @@ O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc and .msg files
 OBJS = \
+    $O/MinHeap.o \
     $O/jsoncpp.o \
     $O/Util.o \
     $O/MyApplicationLayer.o \
@@ -154,13 +158,16 @@ clean:
 	$(Q)-rm -f results/*_m.cc results/*_m.h
 	$(Q)-rm -f results/100/*_m.cc results/100/*_m.h
 	$(Q)-rm -f results/1000/*_m.cc results/1000/*_m.h
+	$(Q)-rm -f results/100r/*_m.cc results/100r/*_m.h
 	$(Q)-rm -f results/200/*_m.cc results/200/*_m.h
 	$(Q)-rm -f results/300/*_m.cc results/300/*_m.h
 	$(Q)-rm -f results/400/*_m.cc results/400/*_m.h
 	$(Q)-rm -f results/50/*_m.cc results/50/*_m.h
 	$(Q)-rm -f results/500/*_m.cc results/500/*_m.h
+	$(Q)-rm -f results/50r/*_m.cc results/50r/*_m.h
 	$(Q)-rm -f results/600/*_m.cc results/600/*_m.h
 	$(Q)-rm -f results/600_2/*_m.cc results/600_2/*_m.h
+	$(Q)-rm -f results/600r/*_m.cc results/600r/*_m.h
 	$(Q)-rm -f results/700/*_m.cc results/700/*_m.h
 	$(Q)-rm -f results/800/*_m.cc results/800/*_m.h
 	$(Q)-rm -f results/900/*_m.cc results/900/*_m.h
@@ -170,7 +177,7 @@ cleanall: clean
 
 depend:
 	$(qecho) Creating dependencies...
-	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc json/*.cc results/*.cc results/100/*.cc results/1000/*.cc results/200/*.cc results/300/*.cc results/400/*.cc results/50/*.cc results/500/*.cc results/600/*.cc results/600_2/*.cc results/700/*.cc results/800/*.cc results/900/*.cc
+	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc json/*.cc results/*.cc results/100/*.cc results/1000/*.cc results/100r/*.cc results/200/*.cc results/300/*.cc results/400/*.cc results/50/*.cc results/500/*.cc results/50r/*.cc results/600/*.cc results/600_2/*.cc results/600r/*.cc results/700/*.cc results/800/*.cc results/900/*.cc
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 $O/BeaconReply_m.o: BeaconReply_m.cc \
@@ -197,6 +204,7 @@ $O/ExtractDataset.o: ExtractDataset.cc \
 	Business.h \
 	ExtractDataset.h \
 	json/json.h
+$O/MinHeap.o: MinHeap.cc
 $O/MyApplicationLayer.o: MyApplicationLayer.cc \
 	$(MIXIM_PROJ)/src/base/messages/ApplPkt_m.h \
 	$(MIXIM_PROJ)/src/base/modules/AddressingInterface.h \
@@ -228,15 +236,19 @@ $O/MyApplicationLayer.o: MyApplicationLayer.cc \
 	BeaconReply_m.h \
 	Beacon_m.h \
 	Business.h \
+	CollectionFrequency.h \
 	Constant.h \
+	Document.h \
 	ExtractDataset.h \
 	KeyWords.h \
+	Lexicon.h \
 	MyApplicationLayer.h \
 	QueryReplyMessage.h \
 	QueryReply_m.h \
 	QueryScore.h \
 	Query_m.h \
-	Util.h
+	Util.h \
+	json/json.h
 $O/QueryReply_m.o: QueryReply_m.cc \
 	$(MIXIM_PROJ)/src/base/messages/ApplPkt_m.h \
 	$(MIXIM_PROJ)/src/base/utils/MiXiMDefs.h \
@@ -276,13 +288,18 @@ $O/QueryScore.o: QueryScore.cc \
 	BeaconReply_m.h \
 	Beacon_m.h \
 	Business.h \
+	CollectionFrequency.h \
+	Constant.h \
+	Document.h \
 	ExtractDataset.h \
 	KeyWords.h \
+	Lexicon.h \
 	MyApplicationLayer.h \
 	QueryReplyMessage.h \
 	QueryReply_m.h \
 	QueryScore.h \
-	Query_m.h
+	Query_m.h \
+	json/json.h
 $O/Query_m.o: Query_m.cc \
 	$(MIXIM_PROJ)/src/base/messages/ApplPkt_m.h \
 	$(MIXIM_PROJ)/src/base/utils/MiXiMDefs.h \
