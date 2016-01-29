@@ -21,7 +21,6 @@
 #include "BeaconReply_m.h"
 #include "Query_m.h"
 #include "QueryReply_m.h"
-#include "ExtractDataset.h"
 #include "LinearMobility.h"
 
 extern int queryNodeNumber;
@@ -53,8 +52,6 @@ public:
     // Destination ip address
     long destAdress;
 
-    // Extract message class
-    static ExtractDataset extractMessage;
     // beacon send number for all nodes
     static int beaconSendNumber;
     // beacon receiving number for all nodes
@@ -77,8 +74,6 @@ private:
     MyApplicationLayer& operator=(const MyApplicationLayer&);
 
     std::queue<LAddress::L3Type> *queryPeerList;  // Address list of peers that return beacon reply message and shoudl send query message to
-
-    void getMyBusiness(std::vector<Business>&, std::multimap<int, Business>&, int);
 
     std::mutex m;   // Mutex lock to ensure thread safe
 

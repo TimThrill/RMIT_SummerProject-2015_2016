@@ -12,7 +12,6 @@
 #include "ApplPkt_m.h"
 #include "AddressingInterface.h"
 #include "FindModule.h"
-#include "ExtractDataset.h"
 #include "Constant.h"
 #include "Util.h"
 #include "QueryScore.h"
@@ -20,7 +19,6 @@
 Define_Module(MyApplicationLayer);
 
 // Read dataset
-ExtractDataset MyApplicationLayer::extractMessage = ExtractDataset(DATASET_PATH);
 int MyApplicationLayer::beaconSendNumber = 0;
 int MyApplicationLayer::beaconReceiveNumber = 0;
 
@@ -115,17 +113,6 @@ void MyApplicationLayer::initialize(int stage) {
         //scheduleAt(simTime() + dblrand() * 10, delayTimer);
     }
     EV<<"Finish initialized"<<std::endl;
-}
-
-void MyApplicationLayer::getMyBusiness(std::vector<Business>& myReviews,
-        std::multimap<int, Business>& businessList,
-        int nodeId) {
-    std::pair<std::multimap<int, Business>::iterator, std::multimap<int, Business>::iterator> it;
-    it = businessList.equal_range(nodeId);
-    EV<<"Nodes in multiset: "<<businessList.count(nodeId)<<std::endl;
-    for(std::multimap<int, Business>::iterator itt = it.first; itt != it.second; ++itt) {
-        myReviews.push_back(itt->second);
-    }
 }
 
 void MyApplicationLayer::handleBeaconExpiredTimer() {

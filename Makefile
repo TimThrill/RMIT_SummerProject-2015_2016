@@ -64,7 +64,6 @@ OBJS = \
     $O/jsoncpp.o \
     $O/Util.o \
     $O/MyApplicationLayer.o \
-    $O/ExtractDataset.o \
     $O/QueryScore.o \
     $O/BeaconReply_m.o \
     $O/QueryReply_m.o \
@@ -199,10 +198,6 @@ $O/Beacon_m.o: Beacon_m.cc \
 	$(MIXIM_PROJ)/src/inet_stub/linklayer/contract/MACAddress.h \
 	$(MIXIM_PROJ)/src/inet_stub/util/FWMath.h \
 	Beacon_m.h
-$O/ExtractDataset.o: ExtractDataset.cc \
-	Business.h \
-	ExtractDataset.h \
-	json/json.h
 $O/MyApplicationLayer.o: MyApplicationLayer.cc \
 	$(MIXIM_PROJ)/src/base/messages/ApplPkt_m.h \
 	$(MIXIM_PROJ)/src/base/modules/AddressingInterface.h \
@@ -233,11 +228,9 @@ $O/MyApplicationLayer.o: MyApplicationLayer.cc \
 	$(MIXIM_PROJ)/src/inet_stub/util/FWMath.h \
 	BeaconReply_m.h \
 	Beacon_m.h \
-	Business.h \
 	CollectionFrequency.h \
 	Constant.h \
 	Document.h \
-	ExtractDataset.h \
 	KeyWords.h \
 	Lexicon.h \
 	MyApplicationLayer.h \
@@ -285,11 +278,9 @@ $O/QueryScore.o: QueryScore.cc \
 	$(MIXIM_PROJ)/src/inet_stub/util/FWMath.h \
 	BeaconReply_m.h \
 	Beacon_m.h \
-	Business.h \
 	CollectionFrequency.h \
 	Constant.h \
 	Document.h \
-	ExtractDataset.h \
 	KeyWords.h \
 	Lexicon.h \
 	MyApplicationLayer.h \
