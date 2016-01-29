@@ -61,7 +61,6 @@ O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc and .msg files
 OBJS = \
-    $O/MinHeap.o \
     $O/jsoncpp.o \
     $O/Util.o \
     $O/MyApplicationLayer.o \
@@ -204,7 +203,6 @@ $O/ExtractDataset.o: ExtractDataset.cc \
 	Business.h \
 	ExtractDataset.h \
 	json/json.h
-$O/MinHeap.o: MinHeap.cc
 $O/MyApplicationLayer.o: MyApplicationLayer.cc \
 	$(MIXIM_PROJ)/src/base/messages/ApplPkt_m.h \
 	$(MIXIM_PROJ)/src/base/modules/AddressingInterface.h \
