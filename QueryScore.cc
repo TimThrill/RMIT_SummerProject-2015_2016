@@ -98,6 +98,8 @@ void QueryScore::setRankingResult(int maxResults, QueryReply* queryReplyMessage,
         reply.textReview = root["text_review"].asString();
         reply.businessName = root["business_name"].asString();
         reply.rate = root["rate"].asDouble();
+        reply.businessLocation = Coord(root["longitude"].asDouble(), root["latitude"].asDouble());
+        reply.score  = (it + i)->second;
         queryReplyMessage->getReplyBusinesses().push_back(reply);
     }
     return;

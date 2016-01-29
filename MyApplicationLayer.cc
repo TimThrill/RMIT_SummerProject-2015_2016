@@ -383,6 +383,8 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
     simtime_t latency = simTime() - msg->getTimeStamp();
     emit(reply, latency);
 
+    EV<<"**********************Query reply results start******************"<<std::endl;
+
     // Test for print result
     std::vector<QueryReplyMessage>::iterator it = msg->getReplyBusinesses().begin();
     for(; it != msg->getReplyBusinesses().end(); it++) {
@@ -392,11 +394,14 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
         EV<<"Business type: "<<it->businessType<<std::endl;
         EV<<"Business address: "<<it->businessAddress<<std::endl;
         EV<<"Business location latitude: "<<it->businessLocation.y<<" longitude: "<<it->businessLocation.x<<std::endl;
-        EV<<"Business distance: "<<it->distance<<std::endl;
+        //EV<<"Business distance: "<<it->distance<<std::endl;
         EV<<"rate: "<<it->rate<<std::endl;
         EV<<"Text review: "<<it->textReview<<std::endl;
-        EV<<"Result end"<<std::endl;
+        EV<<"Ranking score: "<<it->score<<std::endl;
+        EV<<"Result end"<<std::endl<<std::endl;
     }
+
+    EV<<"**********************Query reply results finish******************"<<std::endl;
 
     // Receive query reply from a peer, pop that peer from query peer list
     m.lock();
