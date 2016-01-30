@@ -36,13 +36,13 @@ MyApplicationLayer::~MyApplicationLayer() {
     delete queryPeerList;
     if(delayTimer)
     {
-        delete delayTimer;
+        cancelAndDelete(delayTimer);
     }
     if(beaconExpiredTimer) {
-        delete beaconExpiredTimer;
+        cancelAndDelete(beaconExpiredTimer);
     }
     if(queryExpiredTimer) {
-        delete queryExpiredTimer;
+        cancelAndDelete(queryExpiredTimer);
     }
     oResult.close();
     oKeywords.close();
@@ -460,11 +460,11 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
         }
         else
         {
-            if(queryExpiredTimer)   // Receive the query reply, we extend the timer
-            {
-                cancelAndDelete(queryExpiredTimer);
-                queryExpiredTimer = new cMessage("Expired Timer", SEND_QUERY_EXPIRED_TIMER);
-            }
+//            if(queryExpiredTimer)   // Receive the query reply, we extend the timer
+//            {
+//                cancelAndDelete(queryExpiredTimer);
+//                queryExpiredTimer = new cMessage("Expired Timer", SEND_QUERY_EXPIRED_TIMER);
+//            }
         }
     } else {
         EV<<"Error: query peer list is null!"<<std::endl;
