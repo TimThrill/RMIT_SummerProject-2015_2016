@@ -4,9 +4,9 @@
  *  Created on: Dec 14, 2015
  *      Author: cheetah
  */
+#include <string>
 
-#include <MyApplicationLayer.h>
-
+#include "MyApplicationLayer.h"
 #include "NetwControlInfo.h"
 #include "SimpleAddress.h"
 #include "ApplPkt_m.h"
@@ -483,16 +483,13 @@ void MyApplicationLayer::sendBeaconReply(BeaconReply* beaconReplyMessage) {
 void MyApplicationLayer::sendQuery(LAddress::L3Type& destAddr) {
     Query* queryMessage = new Query("QUERY_MESSAGE", QUERY_MESSAGE);
 
-    // Set business name
-    queryMessage->setBusinessName("McDonals");
-    // Set business type
-    queryMessage->setBusinessType("Restaurant");
-
     // Set query key words
-    std::string keyword1 = "affordable";
-    std::string keyword2 = "alcohol";
+    std::string keyword1 = "asked";
+    std::string keyword2 = "busy";
+    std::string keyword3 = "card";
     (queryMessage->getKeyWords()).keywords.push_back(keyword1);
     (queryMessage->getKeyWords()).keywords.push_back(keyword2);
+    (queryMessage->getKeyWords()).keywords.push_back(keyword3);
 
     // Set query node location
     // Read position from omnetpp.ini file
@@ -587,7 +584,11 @@ void MyApplicationLayer::handleLowerMsg(cMessage* msg) {
 QueryReply* MyApplicationLayer::setQueryReplyMessage(QueryReply* queryReplyMessage, Query* queryMessage) {
     EV<<"Set query reply message start"<<std::endl;
 
-    QueryScore score;
+    std::string lexiconPath = MAIN_INDEXING_PATH + std::to_string(node_id) + "/lexicon";
+    std::string documentMapPath = MAIN_INDEXING_PATH + std::to_string(node_id) + "/map";
+    std::string invertedListPath = MAIN_INDEXING_PATH + std::to_string(node_id) + "/ivlist";
+    std::string jsonFilePath = REVIEW_JSON_DATASET + std::to_string(node_id);
+    QueryScore score(lexiconPath, documentMapPath, invertedListPath, jsonFilePath);
     score.getRankingResult(queryReplyMessage, queryMessage);
 
     EV<<"After set query reply: "<<queryReplyMessage->getReplyBusinesses().size()<<std::endl;

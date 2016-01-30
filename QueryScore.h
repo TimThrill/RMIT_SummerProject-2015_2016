@@ -31,8 +31,12 @@ public:
     std::ifstream lexiconfile;
     std::ifstream mapFile;
 
-    QueryScore()
+    QueryScore(std::string lexiconFilePath, std::string documentMapFilePath, std::string invertedListFilePath, std::string jsonFilePath)
     {
+        this->documentMapFilePath = documentMapFilePath;
+        this->lexiconFilePath = lexiconFilePath;
+        this->invertedListFilePath = invertedListFilePath;
+        this->jsonFilePath = jsonFilePath;
         initialise();
     }
 
@@ -51,6 +55,12 @@ public:
     double getTextScore(const std::vector<std::pair<unsigned int, double> >::iterator& it, Query* queryMessage);
 
     void setRankingResult(int, QueryReply*, std::vector<std::pair<unsigned int, double> >*);
+
+private:
+    std::string lexiconFilePath;
+    std::string documentMapFilePath;
+    std::string invertedListFilePath;
+    std::string jsonFilePath;
 };
 
 

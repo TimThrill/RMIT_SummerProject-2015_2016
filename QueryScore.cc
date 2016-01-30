@@ -11,8 +11,8 @@
 #include "Constant.h"
 
 void QueryScore::initialise() {
-    std::ifstream lexiconfile(LEXICON_FILE_PATH);
-    std::ifstream mapFile(DOCUMENT_MAP_FILE_PATH);
+    std::ifstream lexiconfile(this->lexiconFilePath);
+    std::ifstream mapFile(this->documentMapFilePath);
 
     // Read map file into memory
     unsigned int docNo;
@@ -50,7 +50,7 @@ void QueryScore::getRankingResult(QueryReply* queryReplyMessage,
         if (lexiconMap.find(*it_key) != lexiconMap.end()) { // The word is in the lexicon map
             Lexicon& term = lexiconMap[*it_key];
             long pos = term.location;
-            std::ifstream ivsFile(INVERTED_LIST_FILE_PATH);
+            std::ifstream ivsFile(this->invertedListFilePath);
             ivsFile.seekg(pos, ivsFile.beg); // Jump to the relavant start position
                                              // in invert list
             int ft = term.docFrequency; // Read document frequency
@@ -108,9 +108,9 @@ void QueryScore::setRankingResult(int maxResults, QueryReply* queryReplyMessage,
 void QueryScore::rankingScore(
         std::vector<std::pair<unsigned int, double> >* reviewsScore,
         Query* queryMessage) {
-    float alpha = 0.5;  // weight parameter for distance score
-    float beta = 0.5;   // weight parameter for text score
-    float charley = 0.8;    // weight parameter for rating score
+    float alpha = 0.14;  // weight parameter for distance score
+    float beta = 0.2;   // weight parameter for text score
+    float charley = 0.66;    // weight parameter for rating score
     double maxDis = 0;
     double maxText = 0;
     double maxRating = 5;
@@ -146,15 +146,19 @@ void QueryScore::rankingScore(
 
         ratings.insert(
                 std::pair<unsigned int, double>(it->first,
-                        root["rating"].asDouble()));
+                        root["rate"].asDouble()));
     }
 
     for (std::vector<std::pair<unsigned int, double> >::iterator it =
             reviewsScore->begin(); it != reviewsScore->end(); it++) {
         if (maxDis && maxText && maxRating) {
-            it->second = disScoreset[it->first] / maxDis
-                    + textScoreSet[it->first] / maxText
-                    + ratings[it->first] / maxRating;
+            double disScore = disScoreset[it->first] / maxDis;
+            double textScore = textScoreSet[it->first] / maxText;
+            double ratingScore = ratings[it->first] / maxRating;
+            double overallScore = alpha * disScore + beta * textScore + charley * ratingScore;
+            it->second = overallScore;
+            EV << "hash_value: " << it->first << " score: " << it->second<< std::endl;
+            EV<<"dis score: "<<disScore<<" text score: "<<textScore<<" rating socre: "<<ratingScore<<std::endl<<std::endl;
         }
     }
 
@@ -167,11 +171,6 @@ void QueryScore::rankingScore(
 
     std::sort(reviewsScore->begin(), reviewsScore->end(), t_scoreCompare);
 
-    for (std::vector<std::pair<unsigned int, double> >::iterator it =
-            reviewsScore->begin(); it != reviewsScore->end(); it++) {
-        EV << "hash_value: " << it->first << " score: " << it->second
-                  << std::endl;
-    }
     return;
 }
 
@@ -195,7 +194,7 @@ double QueryScore::getTextScore(
             Lexicon& term = lexiconMap[*it];
             int docFreq = term.docFrequency;
             long pos = term.location;
-            std::ifstream ivsFile(INVERTED_LIST_FILE_PATH);
+            std::ifstream ivsFile(this->invertedListFilePath);
             ivsFile.seekg(pos + sizeof(int), ivsFile.beg); // Jump to the relavant start position
             for (int j = 0; j < docFreq; j++) {
                 unsigned int docId;
@@ -218,7 +217,7 @@ Json::Value QueryScore::readReviewJson(long line_number) {
     Json::Value root;
     Json::Reader reader;
 
-    std::ifstream jsonFile(REVIEW_JSON_DATASET);
+    std::ifstream jsonFile(this->jsonFilePath);
     // Jump to specific line
     jsonFile.seekg(jsonFile.beg);
     for (int i = 1; i <= line_number; ++i) {
