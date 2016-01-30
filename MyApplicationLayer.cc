@@ -44,6 +44,8 @@ MyApplicationLayer::~MyApplicationLayer() {
     if(queryExpiredTimer) {
         delete queryExpiredTimer;
     }
+    oResult.close();
+    oKeywords.close();
 }
 
 void MyApplicationLayer::initialize(int stage) {
@@ -108,6 +110,10 @@ void MyApplicationLayer::initialize(int stage) {
         successfulQuery = 0;
         numSendPackage = 0;
         numReceivePackage = 0;
+
+        // Initial output file
+        oResult.open("./QueryWord/" + std::to_string(node_id) + "/results", std::fstream::out);
+        oKeywords.open("./QueryWord/" + std::to_string(node_id) + "/keywords", std::fstream::out);
     }
     else if(stage==1) {
         //scheduleAt(simTime() + dblrand() * 10, delayTimer);
@@ -374,20 +380,21 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
 
     // Test for print result
     std::vector<QueryReplyMessage>::iterator it = msg->getReplyBusinesses().begin();
+    int cnt = 1;
     for(; it != msg->getReplyBusinesses().end(); it++) {
-        EV<<"Result start: "<<std::endl;
-        EV<<"Business name: "<<it->businessName<<std::endl;
-        EV<<"Business id: "<<it->businessId<<std::endl;
-        EV<<"Business type: "<<it->businessType<<std::endl;
-        EV<<"Business address: "<<it->businessAddress<<std::endl;
-        EV<<"Business location latitude: "<<it->businessLocation.y<<" longitude: "<<it->businessLocation.x<<std::endl;
-        //EV<<"Business distance: "<<it->distance<<std::endl;
-        EV<<"rate: "<<it->rate<<std::endl;
-        EV<<"Text review: "<<it->textReview<<std::endl;
-        EV<<"Ranking score: "<<it->score<<std::endl;
-        EV<<"Result end"<<std::endl<<std::endl;
+        oResult<<"business No."<<cnt<<":"<<std::endl;
+        oResult<<"Result start: "<<std::endl;
+        oResult<<"Business name: "<<it->businessName<<std::endl;
+        oResult<<"Business distance: "<<it->distance<<std::endl;
+        oResult<<"Text review: "<<it->textReview<<std::endl;
+        oResult<<"rate: "<<it->rate<<std::endl;
+        oResult<<"Ranking score: "<<it->score<<std::endl;
+        oResult<<"Business type: "<<it->businessType<<std::endl;
+        oResult<<"Business address: "<<it->businessAddress<<std::endl;
+        oResult<<"Business location latitude: "<<it->businessLocation.y<<" longitude: "<<it->businessLocation.x<<std::endl;
+        oResult<<"*******************end*******************"<<std::endl<<std::endl;
+        cnt++;
     }
-
     EV<<"**********************Query reply results finish******************"<<std::endl;
 
     // Receive query reply from a peer, pop that peer from query peer list
@@ -490,6 +497,16 @@ void MyApplicationLayer::sendQuery(LAddress::L3Type& destAddr) {
     (queryMessage->getKeyWords()).keywords.push_back(keyword1);
     (queryMessage->getKeyWords()).keywords.push_back(keyword2);
     (queryMessage->getKeyWords()).keywords.push_back(keyword3);
+
+    // Record query key words into file
+    oKeywords<<"Query round: "<<querySendRounds<<std::endl;
+    oKeywords<<"key words: "<<std::endl;
+    for(auto x : queryMessage->getKeyWords().keywords)
+    {
+        oKeywords<<x<<", ";
+    }
+    oKeywords<<std::endl;
+    // Write keywords end
 
     // Set query node location
     // Read position from omnetpp.ini file

@@ -14,6 +14,7 @@
 
 #include <queue>
 #include <mutex>
+#include <fstream>
 
 #include "BaseApplLayer.h"
 #include "MiXiMDefs.h"
@@ -98,6 +99,10 @@ private:
     int numReceivePackage;
 
     int node_id;    // Node id for the node, this is corresponding to the node id in the dataset
+
+    // Output file
+    std::fstream oResult;   // For query reply
+    std::fstream oKeywords; // For query keywords
 
 protected:
     /** @brief Timer message for scheduling next message.*/
