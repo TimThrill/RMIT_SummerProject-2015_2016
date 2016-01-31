@@ -11,6 +11,9 @@
 #include "Constant.h"
 
 void QueryScore::initialise() {
+	EV<<"queryscore initialise"<<std::endl;	
+	EV<<this->lexiconFilePath<<std::endl;	
+	EV<<this->documentMapFilePath<<std::endl;	
     std::ifstream lexiconfile(this->lexiconFilePath);
     std::ifstream mapFile(this->documentMapFilePath);
 
@@ -22,8 +25,9 @@ void QueryScore::initialise() {
         docMap.insert(
                 std::pair<unsigned int, Document>(docNo,
                         Document(docNo, docOffset)));
+		EV<<"docNO: "<<docNo<<" offset: "<<docOffset<<std::endl;
     }
-
+	EV<<"map size: "<<docMap.size()<<std::endl;
     // Read lexicon file into memeory
     std::string word;
     while (lexiconfile >> word) {
@@ -119,6 +123,8 @@ void QueryScore::rankingScore(
     std::map<unsigned int, double> ratings;
     for (std::vector<std::pair<unsigned int, double> >::iterator it =
             reviewsScore->begin(); it != reviewsScore->end(); it++) {
+
+	EV<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"<<it->first<<std::endl;
         // Read the corresponding json data of this review into memory
         Json::Value root = readReviewJson(docMap[it->first].docOffset);
         EV << "Processing review: " << root["hash_value"].asString()
