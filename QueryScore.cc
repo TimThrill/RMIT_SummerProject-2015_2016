@@ -6,6 +6,7 @@
  */
 #include <limits>
 #include <algorithm>
+#include <cerrno>
 
 #include "QueryScore.h"
 #include "Constant.h"
@@ -30,7 +31,7 @@ void QueryScore::initialise() {
     }
     else
     {
-        EV<<"map file open error!!!!!"<<std::endl;
+        EV<<"ERROR: map file open error=>"<<strerror(errno)<<std::endl;
     }
     mapFile.close();
 	EV<<"map size: "<<docMap.size()<<std::endl;
@@ -49,7 +50,7 @@ void QueryScore::initialise() {
     }
     else
     {
-        EV<<"lexicon file open error!!!!!"<<std::endl;
+        EV<<"ERROR: lexicon file open error=>"<<strerror(errno)<<std::endl;
     }
 
     lexiconfile.close();
@@ -66,28 +67,35 @@ void QueryScore::getRankingResult(QueryReply* queryReplyMessage,
             Lexicon& term = lexiconMap[*it_key];
             long pos = term.location;
             std::ifstream ivsFile(this->invertedListFilePath);
-            ivsFile.seekg(pos, ivsFile.beg); // Jump to the relavant start position
-                                             // in invert list
-            int ft = term.docFrequency; // Read document frequency
-            EV << "doc freq: " << ft << std::endl;
-            ivsFile.read((char*) &ft, sizeof(int));
-            EV << "doc freq in invs: " << ft << std::endl;
-            for (int j = 0; j < ft; j++) {
-                unsigned int docId;
-                ivsFile.read((char*) &docId, sizeof(int));
-                int fdt;
-                ivsFile.read((char*) &fdt, sizeof(int));
-                unsigned int i = 0;
-                for (; i < reviewScore.size(); i++) {
-                    if (docId == reviewScore[i].first) {
-                        break;
+            if(ivsFile.is_open())
+            {
+                ivsFile.seekg(pos, ivsFile.beg); // Jump to the relavant start position
+                                                 // in invert list
+                int ft = term.docFrequency; // Read document frequency
+                EV << "doc freq: " << ft << std::endl;
+                ivsFile.read((char*) &ft, sizeof(int));
+                EV << "doc freq in invs: " << ft << std::endl;
+                for (int j = 0; j < ft; j++) {
+                    unsigned int docId;
+                    ivsFile.read((char*) &docId, sizeof(int));
+                    int fdt;
+                    ivsFile.read((char*) &fdt, sizeof(int));
+                    unsigned int i = 0;
+                    for (; i < reviewScore.size(); i++) {
+                        if (docId == reviewScore[i].first) {
+                            break;
+                        }
+                    }
+
+                    if (i == reviewScore.size()) {
+                        reviewScore.push_back(
+                                std::pair<unsigned int, double>(docId, 0.0)); // This review is not in the review result, add into review results.
                     }
                 }
-
-                if (i == reviewScore.size()) {
-                    reviewScore.push_back(
-                            std::pair<unsigned int, double>(docId, 0.0)); // This review is not in the review result, add into review results.
-                }
+            }
+            else
+            {
+                EV<<"ERROR: Inverted list file open error=>"<<strerror(errno)<<std::endl;
             }
             ivsFile.close();
         }
@@ -212,16 +220,23 @@ double QueryScore::getTextScore(
             int docFreq = term.docFrequency;
             long pos = term.location;
             std::ifstream ivsFile(this->invertedListFilePath);
-            ivsFile.seekg(pos + sizeof(int), ivsFile.beg); // Jump to the relavant start position
-            for (int j = 0; j < docFreq; j++) {
-                unsigned int docId;
-                ivsFile.read((char*) &docId, sizeof(int));
-                int fdt;    // Within document frequency
-                ivsFile.read((char*) &fdt, sizeof(int));
-                if (docId == it_review->first) {
-                    score += (double) fdt / docFreq;
-                    break;
+            if(ivsFile.is_open())
+            {
+                ivsFile.seekg(pos + sizeof(int), ivsFile.beg); // Jump to the relavant start position
+                for (int j = 0; j < docFreq; j++) {
+                    unsigned int docId;
+                    ivsFile.read((char*) &docId, sizeof(int));
+                    int fdt;    // Within document frequency
+                    ivsFile.read((char*) &fdt, sizeof(int));
+                    if (docId == it_review->first) {
+                        score += (double) fdt / docFreq;
+                        break;
+                    }
                 }
+            }
+            else
+            {
+                EV<<"ERROR: Inverted list file open error=>"<<strerror(errno)<<std::endl;
             }
             ivsFile.close();
         }
@@ -235,15 +250,22 @@ Json::Value QueryScore::readReviewJson(long line_number) {
     Json::Reader reader;
 
     std::ifstream jsonFile(this->jsonFilePath);
-    // Jump to specific line
-    jsonFile.seekg(jsonFile.beg);
-    for (int i = 1; i <= line_number; ++i) {
-        jsonFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    }
+    if(jsonFile.is_open())
+    {
+        // Jump to specific line
+        jsonFile.seekg(jsonFile.beg);
+        for (int i = 1; i <= line_number; ++i) {
+            jsonFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
 
-    std::string line;
-    getline(jsonFile, line);
-    reader.parse(line, root, false);
+        std::string line;
+        getline(jsonFile, line);
+        reader.parse(line, root, false);
+    }
+    else
+    {
+        EV<<"ERROR: json file open error=>"<<strerror(errno)<<std::endl;
+    }
     jsonFile.close();
     return root;
 }
