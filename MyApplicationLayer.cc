@@ -112,8 +112,8 @@ void MyApplicationLayer::initialize(int stage) {
         numReceivePackage = 0;
 
         // Initial output file
-        oResult.open("./QueryWord/" + std::to_string(node_id) + "/results", std::fstream::out);
-        oKeywords.open("./QueryWord/" + std::to_string(node_id) + "/keywords", std::fstream::out);
+        oResult.open("./QueryWord/" + std::to_string(node_id) + "/results_r" + ev.getConfig()->getConfigValue("seed-set"), std::fstream::out);
+        oKeywords.open("./QueryWord/" + std::to_string(node_id) + "/keywords_r" + ev.getConfig()->getConfigValue("seed-set"), std::fstream::out);
     }
     else if(stage==1) {
         //scheduleAt(simTime() + dblrand() * 10, delayTimer);
