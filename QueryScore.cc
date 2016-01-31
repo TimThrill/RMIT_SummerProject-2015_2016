@@ -92,7 +92,7 @@ void QueryScore::setRankingResult(int maxResults, QueryReply* queryReplyMessage,
     std::vector<std::pair<unsigned int, double> >::iterator it =
             reviewScore->begin();
     vecQueryReply replyBusinesses_var;
-    for (int i = 0; i < maxResults; i++) {
+    for (int i = 0; ((i < maxResults) && (i < reviewScore->size())); i++) {
         Json::Value root = readReviewJson(docMap[(it + i)->first].docOffset);
         QueryReplyMessage reply;
         reply.textReview = root["text_review"].asString();
@@ -162,6 +162,7 @@ void QueryScore::rankingScore(
         }
     }
 
+
     struct scoreCompare {
         bool operator ()(std::pair<unsigned int, double>& a,
                 std::pair<unsigned int, double>& b) {
@@ -170,7 +171,6 @@ void QueryScore::rankingScore(
     } t_scoreCompare;
 
     std::sort(reviewsScore->begin(), reviewsScore->end(), t_scoreCompare);
-
     return;
 }
 
