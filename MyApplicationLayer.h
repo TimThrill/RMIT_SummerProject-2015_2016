@@ -26,6 +26,7 @@
 #include "QueryScore.h"
 
 extern int queryNodeNumber;
+class QueryScore;
 
 class MyApplicationLayer: public BaseApplLayer {
 public:
