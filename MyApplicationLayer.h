@@ -23,6 +23,7 @@
 #include "Query_m.h"
 #include "QueryReply_m.h"
 #include "LinearMobility.h"
+#include "QueryScore.h"
 
 extern int queryNodeNumber;
 
@@ -100,6 +101,8 @@ private:
 
     int node_id;    // Node id for the node, this is corresponding to the node id in the dataset
 
+	// Ranking class
+	QueryScore *score;
     // Output file
     std::fstream oResult;   // For query reply
     std::fstream oKeywords; // For query keywords

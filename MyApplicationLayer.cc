@@ -34,6 +34,7 @@ MyApplicationLayer::MyApplicationLayer() : BaseApplLayer(), delayTimer(NULL),
 MyApplicationLayer::~MyApplicationLayer() {
     // TODO Auto-generated destructor stub
     delete queryPeerList;
+	delete score;	
     if(delayTimer)
     {
         cancelAndDelete(delayTimer);
@@ -111,7 +112,13 @@ void MyApplicationLayer::initialize(int stage) {
         numSendPackage = 0;
         numReceivePackage = 0;
 
+		// Set indexing file path
+		std::string lexiconPath = MAIN_INDEXING_PATH + std::to_string(node_id) + "/lexicon";
+		std::string documentMapPath = MAIN_INDEXING_PATH + std::to_string(node_id) + "/map";
+		std::string invertedListPath = MAIN_INDEXING_PATH + std::to_string(node_id) + "/ivlist";
+		std::string jsonFilePath = REVIEW_JSON_DATASET + std::to_string(node_id);
         // Initial output file
+		score = new QueryScore(lexiconPath, documentMapPath, invertedListPath, jsonFilePath);
         oResult.open("./QueryWord/" + std::to_string(node_id) + "/results_r" + ev.getConfig()->getConfigValue("seed-set"), std::fstream::out);
         oKeywords.open("./QueryWord/" + std::to_string(node_id) + "/keywords_r" + ev.getConfig()->getConfigValue("seed-set"), std::fstream::out);
     }
@@ -599,14 +606,9 @@ void MyApplicationLayer::handleLowerMsg(cMessage* msg) {
  * Get the data from dataset and asset into query reply message
  * */
 QueryReply* MyApplicationLayer::setQueryReplyMessage(QueryReply* queryReplyMessage, Query* queryMessage) {
-    EV<<"Set query reply message start"<<std::endl;
-
-    std::string lexiconPath = MAIN_INDEXING_PATH + std::to_string(node_id) + "/lexicon";
-    std::string documentMapPath = MAIN_INDEXING_PATH + std::to_string(node_id) + "/map";
-    std::string invertedListPath = MAIN_INDEXING_PATH + std::to_string(node_id) + "/ivlist";
-    std::string jsonFilePath = REVIEW_JSON_DATASET + std::to_string(node_id);
-    QueryScore score(lexiconPath, documentMapPath, invertedListPath, jsonFilePath);
-    score.getRankingResult(queryReplyMessage, queryMessage);
+    EV<<"Set query reply message start, node_id: "<<node_id<<std::endl;
+	
+		score->getRankingResult(queryReplyMessage, queryMessage);
 
     EV<<"After set query reply: "<<queryReplyMessage->getReplyBusinesses().size()<<std::endl;
 
