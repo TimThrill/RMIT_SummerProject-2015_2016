@@ -119,8 +119,8 @@ void MyApplicationLayer::initialize(int stage) {
 		std::string jsonFilePath = REVIEW_JSON_DATASET + std::to_string(node_id);
         // Initial output file
 		score = new QueryScore(lexiconPath, documentMapPath, invertedListPath, jsonFilePath);
-        oResult.open("./QueryWord/" + std::to_string(node_id) + "/results_r" + ev.getConfig()->getConfigValue("seed-set"), std::fstream::out);
-        oKeywords.open("./QueryWord/" + std::to_string(node_id) + "/keywords_r" + ev.getConfig()->getConfigValue("seed-set"), std::fstream::out);
+        oResult.open(QUERY_RESULT_PATH + std::to_string(node_id) + "/results_r" + ev.getConfig()->getConfigValue("seed-set"), std::fstream::out);
+        oKeywords.open(QUERY_RESULT_PATH + std::to_string(node_id) + "/keywords_r" + ev.getConfig()->getConfigValue("seed-set"), std::fstream::out);
     }
     else if(stage==1) {
         //scheduleAt(simTime() + dblrand() * 10, delayTimer);
@@ -148,6 +148,7 @@ void MyApplicationLayer::handleQueryExpiredTimer() {
     // Record query successful rate
     if(numSendPackage != 0)
     {
+		oResult<<"$$$$$$$$$$$$$$ROUND "<<querySendRounds<<" FINISHED&&&&&&&&&&&&&&"<<std::endl<<std::endl;
         double querySuccessfulRate = numReceivePackage / numSendPackage;
         emit(roundFinish, querySuccessfulRate);
     }
@@ -411,6 +412,7 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
         EV<<"Pop peer from the peer list, query peer list size: "<<queryPeerList->size()<<std::endl;
 
         if((queryPeerList->size() == 0) && (querySendRounds == queryTimes)) {
+		oResult<<"$$$$$$$$$$$$$$ROUND "<<querySendRounds<<" FINISHED&&&&&&&&&&&&&&"<<std::endl<<std::endl;
             if(queryExpiredTimer) {
                 cancelAndDelete(queryExpiredTimer); // Existed previous timer, cancle and delete because receive one beacon reply message
                 queryExpiredTimer = NULL;   // Restore pointer to null
@@ -436,6 +438,7 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
                 // endSimulation();
             }
         } else if(queryPeerList->size() == 0 && querySendRounds < queryTimes){
+		oResult<<"$$$$$$$$$$$$$$ROUND "<<querySendRounds<<" FINISHED&&&&&&&&&&&&&&"<<std::endl<<std::endl;
             if(queryExpiredTimer) {
                 cancelAndDelete(queryExpiredTimer); // Existed previous timer, cancle and delete because receive one beacon reply message
                 queryExpiredTimer = NULL;   // Restore pointer to null
