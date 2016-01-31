@@ -13,35 +13,46 @@
 void QueryScore::initialise() {
 	EV<<"queryscore initialise"<<std::endl;	
 	EV<<this->lexiconFilePath<<std::endl;	
-	EV<<this->documentMapFilePath<<std::endl;	
-    std::ifstream lexiconfile(this->lexiconFilePath);
-    std::ifstream mapFile(this->documentMapFilePath);
+	EV<<this->documentMapFilePath<<std::endl;
 
     // Read map file into memory
+	std::ifstream mapFile(this->documentMapFilePath);
     unsigned int docNo;
-    while (mapFile >> docNo) {
-        long docOffset;
-        mapFile >> docOffset;
-        docMap.insert(
-                std::pair<unsigned int, Document>(docNo,
-                        Document(docNo, docOffset)));
-		EV<<"docNO: "<<docNo<<" offset: "<<docOffset<<std::endl;
+    long docOffset;
+    if(mapFile.is_open())
+    {
+        while (mapFile>>docNo>>docOffset) {
+            docMap.insert(
+                    std::pair<unsigned int, Document>(docNo,
+                            Document(docNo, docOffset)));
+            EV<<"docNO: "<<docNo<<" offset: "<<docOffset<<std::endl;
+        }
     }
+    else
+    {
+        EV<<"map file open error!!!!!"<<std::endl;
+    }
+    mapFile.close();
 	EV<<"map size: "<<docMap.size()<<std::endl;
     // Read lexicon file into memeory
+	std::ifstream lexiconfile(this->lexiconFilePath);
     std::string word;
-    while (lexiconfile >> word) {
-        int docFrequency;
-        lexiconfile >> docFrequency;
-        long invlistPos;
-        lexiconfile >> invlistPos;
-        lexiconMap.insert(
-                std::pair<std::string, Lexicon>(word,
-                        Lexicon(word, invlistPos, docFrequency)));
+    int docFrequency;
+    long invlistPos;
+    if(lexiconfile.is_open())
+    {
+        while (lexiconfile>>word>>docFrequency>>invlistPos) {
+            lexiconMap.insert(
+                    std::pair<std::string, Lexicon>(word,
+                            Lexicon(word, invlistPos, docFrequency)));
+        }
+    }
+    else
+    {
+        EV<<"lexicon file open error!!!!!"<<std::endl;
     }
 
     lexiconfile.close();
-    mapFile.close();
     return;
 }
 

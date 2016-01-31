@@ -31,7 +31,7 @@ public:
     std::ifstream lexiconfile;
     std::ifstream mapFile;
 
-    QueryScore(std::string lexiconFilePath, std::string documentMapFilePath, std::string invertedListFilePath, std::string jsonFilePath)
+    QueryScore(const std::string& lexiconFilePath, const std::string& documentMapFilePath, const std::string& invertedListFilePath, const std::string& jsonFilePath)
     {
         this->documentMapFilePath = documentMapFilePath;
         this->lexiconFilePath = lexiconFilePath;
