@@ -84,7 +84,12 @@ private:
     simsignal_t finishSignal;
     // signal for recording latency
     simsignal_t reply;
-    simtime_t startTime;
+    simtime_t startTime;    // start time for whole process from peer discovery to query reply
+    // Signal for recording the processing time of each query process
+    simsignal_t queryFinish;
+    simtime_t queryStartTime;   // start time for query process from send query message
+    bool firstQuery;
+
     // Signal for beacon send
     simsignal_t beaconSend;
     // Signal for beacon receiving

@@ -27,6 +27,8 @@ simple MyApplicationLayer like IBaseApplLayer
         // Parameter to record processing time
         @signal[finish](type=simtime_t);
         @statistic[processingTime](title=query processing time; source=finish; record=mean; interpolationmode=none);
+        @signal[queryFinish](type=simtime_t);
+        @statistic[queryTime](title=query time; source=queryFinish; record=mean; interpolationmode=none);
         // Parameter to record latency
         @signal[reply](type=simtime_t);
         @statistic[latency](title=laytency; source=reply; record=mean; interpolationmode=none);
