@@ -143,7 +143,6 @@ void QueryScore::rankingScore(
     for (std::vector<std::pair<unsigned int, double> >::iterator it =
             reviewsScore->begin(); it != reviewsScore->end(); it++) {
 
-	EV<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"<<it->first<<std::endl;
         // Read the corresponding json data of this review into memory
         Json::Value root = readReviewJson(docMap[it->first].docOffset);
         EV << "Processing review: " << root["hash_value"].asString()
@@ -153,6 +152,11 @@ void QueryScore::rankingScore(
                 root["latitude"].asDouble());
         double disScore = getDistanceScore(businessCoord,
                 queryMessage->getPeerLocation());
+        if(disScore > queryMessage->getMaxRange())
+        {
+            EV<<"Business is out of range"<<std::endl;
+            disScore = -1;
+        }
         if (maxDis < disScore) {
             maxDis = disScore;
         }
@@ -176,7 +180,7 @@ void QueryScore::rankingScore(
 
     for (std::vector<std::pair<unsigned int, double> >::iterator it =
             reviewsScore->begin(); it != reviewsScore->end(); it++) {
-        if (maxDis && maxText && maxRating) {
+        if (maxDis && maxText && maxRating && (disScoreset[it->first] != -1)) {
             double disScore = disScoreset[it->first] / maxDis;
             double textScore = textScoreSet[it->first] / maxText;
             double ratingScore = ratings[it->first] / maxRating;
