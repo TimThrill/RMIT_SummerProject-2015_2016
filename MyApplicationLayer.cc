@@ -558,7 +558,7 @@ void MyApplicationLayer::sendQuery(LAddress::L3Type& destAddr) {
         oKeywords << x << ", ";
     }
     oKeywords << std::endl;
-    okeyWords << "MAX RANGE: "<<queryMessage->getMaxRange()<<"m"<<std::endl;
+    oKeywords << "MAX RANGE: "<<queryMessage->getMaxRange()<<"m"<<std::endl;
     // Write keywords end
 
     // Set query node location
