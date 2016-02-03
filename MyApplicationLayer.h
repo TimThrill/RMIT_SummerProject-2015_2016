@@ -94,6 +94,8 @@ private:
     simsignal_t beaconSend;
     // Signal for beacon receiving
     simsignal_t beaconReceive;
+    // Signal for query send round
+    simsignal_t querySendRound;
     // Signal for query send
     simsignal_t querySend;
     // Signal for query reply receive

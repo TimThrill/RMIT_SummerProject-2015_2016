@@ -38,7 +38,10 @@ simple MyApplicationLayer like IBaseApplLayer
         // Parameter to record beacon receiving
         @signal[beaconReceive](int);
         @statistic[beaconReceiveNumber](title=beaconReceiveNumber; source=beaconReceive; record=last);
-        // Parameter to record query send number
+        // Parameter to record query send rounds
+        @signal[querySendRound](int);
+        @statistic[querySendRoundNumber](title=querySendRoundNumber; source=querySendRound; record=last);
+        // Parameter to record query send number, total query number of different rounds
         @signal[querySend](int);
         @statistic[querySendNumber](title=querySendNumber; source=querySend; record=last);
         // Paramter to recor query reply number

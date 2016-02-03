@@ -107,6 +107,7 @@ void MyApplicationLayer::initialize(int stage) {
         roundFinish = registerSignal("roundFinish");
         beaconSend = registerSignal("beaconSend");
         beaconReceive = registerSignal("beaconReceive");
+        querySendRound = registerSignal("querySendRound");
         querySend = registerSignal("querySend");
         queryReplyReceive = registerSignal("queryReply");
 
@@ -135,6 +136,7 @@ void MyApplicationLayer::initialize(int stage) {
                         + ev.getConfig()->getConfigValue("seed-set"),
                 std::fstream::out);
     } else if (stage == 1) {
+        emit(querySendRound, querySendRounds);
         //scheduleAt(simTime() + dblrand() * 10, delayTimer);
     }
     EV << "Finish initialized" << std::endl;
