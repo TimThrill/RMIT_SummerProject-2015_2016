@@ -136,7 +136,7 @@ void MyApplicationLayer::initialize(int stage) {
                         + ev.getConfig()->getConfigValue("seed-set"),
                 std::fstream::out);
     } else if (stage == 1) {
-        emit(querySendRound, querySendRounds);
+        emit(querySendRound, queryTimes);
         //scheduleAt(simTime() + dblrand() * 10, delayTimer);
     }
     EV << "Finish initialized" << std::endl;
