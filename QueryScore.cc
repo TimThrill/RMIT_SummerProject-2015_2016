@@ -116,15 +116,18 @@ void QueryScore::setRankingResult(int maxResults, QueryReply* queryReplyMessage,
             reviewScore->begin();
     vecQueryReply replyBusinesses_var;
     for (int i = 0; ((i < maxResults) && (i < reviewScore->size())); i++) {
-        Json::Value root = readReviewJson(docMap[(it + i)->first].docOffset);
-        QueryReplyMessage reply;
-        reply.textReview = root["text_review"].asString();
-        reply.businessName = root["business_name"].asString();
-        reply.rate = root["rate"].asDouble();
-        reply.businessLocation = Coord(root["longitude"].asDouble(), root["latitude"].asDouble());
-        reply.score  = (it + i)->second;
-        reply.businessId = root["business_id"].asString();
-        queryReplyMessage->getReplyBusinesses().push_back(reply);
+        if((it + i)->second != -1)
+        {
+            Json::Value root = readReviewJson(docMap[(it + i)->first].docOffset);
+            QueryReplyMessage reply;
+            reply.textReview = root["text_review"].asString();
+            reply.businessName = root["business_name"].asString();
+            reply.rate = root["rate"].asDouble();
+            reply.businessLocation = Coord(root["longitude"].asDouble(), root["latitude"].asDouble());
+            reply.score  = (it + i)->second;
+            reply.businessId = root["business_id"].asString();
+            queryReplyMessage->getReplyBusinesses().push_back(reply);
+        }
     }
     return;
 }
@@ -189,6 +192,10 @@ void QueryScore::rankingScore(
             it->second = overallScore;
             EV << "hash_value: " << it->first << " score: " << it->second<< std::endl;
             EV<<"dis score: "<<disScore<<" text score: "<<textScore<<" rating socre: "<<ratingScore<<std::endl<<std::endl;
+        }
+        else
+        {
+            disScoreset[it->first] = -1;
         }
     }
 
