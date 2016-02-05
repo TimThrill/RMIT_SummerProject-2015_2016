@@ -102,6 +102,8 @@ private:
     simsignal_t queryReplyReceive;
     // Signal for recording query successful rate, record after each round finish
     simsignal_t roundFinish;
+    // Signal for query score
+    simsignal_t queryScoreFinish;
 
     // Counter for calculating query successful rate
     int numSendPackage;

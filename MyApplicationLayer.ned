@@ -50,6 +50,9 @@ simple MyApplicationLayer like IBaseApplLayer
         // Parameter to record query successful rate
         @signal[roundFinish](type=double);
         @statistic[querySuccessfulRate](title=QueryRate; source=roundFinish; record=last; interpolationmode=none);
+        // Parameter to record query score processing time
+        @signal[finish](type=simtime_t);
+        @statistic[queryScoreProcessingTime](title=query score processing time; source=scoreFinish; record=mean; interpolationmode=none);
         
         //Declareation for the cpp file
         @class(MyApplicationLayer);

@@ -110,6 +110,7 @@ void MyApplicationLayer::initialize(int stage) {
         querySendRound = registerSignal("querySendRound");
         querySend = registerSignal("querySend");
         queryReplyReceive = registerSignal("queryReply");
+        queryScoreFinish = registerSignal("scoreFinish");
 
         successfulQuery = 0;
         numSendPackage = 0;
@@ -671,7 +672,9 @@ QueryReply* MyApplicationLayer::setQueryReplyMessage(
         QueryReply* queryReplyMessage, Query* queryMessage) {
     EV << "Set query reply message start, node_id: " << node_id << std::endl;
 
+    simtime_t startTime = simTime();
     score->getRankingResult(queryReplyMessage, queryMessage);
+    emit(queryScoreFinish, simTime() - startTime);
 
     EV << "After set query reply: "
               << queryReplyMessage->getReplyBusinesses().size() << std::endl;
