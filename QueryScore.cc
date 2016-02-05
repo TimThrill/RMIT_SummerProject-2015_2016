@@ -195,7 +195,7 @@ void QueryScore::rankingScore(
         }
         else
         {
-            disScoreset[it->first] = -1;
+            it->second = -1;
         }
     }
 
