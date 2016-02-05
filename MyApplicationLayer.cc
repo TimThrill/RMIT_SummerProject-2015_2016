@@ -545,7 +545,7 @@ void MyApplicationLayer::sendQuery(LAddress::L3Type& destAddr) {
     Query* queryMessage = new Query("QUERY_MESSAGE", QUERY_MESSAGE);
 
     // Set max distance to 1km
-    queryMessage->setMaxRange(1000);
+    queryMessage->setMaxRange(MAX_RANGE);
 
     // Set query key words
     std::string keyword1 = "asked";
