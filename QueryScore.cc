@@ -123,6 +123,7 @@ void QueryScore::setRankingResult(int maxResults, QueryReply* queryReplyMessage,
         reply.rate = root["rate"].asDouble();
         reply.businessLocation = Coord(root["longitude"].asDouble(), root["latitude"].asDouble());
         reply.score  = (it + i)->second;
+        reply.businessId = root["business_id"].asString();
         queryReplyMessage->getReplyBusinesses().push_back(reply);
     }
     return;

@@ -415,7 +415,8 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
         oResult << "business No." << cnt << ":" << std::endl;
         oResult << "Result start: " << std::endl;
         oResult << "Business name: " << it->businessName << std::endl;
-        oResult << "Business distance: " << it->distance << std::endl;
+        oResult << "Business id: "<<it->businessId<< std::endl;
+        oResult << "Business distance: " << (FindModule<LinearMobility*>::findSubModule(getParentModule())->getCurrentPosition()).distance(Coord(it->businessLocation.x, it->businessLocation.y)) << std::endl;
         oResult << "Text review: " << it->textReview << std::endl;
         oResult << "rate: " << it->rate << std::endl;
         oResult << "Ranking score: " << it->score << std::endl;
