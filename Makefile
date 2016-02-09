@@ -29,609 +29,636 @@ INCLUDE_PATH = \
     -I../MiXiM/src/base \
     -I../MiXiM/src/inet_stub/mobility/models \
     -I. \
-    -IQueryWord \
-    -IQueryWord/0 \
-    -IQueryWord/1 \
-    -IQueryWord/10 \
-    -IQueryWord/100 \
-    -IQueryWord/101 \
-    -IQueryWord/102 \
-    -IQueryWord/103 \
-    -IQueryWord/104 \
-    -IQueryWord/105 \
-    -IQueryWord/106 \
-    -IQueryWord/107 \
-    -IQueryWord/108 \
-    -IQueryWord/109 \
-    -IQueryWord/11 \
-    -IQueryWord/110 \
-    -IQueryWord/111 \
-    -IQueryWord/112 \
-    -IQueryWord/113 \
-    -IQueryWord/114 \
-    -IQueryWord/115 \
-    -IQueryWord/116 \
-    -IQueryWord/117 \
-    -IQueryWord/118 \
-    -IQueryWord/119 \
-    -IQueryWord/12 \
-    -IQueryWord/120 \
-    -IQueryWord/121 \
-    -IQueryWord/122 \
-    -IQueryWord/123 \
-    -IQueryWord/124 \
-    -IQueryWord/125 \
-    -IQueryWord/126 \
-    -IQueryWord/127 \
-    -IQueryWord/128 \
-    -IQueryWord/129 \
-    -IQueryWord/13 \
-    -IQueryWord/130 \
-    -IQueryWord/131 \
-    -IQueryWord/132 \
-    -IQueryWord/133 \
-    -IQueryWord/134 \
-    -IQueryWord/135 \
-    -IQueryWord/136 \
-    -IQueryWord/137 \
-    -IQueryWord/138 \
-    -IQueryWord/139 \
-    -IQueryWord/14 \
-    -IQueryWord/140 \
-    -IQueryWord/141 \
-    -IQueryWord/142 \
-    -IQueryWord/143 \
-    -IQueryWord/144 \
-    -IQueryWord/145 \
-    -IQueryWord/146 \
-    -IQueryWord/147 \
-    -IQueryWord/148 \
-    -IQueryWord/149 \
-    -IQueryWord/15 \
-    -IQueryWord/150 \
-    -IQueryWord/151 \
-    -IQueryWord/152 \
-    -IQueryWord/153 \
-    -IQueryWord/154 \
-    -IQueryWord/155 \
-    -IQueryWord/156 \
-    -IQueryWord/157 \
-    -IQueryWord/158 \
-    -IQueryWord/159 \
-    -IQueryWord/16 \
-    -IQueryWord/160 \
-    -IQueryWord/161 \
-    -IQueryWord/162 \
-    -IQueryWord/163 \
-    -IQueryWord/164 \
-    -IQueryWord/165 \
-    -IQueryWord/166 \
-    -IQueryWord/167 \
-    -IQueryWord/168 \
-    -IQueryWord/169 \
-    -IQueryWord/17 \
-    -IQueryWord/170 \
-    -IQueryWord/171 \
-    -IQueryWord/172 \
-    -IQueryWord/173 \
-    -IQueryWord/174 \
-    -IQueryWord/175 \
-    -IQueryWord/176 \
-    -IQueryWord/177 \
-    -IQueryWord/178 \
-    -IQueryWord/179 \
-    -IQueryWord/18 \
-    -IQueryWord/180 \
-    -IQueryWord/181 \
-    -IQueryWord/182 \
-    -IQueryWord/183 \
-    -IQueryWord/184 \
-    -IQueryWord/185 \
-    -IQueryWord/186 \
-    -IQueryWord/187 \
-    -IQueryWord/188 \
-    -IQueryWord/189 \
-    -IQueryWord/19 \
-    -IQueryWord/190 \
-    -IQueryWord/191 \
-    -IQueryWord/192 \
-    -IQueryWord/193 \
-    -IQueryWord/194 \
-    -IQueryWord/195 \
-    -IQueryWord/196 \
-    -IQueryWord/197 \
-    -IQueryWord/198 \
-    -IQueryWord/199 \
-    -IQueryWord/2 \
-    -IQueryWord/20 \
-    -IQueryWord/200 \
-    -IQueryWord/201 \
-    -IQueryWord/202 \
-    -IQueryWord/203 \
-    -IQueryWord/204 \
-    -IQueryWord/205 \
-    -IQueryWord/206 \
-    -IQueryWord/207 \
-    -IQueryWord/208 \
-    -IQueryWord/209 \
-    -IQueryWord/21 \
-    -IQueryWord/210 \
-    -IQueryWord/211 \
-    -IQueryWord/212 \
-    -IQueryWord/213 \
-    -IQueryWord/214 \
-    -IQueryWord/215 \
-    -IQueryWord/216 \
-    -IQueryWord/217 \
-    -IQueryWord/218 \
-    -IQueryWord/219 \
-    -IQueryWord/22 \
-    -IQueryWord/220 \
-    -IQueryWord/221 \
-    -IQueryWord/222 \
-    -IQueryWord/223 \
-    -IQueryWord/224 \
-    -IQueryWord/225 \
-    -IQueryWord/226 \
-    -IQueryWord/227 \
-    -IQueryWord/228 \
-    -IQueryWord/229 \
-    -IQueryWord/23 \
-    -IQueryWord/230 \
-    -IQueryWord/231 \
-    -IQueryWord/232 \
-    -IQueryWord/233 \
-    -IQueryWord/234 \
-    -IQueryWord/235 \
-    -IQueryWord/236 \
-    -IQueryWord/237 \
-    -IQueryWord/238 \
-    -IQueryWord/239 \
-    -IQueryWord/24 \
-    -IQueryWord/240 \
-    -IQueryWord/241 \
-    -IQueryWord/242 \
-    -IQueryWord/243 \
-    -IQueryWord/244 \
-    -IQueryWord/245 \
-    -IQueryWord/246 \
-    -IQueryWord/247 \
-    -IQueryWord/248 \
-    -IQueryWord/249 \
-    -IQueryWord/25 \
-    -IQueryWord/250 \
-    -IQueryWord/251 \
-    -IQueryWord/252 \
-    -IQueryWord/253 \
-    -IQueryWord/254 \
-    -IQueryWord/255 \
-    -IQueryWord/256 \
-    -IQueryWord/257 \
-    -IQueryWord/258 \
-    -IQueryWord/259 \
-    -IQueryWord/26 \
-    -IQueryWord/260 \
-    -IQueryWord/261 \
-    -IQueryWord/262 \
-    -IQueryWord/263 \
-    -IQueryWord/264 \
-    -IQueryWord/265 \
-    -IQueryWord/266 \
-    -IQueryWord/267 \
-    -IQueryWord/268 \
-    -IQueryWord/269 \
-    -IQueryWord/27 \
-    -IQueryWord/270 \
-    -IQueryWord/271 \
-    -IQueryWord/272 \
-    -IQueryWord/273 \
-    -IQueryWord/274 \
-    -IQueryWord/275 \
-    -IQueryWord/276 \
-    -IQueryWord/277 \
-    -IQueryWord/278 \
-    -IQueryWord/279 \
-    -IQueryWord/28 \
-    -IQueryWord/280 \
-    -IQueryWord/281 \
-    -IQueryWord/282 \
-    -IQueryWord/283 \
-    -IQueryWord/284 \
-    -IQueryWord/285 \
-    -IQueryWord/286 \
-    -IQueryWord/287 \
-    -IQueryWord/288 \
-    -IQueryWord/289 \
-    -IQueryWord/29 \
-    -IQueryWord/290 \
-    -IQueryWord/291 \
-    -IQueryWord/292 \
-    -IQueryWord/293 \
-    -IQueryWord/294 \
-    -IQueryWord/295 \
-    -IQueryWord/296 \
-    -IQueryWord/297 \
-    -IQueryWord/298 \
-    -IQueryWord/299 \
-    -IQueryWord/3 \
-    -IQueryWord/30 \
-    -IQueryWord/300 \
-    -IQueryWord/301 \
-    -IQueryWord/302 \
-    -IQueryWord/303 \
-    -IQueryWord/304 \
-    -IQueryWord/305 \
-    -IQueryWord/306 \
-    -IQueryWord/307 \
-    -IQueryWord/308 \
-    -IQueryWord/309 \
-    -IQueryWord/31 \
-    -IQueryWord/310 \
-    -IQueryWord/311 \
-    -IQueryWord/312 \
-    -IQueryWord/313 \
-    -IQueryWord/314 \
-    -IQueryWord/315 \
-    -IQueryWord/316 \
-    -IQueryWord/317 \
-    -IQueryWord/318 \
-    -IQueryWord/319 \
-    -IQueryWord/32 \
-    -IQueryWord/320 \
-    -IQueryWord/321 \
-    -IQueryWord/322 \
-    -IQueryWord/323 \
-    -IQueryWord/324 \
-    -IQueryWord/325 \
-    -IQueryWord/326 \
-    -IQueryWord/327 \
-    -IQueryWord/328 \
-    -IQueryWord/329 \
-    -IQueryWord/33 \
-    -IQueryWord/330 \
-    -IQueryWord/331 \
-    -IQueryWord/332 \
-    -IQueryWord/333 \
-    -IQueryWord/334 \
-    -IQueryWord/335 \
-    -IQueryWord/336 \
-    -IQueryWord/337 \
-    -IQueryWord/338 \
-    -IQueryWord/339 \
-    -IQueryWord/34 \
-    -IQueryWord/340 \
-    -IQueryWord/341 \
-    -IQueryWord/342 \
-    -IQueryWord/343 \
-    -IQueryWord/344 \
-    -IQueryWord/345 \
-    -IQueryWord/346 \
-    -IQueryWord/347 \
-    -IQueryWord/348 \
-    -IQueryWord/349 \
-    -IQueryWord/35 \
-    -IQueryWord/350 \
-    -IQueryWord/351 \
-    -IQueryWord/352 \
-    -IQueryWord/353 \
-    -IQueryWord/354 \
-    -IQueryWord/355 \
-    -IQueryWord/356 \
-    -IQueryWord/357 \
-    -IQueryWord/358 \
-    -IQueryWord/359 \
-    -IQueryWord/36 \
-    -IQueryWord/360 \
-    -IQueryWord/361 \
-    -IQueryWord/362 \
-    -IQueryWord/363 \
-    -IQueryWord/364 \
-    -IQueryWord/365 \
-    -IQueryWord/366 \
-    -IQueryWord/367 \
-    -IQueryWord/368 \
-    -IQueryWord/369 \
-    -IQueryWord/37 \
-    -IQueryWord/370 \
-    -IQueryWord/371 \
-    -IQueryWord/372 \
-    -IQueryWord/373 \
-    -IQueryWord/374 \
-    -IQueryWord/375 \
-    -IQueryWord/376 \
-    -IQueryWord/377 \
-    -IQueryWord/378 \
-    -IQueryWord/379 \
-    -IQueryWord/38 \
-    -IQueryWord/380 \
-    -IQueryWord/381 \
-    -IQueryWord/382 \
-    -IQueryWord/383 \
-    -IQueryWord/384 \
-    -IQueryWord/385 \
-    -IQueryWord/386 \
-    -IQueryWord/387 \
-    -IQueryWord/388 \
-    -IQueryWord/389 \
-    -IQueryWord/39 \
-    -IQueryWord/390 \
-    -IQueryWord/391 \
-    -IQueryWord/392 \
-    -IQueryWord/393 \
-    -IQueryWord/394 \
-    -IQueryWord/395 \
-    -IQueryWord/396 \
-    -IQueryWord/397 \
-    -IQueryWord/398 \
-    -IQueryWord/399 \
-    -IQueryWord/4 \
-    -IQueryWord/40 \
-    -IQueryWord/400 \
-    -IQueryWord/401 \
-    -IQueryWord/402 \
-    -IQueryWord/403 \
-    -IQueryWord/404 \
-    -IQueryWord/405 \
-    -IQueryWord/406 \
-    -IQueryWord/407 \
-    -IQueryWord/408 \
-    -IQueryWord/409 \
-    -IQueryWord/41 \
-    -IQueryWord/410 \
-    -IQueryWord/411 \
-    -IQueryWord/412 \
-    -IQueryWord/413 \
-    -IQueryWord/414 \
-    -IQueryWord/415 \
-    -IQueryWord/416 \
-    -IQueryWord/417 \
-    -IQueryWord/418 \
-    -IQueryWord/419 \
-    -IQueryWord/42 \
-    -IQueryWord/420 \
-    -IQueryWord/421 \
-    -IQueryWord/422 \
-    -IQueryWord/423 \
-    -IQueryWord/424 \
-    -IQueryWord/425 \
-    -IQueryWord/426 \
-    -IQueryWord/427 \
-    -IQueryWord/428 \
-    -IQueryWord/429 \
-    -IQueryWord/43 \
-    -IQueryWord/430 \
-    -IQueryWord/431 \
-    -IQueryWord/432 \
-    -IQueryWord/433 \
-    -IQueryWord/434 \
-    -IQueryWord/435 \
-    -IQueryWord/436 \
-    -IQueryWord/437 \
-    -IQueryWord/438 \
-    -IQueryWord/439 \
-    -IQueryWord/44 \
-    -IQueryWord/440 \
-    -IQueryWord/441 \
-    -IQueryWord/442 \
-    -IQueryWord/443 \
-    -IQueryWord/444 \
-    -IQueryWord/445 \
-    -IQueryWord/446 \
-    -IQueryWord/447 \
-    -IQueryWord/448 \
-    -IQueryWord/449 \
-    -IQueryWord/45 \
-    -IQueryWord/450 \
-    -IQueryWord/451 \
-    -IQueryWord/452 \
-    -IQueryWord/453 \
-    -IQueryWord/454 \
-    -IQueryWord/455 \
-    -IQueryWord/456 \
-    -IQueryWord/457 \
-    -IQueryWord/458 \
-    -IQueryWord/459 \
-    -IQueryWord/46 \
-    -IQueryWord/460 \
-    -IQueryWord/461 \
-    -IQueryWord/462 \
-    -IQueryWord/463 \
-    -IQueryWord/464 \
-    -IQueryWord/465 \
-    -IQueryWord/466 \
-    -IQueryWord/467 \
-    -IQueryWord/468 \
-    -IQueryWord/469 \
-    -IQueryWord/47 \
-    -IQueryWord/470 \
-    -IQueryWord/471 \
-    -IQueryWord/472 \
-    -IQueryWord/473 \
-    -IQueryWord/474 \
-    -IQueryWord/475 \
-    -IQueryWord/476 \
-    -IQueryWord/477 \
-    -IQueryWord/478 \
-    -IQueryWord/479 \
-    -IQueryWord/48 \
-    -IQueryWord/480 \
-    -IQueryWord/481 \
-    -IQueryWord/482 \
-    -IQueryWord/483 \
-    -IQueryWord/484 \
-    -IQueryWord/485 \
-    -IQueryWord/486 \
-    -IQueryWord/487 \
-    -IQueryWord/488 \
-    -IQueryWord/489 \
-    -IQueryWord/49 \
-    -IQueryWord/490 \
-    -IQueryWord/491 \
-    -IQueryWord/492 \
-    -IQueryWord/493 \
-    -IQueryWord/494 \
-    -IQueryWord/495 \
-    -IQueryWord/496 \
-    -IQueryWord/497 \
-    -IQueryWord/498 \
-    -IQueryWord/499 \
-    -IQueryWord/5 \
-    -IQueryWord/50 \
-    -IQueryWord/500 \
-    -IQueryWord/501 \
-    -IQueryWord/502 \
-    -IQueryWord/503 \
-    -IQueryWord/504 \
-    -IQueryWord/505 \
-    -IQueryWord/506 \
-    -IQueryWord/507 \
-    -IQueryWord/508 \
-    -IQueryWord/509 \
-    -IQueryWord/51 \
-    -IQueryWord/510 \
-    -IQueryWord/511 \
-    -IQueryWord/512 \
-    -IQueryWord/513 \
-    -IQueryWord/514 \
-    -IQueryWord/515 \
-    -IQueryWord/516 \
-    -IQueryWord/517 \
-    -IQueryWord/518 \
-    -IQueryWord/519 \
-    -IQueryWord/52 \
-    -IQueryWord/520 \
-    -IQueryWord/521 \
-    -IQueryWord/522 \
-    -IQueryWord/523 \
-    -IQueryWord/524 \
-    -IQueryWord/525 \
-    -IQueryWord/526 \
-    -IQueryWord/527 \
-    -IQueryWord/528 \
-    -IQueryWord/529 \
-    -IQueryWord/53 \
-    -IQueryWord/530 \
-    -IQueryWord/531 \
-    -IQueryWord/532 \
-    -IQueryWord/533 \
-    -IQueryWord/534 \
-    -IQueryWord/535 \
-    -IQueryWord/536 \
-    -IQueryWord/537 \
-    -IQueryWord/538 \
-    -IQueryWord/539 \
-    -IQueryWord/54 \
-    -IQueryWord/540 \
-    -IQueryWord/541 \
-    -IQueryWord/542 \
-    -IQueryWord/543 \
-    -IQueryWord/544 \
-    -IQueryWord/545 \
-    -IQueryWord/546 \
-    -IQueryWord/547 \
-    -IQueryWord/548 \
-    -IQueryWord/549 \
-    -IQueryWord/55 \
-    -IQueryWord/550 \
-    -IQueryWord/551 \
-    -IQueryWord/552 \
-    -IQueryWord/553 \
-    -IQueryWord/554 \
-    -IQueryWord/555 \
-    -IQueryWord/556 \
-    -IQueryWord/557 \
-    -IQueryWord/558 \
-    -IQueryWord/559 \
-    -IQueryWord/56 \
-    -IQueryWord/560 \
-    -IQueryWord/561 \
-    -IQueryWord/562 \
-    -IQueryWord/563 \
-    -IQueryWord/564 \
-    -IQueryWord/565 \
-    -IQueryWord/566 \
-    -IQueryWord/567 \
-    -IQueryWord/568 \
-    -IQueryWord/569 \
-    -IQueryWord/57 \
-    -IQueryWord/570 \
-    -IQueryWord/571 \
-    -IQueryWord/572 \
-    -IQueryWord/573 \
-    -IQueryWord/574 \
-    -IQueryWord/575 \
-    -IQueryWord/576 \
-    -IQueryWord/577 \
-    -IQueryWord/578 \
-    -IQueryWord/579 \
-    -IQueryWord/58 \
-    -IQueryWord/580 \
-    -IQueryWord/581 \
-    -IQueryWord/582 \
-    -IQueryWord/583 \
-    -IQueryWord/584 \
-    -IQueryWord/585 \
-    -IQueryWord/586 \
-    -IQueryWord/587 \
-    -IQueryWord/588 \
-    -IQueryWord/589 \
-    -IQueryWord/59 \
-    -IQueryWord/590 \
-    -IQueryWord/591 \
-    -IQueryWord/592 \
-    -IQueryWord/593 \
-    -IQueryWord/594 \
-    -IQueryWord/595 \
-    -IQueryWord/596 \
-    -IQueryWord/597 \
-    -IQueryWord/598 \
-    -IQueryWord/599 \
-    -IQueryWord/6 \
-    -IQueryWord/60 \
-    -IQueryWord/61 \
-    -IQueryWord/62 \
-    -IQueryWord/63 \
-    -IQueryWord/64 \
-    -IQueryWord/65 \
-    -IQueryWord/66 \
-    -IQueryWord/67 \
-    -IQueryWord/68 \
-    -IQueryWord/69 \
-    -IQueryWord/7 \
-    -IQueryWord/70 \
-    -IQueryWord/71 \
-    -IQueryWord/72 \
-    -IQueryWord/73 \
-    -IQueryWord/74 \
-    -IQueryWord/75 \
-    -IQueryWord/76 \
-    -IQueryWord/77 \
-    -IQueryWord/78 \
-    -IQueryWord/79 \
-    -IQueryWord/8 \
-    -IQueryWord/80 \
-    -IQueryWord/81 \
-    -IQueryWord/82 \
-    -IQueryWord/83 \
-    -IQueryWord/84 \
-    -IQueryWord/85 \
-    -IQueryWord/86 \
-    -IQueryWord/87 \
-    -IQueryWord/88 \
-    -IQueryWord/89 \
-    -IQueryWord/9 \
-    -IQueryWord/90 \
-    -IQueryWord/91 \
-    -IQueryWord/92 \
-    -IQueryWord/93 \
-    -IQueryWord/94 \
-    -IQueryWord/95 \
-    -IQueryWord/96 \
-    -IQueryWord/97 \
-    -IQueryWord/98 \
-    -IQueryWord/99 \
+    -IQueryResults \
+    -IQueryResults/0 \
+    -IQueryResults/1 \
+    -IQueryResults/10 \
+    -IQueryResults/100 \
+    -IQueryResults/101 \
+    -IQueryResults/102 \
+    -IQueryResults/103 \
+    -IQueryResults/104 \
+    -IQueryResults/105 \
+    -IQueryResults/106 \
+    -IQueryResults/107 \
+    -IQueryResults/108 \
+    -IQueryResults/109 \
+    -IQueryResults/11 \
+    -IQueryResults/110 \
+    -IQueryResults/111 \
+    -IQueryResults/112 \
+    -IQueryResults/113 \
+    -IQueryResults/114 \
+    -IQueryResults/115 \
+    -IQueryResults/116 \
+    -IQueryResults/117 \
+    -IQueryResults/118 \
+    -IQueryResults/119 \
+    -IQueryResults/12 \
+    -IQueryResults/120 \
+    -IQueryResults/121 \
+    -IQueryResults/122 \
+    -IQueryResults/123 \
+    -IQueryResults/124 \
+    -IQueryResults/125 \
+    -IQueryResults/126 \
+    -IQueryResults/127 \
+    -IQueryResults/128 \
+    -IQueryResults/129 \
+    -IQueryResults/13 \
+    -IQueryResults/130 \
+    -IQueryResults/131 \
+    -IQueryResults/132 \
+    -IQueryResults/133 \
+    -IQueryResults/134 \
+    -IQueryResults/135 \
+    -IQueryResults/136 \
+    -IQueryResults/137 \
+    -IQueryResults/138 \
+    -IQueryResults/139 \
+    -IQueryResults/14 \
+    -IQueryResults/140 \
+    -IQueryResults/141 \
+    -IQueryResults/142 \
+    -IQueryResults/143 \
+    -IQueryResults/144 \
+    -IQueryResults/145 \
+    -IQueryResults/146 \
+    -IQueryResults/147 \
+    -IQueryResults/148 \
+    -IQueryResults/149 \
+    -IQueryResults/15 \
+    -IQueryResults/150 \
+    -IQueryResults/151 \
+    -IQueryResults/152 \
+    -IQueryResults/153 \
+    -IQueryResults/154 \
+    -IQueryResults/155 \
+    -IQueryResults/156 \
+    -IQueryResults/157 \
+    -IQueryResults/158 \
+    -IQueryResults/159 \
+    -IQueryResults/16 \
+    -IQueryResults/160 \
+    -IQueryResults/161 \
+    -IQueryResults/162 \
+    -IQueryResults/163 \
+    -IQueryResults/164 \
+    -IQueryResults/165 \
+    -IQueryResults/166 \
+    -IQueryResults/167 \
+    -IQueryResults/168 \
+    -IQueryResults/169 \
+    -IQueryResults/17 \
+    -IQueryResults/170 \
+    -IQueryResults/171 \
+    -IQueryResults/172 \
+    -IQueryResults/173 \
+    -IQueryResults/174 \
+    -IQueryResults/175 \
+    -IQueryResults/176 \
+    -IQueryResults/177 \
+    -IQueryResults/178 \
+    -IQueryResults/179 \
+    -IQueryResults/18 \
+    -IQueryResults/180 \
+    -IQueryResults/181 \
+    -IQueryResults/182 \
+    -IQueryResults/183 \
+    -IQueryResults/184 \
+    -IQueryResults/185 \
+    -IQueryResults/186 \
+    -IQueryResults/187 \
+    -IQueryResults/188 \
+    -IQueryResults/189 \
+    -IQueryResults/19 \
+    -IQueryResults/190 \
+    -IQueryResults/191 \
+    -IQueryResults/192 \
+    -IQueryResults/193 \
+    -IQueryResults/194 \
+    -IQueryResults/195 \
+    -IQueryResults/196 \
+    -IQueryResults/197 \
+    -IQueryResults/198 \
+    -IQueryResults/199 \
+    -IQueryResults/2 \
+    -IQueryResults/20 \
+    -IQueryResults/200 \
+    -IQueryResults/201 \
+    -IQueryResults/202 \
+    -IQueryResults/203 \
+    -IQueryResults/204 \
+    -IQueryResults/205 \
+    -IQueryResults/206 \
+    -IQueryResults/207 \
+    -IQueryResults/208 \
+    -IQueryResults/209 \
+    -IQueryResults/21 \
+    -IQueryResults/210 \
+    -IQueryResults/211 \
+    -IQueryResults/212 \
+    -IQueryResults/213 \
+    -IQueryResults/214 \
+    -IQueryResults/215 \
+    -IQueryResults/216 \
+    -IQueryResults/217 \
+    -IQueryResults/218 \
+    -IQueryResults/219 \
+    -IQueryResults/22 \
+    -IQueryResults/220 \
+    -IQueryResults/221 \
+    -IQueryResults/222 \
+    -IQueryResults/223 \
+    -IQueryResults/224 \
+    -IQueryResults/225 \
+    -IQueryResults/226 \
+    -IQueryResults/227 \
+    -IQueryResults/228 \
+    -IQueryResults/229 \
+    -IQueryResults/23 \
+    -IQueryResults/230 \
+    -IQueryResults/231 \
+    -IQueryResults/232 \
+    -IQueryResults/233 \
+    -IQueryResults/234 \
+    -IQueryResults/235 \
+    -IQueryResults/236 \
+    -IQueryResults/237 \
+    -IQueryResults/238 \
+    -IQueryResults/239 \
+    -IQueryResults/24 \
+    -IQueryResults/240 \
+    -IQueryResults/241 \
+    -IQueryResults/242 \
+    -IQueryResults/243 \
+    -IQueryResults/244 \
+    -IQueryResults/245 \
+    -IQueryResults/246 \
+    -IQueryResults/247 \
+    -IQueryResults/248 \
+    -IQueryResults/249 \
+    -IQueryResults/25 \
+    -IQueryResults/250 \
+    -IQueryResults/251 \
+    -IQueryResults/252 \
+    -IQueryResults/253 \
+    -IQueryResults/254 \
+    -IQueryResults/255 \
+    -IQueryResults/256 \
+    -IQueryResults/257 \
+    -IQueryResults/258 \
+    -IQueryResults/259 \
+    -IQueryResults/26 \
+    -IQueryResults/260 \
+    -IQueryResults/261 \
+    -IQueryResults/262 \
+    -IQueryResults/263 \
+    -IQueryResults/264 \
+    -IQueryResults/265 \
+    -IQueryResults/266 \
+    -IQueryResults/267 \
+    -IQueryResults/268 \
+    -IQueryResults/269 \
+    -IQueryResults/27 \
+    -IQueryResults/270 \
+    -IQueryResults/271 \
+    -IQueryResults/272 \
+    -IQueryResults/273 \
+    -IQueryResults/274 \
+    -IQueryResults/275 \
+    -IQueryResults/276 \
+    -IQueryResults/277 \
+    -IQueryResults/278 \
+    -IQueryResults/279 \
+    -IQueryResults/28 \
+    -IQueryResults/280 \
+    -IQueryResults/281 \
+    -IQueryResults/282 \
+    -IQueryResults/283 \
+    -IQueryResults/284 \
+    -IQueryResults/285 \
+    -IQueryResults/286 \
+    -IQueryResults/287 \
+    -IQueryResults/288 \
+    -IQueryResults/289 \
+    -IQueryResults/29 \
+    -IQueryResults/290 \
+    -IQueryResults/291 \
+    -IQueryResults/292 \
+    -IQueryResults/293 \
+    -IQueryResults/294 \
+    -IQueryResults/295 \
+    -IQueryResults/296 \
+    -IQueryResults/297 \
+    -IQueryResults/298 \
+    -IQueryResults/299 \
+    -IQueryResults/3 \
+    -IQueryResults/30 \
+    -IQueryResults/300 \
+    -IQueryResults/301 \
+    -IQueryResults/302 \
+    -IQueryResults/303 \
+    -IQueryResults/304 \
+    -IQueryResults/305 \
+    -IQueryResults/306 \
+    -IQueryResults/307 \
+    -IQueryResults/308 \
+    -IQueryResults/309 \
+    -IQueryResults/31 \
+    -IQueryResults/310 \
+    -IQueryResults/311 \
+    -IQueryResults/312 \
+    -IQueryResults/313 \
+    -IQueryResults/314 \
+    -IQueryResults/315 \
+    -IQueryResults/316 \
+    -IQueryResults/317 \
+    -IQueryResults/318 \
+    -IQueryResults/319 \
+    -IQueryResults/32 \
+    -IQueryResults/320 \
+    -IQueryResults/321 \
+    -IQueryResults/322 \
+    -IQueryResults/323 \
+    -IQueryResults/324 \
+    -IQueryResults/325 \
+    -IQueryResults/326 \
+    -IQueryResults/327 \
+    -IQueryResults/328 \
+    -IQueryResults/329 \
+    -IQueryResults/33 \
+    -IQueryResults/330 \
+    -IQueryResults/331 \
+    -IQueryResults/332 \
+    -IQueryResults/333 \
+    -IQueryResults/334 \
+    -IQueryResults/335 \
+    -IQueryResults/336 \
+    -IQueryResults/337 \
+    -IQueryResults/338 \
+    -IQueryResults/339 \
+    -IQueryResults/34 \
+    -IQueryResults/340 \
+    -IQueryResults/341 \
+    -IQueryResults/342 \
+    -IQueryResults/343 \
+    -IQueryResults/344 \
+    -IQueryResults/345 \
+    -IQueryResults/346 \
+    -IQueryResults/347 \
+    -IQueryResults/348 \
+    -IQueryResults/349 \
+    -IQueryResults/35 \
+    -IQueryResults/350 \
+    -IQueryResults/351 \
+    -IQueryResults/352 \
+    -IQueryResults/353 \
+    -IQueryResults/354 \
+    -IQueryResults/355 \
+    -IQueryResults/356 \
+    -IQueryResults/357 \
+    -IQueryResults/358 \
+    -IQueryResults/359 \
+    -IQueryResults/36 \
+    -IQueryResults/360 \
+    -IQueryResults/361 \
+    -IQueryResults/362 \
+    -IQueryResults/363 \
+    -IQueryResults/364 \
+    -IQueryResults/365 \
+    -IQueryResults/366 \
+    -IQueryResults/367 \
+    -IQueryResults/368 \
+    -IQueryResults/369 \
+    -IQueryResults/37 \
+    -IQueryResults/370 \
+    -IQueryResults/371 \
+    -IQueryResults/372 \
+    -IQueryResults/373 \
+    -IQueryResults/374 \
+    -IQueryResults/375 \
+    -IQueryResults/376 \
+    -IQueryResults/377 \
+    -IQueryResults/378 \
+    -IQueryResults/379 \
+    -IQueryResults/38 \
+    -IQueryResults/380 \
+    -IQueryResults/381 \
+    -IQueryResults/382 \
+    -IQueryResults/383 \
+    -IQueryResults/384 \
+    -IQueryResults/385 \
+    -IQueryResults/386 \
+    -IQueryResults/387 \
+    -IQueryResults/388 \
+    -IQueryResults/389 \
+    -IQueryResults/39 \
+    -IQueryResults/390 \
+    -IQueryResults/391 \
+    -IQueryResults/392 \
+    -IQueryResults/393 \
+    -IQueryResults/394 \
+    -IQueryResults/395 \
+    -IQueryResults/396 \
+    -IQueryResults/397 \
+    -IQueryResults/398 \
+    -IQueryResults/399 \
+    -IQueryResults/4 \
+    -IQueryResults/40 \
+    -IQueryResults/400 \
+    -IQueryResults/401 \
+    -IQueryResults/402 \
+    -IQueryResults/403 \
+    -IQueryResults/404 \
+    -IQueryResults/405 \
+    -IQueryResults/406 \
+    -IQueryResults/407 \
+    -IQueryResults/408 \
+    -IQueryResults/409 \
+    -IQueryResults/41 \
+    -IQueryResults/410 \
+    -IQueryResults/411 \
+    -IQueryResults/412 \
+    -IQueryResults/413 \
+    -IQueryResults/414 \
+    -IQueryResults/415 \
+    -IQueryResults/416 \
+    -IQueryResults/417 \
+    -IQueryResults/418 \
+    -IQueryResults/419 \
+    -IQueryResults/42 \
+    -IQueryResults/420 \
+    -IQueryResults/421 \
+    -IQueryResults/422 \
+    -IQueryResults/423 \
+    -IQueryResults/424 \
+    -IQueryResults/425 \
+    -IQueryResults/426 \
+    -IQueryResults/427 \
+    -IQueryResults/428 \
+    -IQueryResults/429 \
+    -IQueryResults/43 \
+    -IQueryResults/430 \
+    -IQueryResults/431 \
+    -IQueryResults/432 \
+    -IQueryResults/433 \
+    -IQueryResults/434 \
+    -IQueryResults/435 \
+    -IQueryResults/436 \
+    -IQueryResults/437 \
+    -IQueryResults/438 \
+    -IQueryResults/439 \
+    -IQueryResults/44 \
+    -IQueryResults/440 \
+    -IQueryResults/441 \
+    -IQueryResults/442 \
+    -IQueryResults/443 \
+    -IQueryResults/444 \
+    -IQueryResults/445 \
+    -IQueryResults/446 \
+    -IQueryResults/447 \
+    -IQueryResults/448 \
+    -IQueryResults/449 \
+    -IQueryResults/45 \
+    -IQueryResults/450 \
+    -IQueryResults/451 \
+    -IQueryResults/452 \
+    -IQueryResults/453 \
+    -IQueryResults/454 \
+    -IQueryResults/455 \
+    -IQueryResults/456 \
+    -IQueryResults/457 \
+    -IQueryResults/458 \
+    -IQueryResults/459 \
+    -IQueryResults/46 \
+    -IQueryResults/460 \
+    -IQueryResults/461 \
+    -IQueryResults/462 \
+    -IQueryResults/463 \
+    -IQueryResults/464 \
+    -IQueryResults/465 \
+    -IQueryResults/466 \
+    -IQueryResults/467 \
+    -IQueryResults/468 \
+    -IQueryResults/469 \
+    -IQueryResults/47 \
+    -IQueryResults/470 \
+    -IQueryResults/471 \
+    -IQueryResults/472 \
+    -IQueryResults/473 \
+    -IQueryResults/474 \
+    -IQueryResults/475 \
+    -IQueryResults/476 \
+    -IQueryResults/477 \
+    -IQueryResults/478 \
+    -IQueryResults/479 \
+    -IQueryResults/48 \
+    -IQueryResults/480 \
+    -IQueryResults/481 \
+    -IQueryResults/482 \
+    -IQueryResults/483 \
+    -IQueryResults/484 \
+    -IQueryResults/485 \
+    -IQueryResults/486 \
+    -IQueryResults/487 \
+    -IQueryResults/488 \
+    -IQueryResults/489 \
+    -IQueryResults/49 \
+    -IQueryResults/490 \
+    -IQueryResults/491 \
+    -IQueryResults/492 \
+    -IQueryResults/493 \
+    -IQueryResults/494 \
+    -IQueryResults/495 \
+    -IQueryResults/496 \
+    -IQueryResults/497 \
+    -IQueryResults/498 \
+    -IQueryResults/499 \
+    -IQueryResults/5 \
+    -IQueryResults/50 \
+    -IQueryResults/500 \
+    -IQueryResults/501 \
+    -IQueryResults/502 \
+    -IQueryResults/503 \
+    -IQueryResults/504 \
+    -IQueryResults/505 \
+    -IQueryResults/506 \
+    -IQueryResults/507 \
+    -IQueryResults/508 \
+    -IQueryResults/509 \
+    -IQueryResults/51 \
+    -IQueryResults/510 \
+    -IQueryResults/511 \
+    -IQueryResults/512 \
+    -IQueryResults/513 \
+    -IQueryResults/514 \
+    -IQueryResults/515 \
+    -IQueryResults/516 \
+    -IQueryResults/517 \
+    -IQueryResults/518 \
+    -IQueryResults/519 \
+    -IQueryResults/52 \
+    -IQueryResults/520 \
+    -IQueryResults/521 \
+    -IQueryResults/522 \
+    -IQueryResults/523 \
+    -IQueryResults/524 \
+    -IQueryResults/525 \
+    -IQueryResults/526 \
+    -IQueryResults/527 \
+    -IQueryResults/528 \
+    -IQueryResults/529 \
+    -IQueryResults/53 \
+    -IQueryResults/530 \
+    -IQueryResults/531 \
+    -IQueryResults/532 \
+    -IQueryResults/533 \
+    -IQueryResults/534 \
+    -IQueryResults/535 \
+    -IQueryResults/536 \
+    -IQueryResults/537 \
+    -IQueryResults/538 \
+    -IQueryResults/539 \
+    -IQueryResults/54 \
+    -IQueryResults/540 \
+    -IQueryResults/541 \
+    -IQueryResults/542 \
+    -IQueryResults/543 \
+    -IQueryResults/544 \
+    -IQueryResults/545 \
+    -IQueryResults/546 \
+    -IQueryResults/547 \
+    -IQueryResults/548 \
+    -IQueryResults/549 \
+    -IQueryResults/55 \
+    -IQueryResults/550 \
+    -IQueryResults/551 \
+    -IQueryResults/552 \
+    -IQueryResults/553 \
+    -IQueryResults/554 \
+    -IQueryResults/555 \
+    -IQueryResults/556 \
+    -IQueryResults/557 \
+    -IQueryResults/558 \
+    -IQueryResults/559 \
+    -IQueryResults/56 \
+    -IQueryResults/560 \
+    -IQueryResults/561 \
+    -IQueryResults/562 \
+    -IQueryResults/563 \
+    -IQueryResults/564 \
+    -IQueryResults/565 \
+    -IQueryResults/566 \
+    -IQueryResults/567 \
+    -IQueryResults/568 \
+    -IQueryResults/569 \
+    -IQueryResults/57 \
+    -IQueryResults/570 \
+    -IQueryResults/571 \
+    -IQueryResults/572 \
+    -IQueryResults/573 \
+    -IQueryResults/574 \
+    -IQueryResults/575 \
+    -IQueryResults/576 \
+    -IQueryResults/577 \
+    -IQueryResults/578 \
+    -IQueryResults/579 \
+    -IQueryResults/58 \
+    -IQueryResults/580 \
+    -IQueryResults/581 \
+    -IQueryResults/582 \
+    -IQueryResults/583 \
+    -IQueryResults/584 \
+    -IQueryResults/585 \
+    -IQueryResults/586 \
+    -IQueryResults/587 \
+    -IQueryResults/588 \
+    -IQueryResults/589 \
+    -IQueryResults/59 \
+    -IQueryResults/590 \
+    -IQueryResults/591 \
+    -IQueryResults/592 \
+    -IQueryResults/593 \
+    -IQueryResults/594 \
+    -IQueryResults/595 \
+    -IQueryResults/596 \
+    -IQueryResults/597 \
+    -IQueryResults/598 \
+    -IQueryResults/599 \
+    -IQueryResults/6 \
+    -IQueryResults/60 \
+    -IQueryResults/61 \
+    -IQueryResults/62 \
+    -IQueryResults/63 \
+    -IQueryResults/64 \
+    -IQueryResults/65 \
+    -IQueryResults/66 \
+    -IQueryResults/67 \
+    -IQueryResults/68 \
+    -IQueryResults/69 \
+    -IQueryResults/7 \
+    -IQueryResults/70 \
+    -IQueryResults/71 \
+    -IQueryResults/72 \
+    -IQueryResults/73 \
+    -IQueryResults/74 \
+    -IQueryResults/75 \
+    -IQueryResults/76 \
+    -IQueryResults/77 \
+    -IQueryResults/78 \
+    -IQueryResults/79 \
+    -IQueryResults/8 \
+    -IQueryResults/80 \
+    -IQueryResults/81 \
+    -IQueryResults/82 \
+    -IQueryResults/83 \
+    -IQueryResults/84 \
+    -IQueryResults/85 \
+    -IQueryResults/86 \
+    -IQueryResults/87 \
+    -IQueryResults/88 \
+    -IQueryResults/89 \
+    -IQueryResults/9 \
+    -IQueryResults/90 \
+    -IQueryResults/91 \
+    -IQueryResults/92 \
+    -IQueryResults/93 \
+    -IQueryResults/94 \
+    -IQueryResults/95 \
+    -IQueryResults/96 \
+    -IQueryResults/97 \
+    -IQueryResults/98 \
+    -IQueryResults/99 \
     -Ijson \
-    -Iresults
+    -Iresults \
+    -Iresults/100 \
+    -Iresults/1000 \
+    -Iresults/10_1000 \
+    -Iresults/10_200 \
+    -Iresults/10_3000 \
+    -Iresults/10mps \
+    -Iresults/17mps \
+    -Iresults/1mps \
+    -Iresults/200 \
+    -Iresults/300 \
+    -Iresults/3mps \
+    -Iresults/400 \
+    -Iresults/50 \
+    -Iresults/500 \
+    -Iresults/50n \
+    -Iresults/5mps \
+    -Iresults/600 \
+    -Iresults/600_100 \
+    -Iresults/600_200 \
+    -Iresults/600_30 \
+    -Iresults/600_lamda \
+    -Iresults/600_queryNumber \
+    -Iresults/600_reviews \
+    -Iresults/700 \
+    -Iresults/800 \
+    -Iresults/900 \
+    -Iresults/querytime
 
 # Additional object and library files to link with
 EXTRA_OBJS =
@@ -738,616 +765,643 @@ clean:
 	$(Q)-rm -rf $O
 	$(Q)-rm -f P2P_Wireless_Wifi P2P_Wireless_Wifi.exe libP2P_Wireless_Wifi.so libP2P_Wireless_Wifi.a libP2P_Wireless_Wifi.dll libP2P_Wireless_Wifi.dylib
 	$(Q)-rm -f ./*_m.cc ./*_m.h
-	$(Q)-rm -f QueryWord/*_m.cc QueryWord/*_m.h
-	$(Q)-rm -f QueryWord/0/*_m.cc QueryWord/0/*_m.h
-	$(Q)-rm -f QueryWord/1/*_m.cc QueryWord/1/*_m.h
-	$(Q)-rm -f QueryWord/10/*_m.cc QueryWord/10/*_m.h
-	$(Q)-rm -f QueryWord/100/*_m.cc QueryWord/100/*_m.h
-	$(Q)-rm -f QueryWord/101/*_m.cc QueryWord/101/*_m.h
-	$(Q)-rm -f QueryWord/102/*_m.cc QueryWord/102/*_m.h
-	$(Q)-rm -f QueryWord/103/*_m.cc QueryWord/103/*_m.h
-	$(Q)-rm -f QueryWord/104/*_m.cc QueryWord/104/*_m.h
-	$(Q)-rm -f QueryWord/105/*_m.cc QueryWord/105/*_m.h
-	$(Q)-rm -f QueryWord/106/*_m.cc QueryWord/106/*_m.h
-	$(Q)-rm -f QueryWord/107/*_m.cc QueryWord/107/*_m.h
-	$(Q)-rm -f QueryWord/108/*_m.cc QueryWord/108/*_m.h
-	$(Q)-rm -f QueryWord/109/*_m.cc QueryWord/109/*_m.h
-	$(Q)-rm -f QueryWord/11/*_m.cc QueryWord/11/*_m.h
-	$(Q)-rm -f QueryWord/110/*_m.cc QueryWord/110/*_m.h
-	$(Q)-rm -f QueryWord/111/*_m.cc QueryWord/111/*_m.h
-	$(Q)-rm -f QueryWord/112/*_m.cc QueryWord/112/*_m.h
-	$(Q)-rm -f QueryWord/113/*_m.cc QueryWord/113/*_m.h
-	$(Q)-rm -f QueryWord/114/*_m.cc QueryWord/114/*_m.h
-	$(Q)-rm -f QueryWord/115/*_m.cc QueryWord/115/*_m.h
-	$(Q)-rm -f QueryWord/116/*_m.cc QueryWord/116/*_m.h
-	$(Q)-rm -f QueryWord/117/*_m.cc QueryWord/117/*_m.h
-	$(Q)-rm -f QueryWord/118/*_m.cc QueryWord/118/*_m.h
-	$(Q)-rm -f QueryWord/119/*_m.cc QueryWord/119/*_m.h
-	$(Q)-rm -f QueryWord/12/*_m.cc QueryWord/12/*_m.h
-	$(Q)-rm -f QueryWord/120/*_m.cc QueryWord/120/*_m.h
-	$(Q)-rm -f QueryWord/121/*_m.cc QueryWord/121/*_m.h
-	$(Q)-rm -f QueryWord/122/*_m.cc QueryWord/122/*_m.h
-	$(Q)-rm -f QueryWord/123/*_m.cc QueryWord/123/*_m.h
-	$(Q)-rm -f QueryWord/124/*_m.cc QueryWord/124/*_m.h
-	$(Q)-rm -f QueryWord/125/*_m.cc QueryWord/125/*_m.h
-	$(Q)-rm -f QueryWord/126/*_m.cc QueryWord/126/*_m.h
-	$(Q)-rm -f QueryWord/127/*_m.cc QueryWord/127/*_m.h
-	$(Q)-rm -f QueryWord/128/*_m.cc QueryWord/128/*_m.h
-	$(Q)-rm -f QueryWord/129/*_m.cc QueryWord/129/*_m.h
-	$(Q)-rm -f QueryWord/13/*_m.cc QueryWord/13/*_m.h
-	$(Q)-rm -f QueryWord/130/*_m.cc QueryWord/130/*_m.h
-	$(Q)-rm -f QueryWord/131/*_m.cc QueryWord/131/*_m.h
-	$(Q)-rm -f QueryWord/132/*_m.cc QueryWord/132/*_m.h
-	$(Q)-rm -f QueryWord/133/*_m.cc QueryWord/133/*_m.h
-	$(Q)-rm -f QueryWord/134/*_m.cc QueryWord/134/*_m.h
-	$(Q)-rm -f QueryWord/135/*_m.cc QueryWord/135/*_m.h
-	$(Q)-rm -f QueryWord/136/*_m.cc QueryWord/136/*_m.h
-	$(Q)-rm -f QueryWord/137/*_m.cc QueryWord/137/*_m.h
-	$(Q)-rm -f QueryWord/138/*_m.cc QueryWord/138/*_m.h
-	$(Q)-rm -f QueryWord/139/*_m.cc QueryWord/139/*_m.h
-	$(Q)-rm -f QueryWord/14/*_m.cc QueryWord/14/*_m.h
-	$(Q)-rm -f QueryWord/140/*_m.cc QueryWord/140/*_m.h
-	$(Q)-rm -f QueryWord/141/*_m.cc QueryWord/141/*_m.h
-	$(Q)-rm -f QueryWord/142/*_m.cc QueryWord/142/*_m.h
-	$(Q)-rm -f QueryWord/143/*_m.cc QueryWord/143/*_m.h
-	$(Q)-rm -f QueryWord/144/*_m.cc QueryWord/144/*_m.h
-	$(Q)-rm -f QueryWord/145/*_m.cc QueryWord/145/*_m.h
-	$(Q)-rm -f QueryWord/146/*_m.cc QueryWord/146/*_m.h
-	$(Q)-rm -f QueryWord/147/*_m.cc QueryWord/147/*_m.h
-	$(Q)-rm -f QueryWord/148/*_m.cc QueryWord/148/*_m.h
-	$(Q)-rm -f QueryWord/149/*_m.cc QueryWord/149/*_m.h
-	$(Q)-rm -f QueryWord/15/*_m.cc QueryWord/15/*_m.h
-	$(Q)-rm -f QueryWord/150/*_m.cc QueryWord/150/*_m.h
-	$(Q)-rm -f QueryWord/151/*_m.cc QueryWord/151/*_m.h
-	$(Q)-rm -f QueryWord/152/*_m.cc QueryWord/152/*_m.h
-	$(Q)-rm -f QueryWord/153/*_m.cc QueryWord/153/*_m.h
-	$(Q)-rm -f QueryWord/154/*_m.cc QueryWord/154/*_m.h
-	$(Q)-rm -f QueryWord/155/*_m.cc QueryWord/155/*_m.h
-	$(Q)-rm -f QueryWord/156/*_m.cc QueryWord/156/*_m.h
-	$(Q)-rm -f QueryWord/157/*_m.cc QueryWord/157/*_m.h
-	$(Q)-rm -f QueryWord/158/*_m.cc QueryWord/158/*_m.h
-	$(Q)-rm -f QueryWord/159/*_m.cc QueryWord/159/*_m.h
-	$(Q)-rm -f QueryWord/16/*_m.cc QueryWord/16/*_m.h
-	$(Q)-rm -f QueryWord/160/*_m.cc QueryWord/160/*_m.h
-	$(Q)-rm -f QueryWord/161/*_m.cc QueryWord/161/*_m.h
-	$(Q)-rm -f QueryWord/162/*_m.cc QueryWord/162/*_m.h
-	$(Q)-rm -f QueryWord/163/*_m.cc QueryWord/163/*_m.h
-	$(Q)-rm -f QueryWord/164/*_m.cc QueryWord/164/*_m.h
-	$(Q)-rm -f QueryWord/165/*_m.cc QueryWord/165/*_m.h
-	$(Q)-rm -f QueryWord/166/*_m.cc QueryWord/166/*_m.h
-	$(Q)-rm -f QueryWord/167/*_m.cc QueryWord/167/*_m.h
-	$(Q)-rm -f QueryWord/168/*_m.cc QueryWord/168/*_m.h
-	$(Q)-rm -f QueryWord/169/*_m.cc QueryWord/169/*_m.h
-	$(Q)-rm -f QueryWord/17/*_m.cc QueryWord/17/*_m.h
-	$(Q)-rm -f QueryWord/170/*_m.cc QueryWord/170/*_m.h
-	$(Q)-rm -f QueryWord/171/*_m.cc QueryWord/171/*_m.h
-	$(Q)-rm -f QueryWord/172/*_m.cc QueryWord/172/*_m.h
-	$(Q)-rm -f QueryWord/173/*_m.cc QueryWord/173/*_m.h
-	$(Q)-rm -f QueryWord/174/*_m.cc QueryWord/174/*_m.h
-	$(Q)-rm -f QueryWord/175/*_m.cc QueryWord/175/*_m.h
-	$(Q)-rm -f QueryWord/176/*_m.cc QueryWord/176/*_m.h
-	$(Q)-rm -f QueryWord/177/*_m.cc QueryWord/177/*_m.h
-	$(Q)-rm -f QueryWord/178/*_m.cc QueryWord/178/*_m.h
-	$(Q)-rm -f QueryWord/179/*_m.cc QueryWord/179/*_m.h
-	$(Q)-rm -f QueryWord/18/*_m.cc QueryWord/18/*_m.h
-	$(Q)-rm -f QueryWord/180/*_m.cc QueryWord/180/*_m.h
-	$(Q)-rm -f QueryWord/181/*_m.cc QueryWord/181/*_m.h
-	$(Q)-rm -f QueryWord/182/*_m.cc QueryWord/182/*_m.h
-	$(Q)-rm -f QueryWord/183/*_m.cc QueryWord/183/*_m.h
-	$(Q)-rm -f QueryWord/184/*_m.cc QueryWord/184/*_m.h
-	$(Q)-rm -f QueryWord/185/*_m.cc QueryWord/185/*_m.h
-	$(Q)-rm -f QueryWord/186/*_m.cc QueryWord/186/*_m.h
-	$(Q)-rm -f QueryWord/187/*_m.cc QueryWord/187/*_m.h
-	$(Q)-rm -f QueryWord/188/*_m.cc QueryWord/188/*_m.h
-	$(Q)-rm -f QueryWord/189/*_m.cc QueryWord/189/*_m.h
-	$(Q)-rm -f QueryWord/19/*_m.cc QueryWord/19/*_m.h
-	$(Q)-rm -f QueryWord/190/*_m.cc QueryWord/190/*_m.h
-	$(Q)-rm -f QueryWord/191/*_m.cc QueryWord/191/*_m.h
-	$(Q)-rm -f QueryWord/192/*_m.cc QueryWord/192/*_m.h
-	$(Q)-rm -f QueryWord/193/*_m.cc QueryWord/193/*_m.h
-	$(Q)-rm -f QueryWord/194/*_m.cc QueryWord/194/*_m.h
-	$(Q)-rm -f QueryWord/195/*_m.cc QueryWord/195/*_m.h
-	$(Q)-rm -f QueryWord/196/*_m.cc QueryWord/196/*_m.h
-	$(Q)-rm -f QueryWord/197/*_m.cc QueryWord/197/*_m.h
-	$(Q)-rm -f QueryWord/198/*_m.cc QueryWord/198/*_m.h
-	$(Q)-rm -f QueryWord/199/*_m.cc QueryWord/199/*_m.h
-	$(Q)-rm -f QueryWord/2/*_m.cc QueryWord/2/*_m.h
-	$(Q)-rm -f QueryWord/20/*_m.cc QueryWord/20/*_m.h
-	$(Q)-rm -f QueryWord/200/*_m.cc QueryWord/200/*_m.h
-	$(Q)-rm -f QueryWord/201/*_m.cc QueryWord/201/*_m.h
-	$(Q)-rm -f QueryWord/202/*_m.cc QueryWord/202/*_m.h
-	$(Q)-rm -f QueryWord/203/*_m.cc QueryWord/203/*_m.h
-	$(Q)-rm -f QueryWord/204/*_m.cc QueryWord/204/*_m.h
-	$(Q)-rm -f QueryWord/205/*_m.cc QueryWord/205/*_m.h
-	$(Q)-rm -f QueryWord/206/*_m.cc QueryWord/206/*_m.h
-	$(Q)-rm -f QueryWord/207/*_m.cc QueryWord/207/*_m.h
-	$(Q)-rm -f QueryWord/208/*_m.cc QueryWord/208/*_m.h
-	$(Q)-rm -f QueryWord/209/*_m.cc QueryWord/209/*_m.h
-	$(Q)-rm -f QueryWord/21/*_m.cc QueryWord/21/*_m.h
-	$(Q)-rm -f QueryWord/210/*_m.cc QueryWord/210/*_m.h
-	$(Q)-rm -f QueryWord/211/*_m.cc QueryWord/211/*_m.h
-	$(Q)-rm -f QueryWord/212/*_m.cc QueryWord/212/*_m.h
-	$(Q)-rm -f QueryWord/213/*_m.cc QueryWord/213/*_m.h
-	$(Q)-rm -f QueryWord/214/*_m.cc QueryWord/214/*_m.h
-	$(Q)-rm -f QueryWord/215/*_m.cc QueryWord/215/*_m.h
-	$(Q)-rm -f QueryWord/216/*_m.cc QueryWord/216/*_m.h
-	$(Q)-rm -f QueryWord/217/*_m.cc QueryWord/217/*_m.h
-	$(Q)-rm -f QueryWord/218/*_m.cc QueryWord/218/*_m.h
-	$(Q)-rm -f QueryWord/219/*_m.cc QueryWord/219/*_m.h
-	$(Q)-rm -f QueryWord/22/*_m.cc QueryWord/22/*_m.h
-	$(Q)-rm -f QueryWord/220/*_m.cc QueryWord/220/*_m.h
-	$(Q)-rm -f QueryWord/221/*_m.cc QueryWord/221/*_m.h
-	$(Q)-rm -f QueryWord/222/*_m.cc QueryWord/222/*_m.h
-	$(Q)-rm -f QueryWord/223/*_m.cc QueryWord/223/*_m.h
-	$(Q)-rm -f QueryWord/224/*_m.cc QueryWord/224/*_m.h
-	$(Q)-rm -f QueryWord/225/*_m.cc QueryWord/225/*_m.h
-	$(Q)-rm -f QueryWord/226/*_m.cc QueryWord/226/*_m.h
-	$(Q)-rm -f QueryWord/227/*_m.cc QueryWord/227/*_m.h
-	$(Q)-rm -f QueryWord/228/*_m.cc QueryWord/228/*_m.h
-	$(Q)-rm -f QueryWord/229/*_m.cc QueryWord/229/*_m.h
-	$(Q)-rm -f QueryWord/23/*_m.cc QueryWord/23/*_m.h
-	$(Q)-rm -f QueryWord/230/*_m.cc QueryWord/230/*_m.h
-	$(Q)-rm -f QueryWord/231/*_m.cc QueryWord/231/*_m.h
-	$(Q)-rm -f QueryWord/232/*_m.cc QueryWord/232/*_m.h
-	$(Q)-rm -f QueryWord/233/*_m.cc QueryWord/233/*_m.h
-	$(Q)-rm -f QueryWord/234/*_m.cc QueryWord/234/*_m.h
-	$(Q)-rm -f QueryWord/235/*_m.cc QueryWord/235/*_m.h
-	$(Q)-rm -f QueryWord/236/*_m.cc QueryWord/236/*_m.h
-	$(Q)-rm -f QueryWord/237/*_m.cc QueryWord/237/*_m.h
-	$(Q)-rm -f QueryWord/238/*_m.cc QueryWord/238/*_m.h
-	$(Q)-rm -f QueryWord/239/*_m.cc QueryWord/239/*_m.h
-	$(Q)-rm -f QueryWord/24/*_m.cc QueryWord/24/*_m.h
-	$(Q)-rm -f QueryWord/240/*_m.cc QueryWord/240/*_m.h
-	$(Q)-rm -f QueryWord/241/*_m.cc QueryWord/241/*_m.h
-	$(Q)-rm -f QueryWord/242/*_m.cc QueryWord/242/*_m.h
-	$(Q)-rm -f QueryWord/243/*_m.cc QueryWord/243/*_m.h
-	$(Q)-rm -f QueryWord/244/*_m.cc QueryWord/244/*_m.h
-	$(Q)-rm -f QueryWord/245/*_m.cc QueryWord/245/*_m.h
-	$(Q)-rm -f QueryWord/246/*_m.cc QueryWord/246/*_m.h
-	$(Q)-rm -f QueryWord/247/*_m.cc QueryWord/247/*_m.h
-	$(Q)-rm -f QueryWord/248/*_m.cc QueryWord/248/*_m.h
-	$(Q)-rm -f QueryWord/249/*_m.cc QueryWord/249/*_m.h
-	$(Q)-rm -f QueryWord/25/*_m.cc QueryWord/25/*_m.h
-	$(Q)-rm -f QueryWord/250/*_m.cc QueryWord/250/*_m.h
-	$(Q)-rm -f QueryWord/251/*_m.cc QueryWord/251/*_m.h
-	$(Q)-rm -f QueryWord/252/*_m.cc QueryWord/252/*_m.h
-	$(Q)-rm -f QueryWord/253/*_m.cc QueryWord/253/*_m.h
-	$(Q)-rm -f QueryWord/254/*_m.cc QueryWord/254/*_m.h
-	$(Q)-rm -f QueryWord/255/*_m.cc QueryWord/255/*_m.h
-	$(Q)-rm -f QueryWord/256/*_m.cc QueryWord/256/*_m.h
-	$(Q)-rm -f QueryWord/257/*_m.cc QueryWord/257/*_m.h
-	$(Q)-rm -f QueryWord/258/*_m.cc QueryWord/258/*_m.h
-	$(Q)-rm -f QueryWord/259/*_m.cc QueryWord/259/*_m.h
-	$(Q)-rm -f QueryWord/26/*_m.cc QueryWord/26/*_m.h
-	$(Q)-rm -f QueryWord/260/*_m.cc QueryWord/260/*_m.h
-	$(Q)-rm -f QueryWord/261/*_m.cc QueryWord/261/*_m.h
-	$(Q)-rm -f QueryWord/262/*_m.cc QueryWord/262/*_m.h
-	$(Q)-rm -f QueryWord/263/*_m.cc QueryWord/263/*_m.h
-	$(Q)-rm -f QueryWord/264/*_m.cc QueryWord/264/*_m.h
-	$(Q)-rm -f QueryWord/265/*_m.cc QueryWord/265/*_m.h
-	$(Q)-rm -f QueryWord/266/*_m.cc QueryWord/266/*_m.h
-	$(Q)-rm -f QueryWord/267/*_m.cc QueryWord/267/*_m.h
-	$(Q)-rm -f QueryWord/268/*_m.cc QueryWord/268/*_m.h
-	$(Q)-rm -f QueryWord/269/*_m.cc QueryWord/269/*_m.h
-	$(Q)-rm -f QueryWord/27/*_m.cc QueryWord/27/*_m.h
-	$(Q)-rm -f QueryWord/270/*_m.cc QueryWord/270/*_m.h
-	$(Q)-rm -f QueryWord/271/*_m.cc QueryWord/271/*_m.h
-	$(Q)-rm -f QueryWord/272/*_m.cc QueryWord/272/*_m.h
-	$(Q)-rm -f QueryWord/273/*_m.cc QueryWord/273/*_m.h
-	$(Q)-rm -f QueryWord/274/*_m.cc QueryWord/274/*_m.h
-	$(Q)-rm -f QueryWord/275/*_m.cc QueryWord/275/*_m.h
-	$(Q)-rm -f QueryWord/276/*_m.cc QueryWord/276/*_m.h
-	$(Q)-rm -f QueryWord/277/*_m.cc QueryWord/277/*_m.h
-	$(Q)-rm -f QueryWord/278/*_m.cc QueryWord/278/*_m.h
-	$(Q)-rm -f QueryWord/279/*_m.cc QueryWord/279/*_m.h
-	$(Q)-rm -f QueryWord/28/*_m.cc QueryWord/28/*_m.h
-	$(Q)-rm -f QueryWord/280/*_m.cc QueryWord/280/*_m.h
-	$(Q)-rm -f QueryWord/281/*_m.cc QueryWord/281/*_m.h
-	$(Q)-rm -f QueryWord/282/*_m.cc QueryWord/282/*_m.h
-	$(Q)-rm -f QueryWord/283/*_m.cc QueryWord/283/*_m.h
-	$(Q)-rm -f QueryWord/284/*_m.cc QueryWord/284/*_m.h
-	$(Q)-rm -f QueryWord/285/*_m.cc QueryWord/285/*_m.h
-	$(Q)-rm -f QueryWord/286/*_m.cc QueryWord/286/*_m.h
-	$(Q)-rm -f QueryWord/287/*_m.cc QueryWord/287/*_m.h
-	$(Q)-rm -f QueryWord/288/*_m.cc QueryWord/288/*_m.h
-	$(Q)-rm -f QueryWord/289/*_m.cc QueryWord/289/*_m.h
-	$(Q)-rm -f QueryWord/29/*_m.cc QueryWord/29/*_m.h
-	$(Q)-rm -f QueryWord/290/*_m.cc QueryWord/290/*_m.h
-	$(Q)-rm -f QueryWord/291/*_m.cc QueryWord/291/*_m.h
-	$(Q)-rm -f QueryWord/292/*_m.cc QueryWord/292/*_m.h
-	$(Q)-rm -f QueryWord/293/*_m.cc QueryWord/293/*_m.h
-	$(Q)-rm -f QueryWord/294/*_m.cc QueryWord/294/*_m.h
-	$(Q)-rm -f QueryWord/295/*_m.cc QueryWord/295/*_m.h
-	$(Q)-rm -f QueryWord/296/*_m.cc QueryWord/296/*_m.h
-	$(Q)-rm -f QueryWord/297/*_m.cc QueryWord/297/*_m.h
-	$(Q)-rm -f QueryWord/298/*_m.cc QueryWord/298/*_m.h
-	$(Q)-rm -f QueryWord/299/*_m.cc QueryWord/299/*_m.h
-	$(Q)-rm -f QueryWord/3/*_m.cc QueryWord/3/*_m.h
-	$(Q)-rm -f QueryWord/30/*_m.cc QueryWord/30/*_m.h
-	$(Q)-rm -f QueryWord/300/*_m.cc QueryWord/300/*_m.h
-	$(Q)-rm -f QueryWord/301/*_m.cc QueryWord/301/*_m.h
-	$(Q)-rm -f QueryWord/302/*_m.cc QueryWord/302/*_m.h
-	$(Q)-rm -f QueryWord/303/*_m.cc QueryWord/303/*_m.h
-	$(Q)-rm -f QueryWord/304/*_m.cc QueryWord/304/*_m.h
-	$(Q)-rm -f QueryWord/305/*_m.cc QueryWord/305/*_m.h
-	$(Q)-rm -f QueryWord/306/*_m.cc QueryWord/306/*_m.h
-	$(Q)-rm -f QueryWord/307/*_m.cc QueryWord/307/*_m.h
-	$(Q)-rm -f QueryWord/308/*_m.cc QueryWord/308/*_m.h
-	$(Q)-rm -f QueryWord/309/*_m.cc QueryWord/309/*_m.h
-	$(Q)-rm -f QueryWord/31/*_m.cc QueryWord/31/*_m.h
-	$(Q)-rm -f QueryWord/310/*_m.cc QueryWord/310/*_m.h
-	$(Q)-rm -f QueryWord/311/*_m.cc QueryWord/311/*_m.h
-	$(Q)-rm -f QueryWord/312/*_m.cc QueryWord/312/*_m.h
-	$(Q)-rm -f QueryWord/313/*_m.cc QueryWord/313/*_m.h
-	$(Q)-rm -f QueryWord/314/*_m.cc QueryWord/314/*_m.h
-	$(Q)-rm -f QueryWord/315/*_m.cc QueryWord/315/*_m.h
-	$(Q)-rm -f QueryWord/316/*_m.cc QueryWord/316/*_m.h
-	$(Q)-rm -f QueryWord/317/*_m.cc QueryWord/317/*_m.h
-	$(Q)-rm -f QueryWord/318/*_m.cc QueryWord/318/*_m.h
-	$(Q)-rm -f QueryWord/319/*_m.cc QueryWord/319/*_m.h
-	$(Q)-rm -f QueryWord/32/*_m.cc QueryWord/32/*_m.h
-	$(Q)-rm -f QueryWord/320/*_m.cc QueryWord/320/*_m.h
-	$(Q)-rm -f QueryWord/321/*_m.cc QueryWord/321/*_m.h
-	$(Q)-rm -f QueryWord/322/*_m.cc QueryWord/322/*_m.h
-	$(Q)-rm -f QueryWord/323/*_m.cc QueryWord/323/*_m.h
-	$(Q)-rm -f QueryWord/324/*_m.cc QueryWord/324/*_m.h
-	$(Q)-rm -f QueryWord/325/*_m.cc QueryWord/325/*_m.h
-	$(Q)-rm -f QueryWord/326/*_m.cc QueryWord/326/*_m.h
-	$(Q)-rm -f QueryWord/327/*_m.cc QueryWord/327/*_m.h
-	$(Q)-rm -f QueryWord/328/*_m.cc QueryWord/328/*_m.h
-	$(Q)-rm -f QueryWord/329/*_m.cc QueryWord/329/*_m.h
-	$(Q)-rm -f QueryWord/33/*_m.cc QueryWord/33/*_m.h
-	$(Q)-rm -f QueryWord/330/*_m.cc QueryWord/330/*_m.h
-	$(Q)-rm -f QueryWord/331/*_m.cc QueryWord/331/*_m.h
-	$(Q)-rm -f QueryWord/332/*_m.cc QueryWord/332/*_m.h
-	$(Q)-rm -f QueryWord/333/*_m.cc QueryWord/333/*_m.h
-	$(Q)-rm -f QueryWord/334/*_m.cc QueryWord/334/*_m.h
-	$(Q)-rm -f QueryWord/335/*_m.cc QueryWord/335/*_m.h
-	$(Q)-rm -f QueryWord/336/*_m.cc QueryWord/336/*_m.h
-	$(Q)-rm -f QueryWord/337/*_m.cc QueryWord/337/*_m.h
-	$(Q)-rm -f QueryWord/338/*_m.cc QueryWord/338/*_m.h
-	$(Q)-rm -f QueryWord/339/*_m.cc QueryWord/339/*_m.h
-	$(Q)-rm -f QueryWord/34/*_m.cc QueryWord/34/*_m.h
-	$(Q)-rm -f QueryWord/340/*_m.cc QueryWord/340/*_m.h
-	$(Q)-rm -f QueryWord/341/*_m.cc QueryWord/341/*_m.h
-	$(Q)-rm -f QueryWord/342/*_m.cc QueryWord/342/*_m.h
-	$(Q)-rm -f QueryWord/343/*_m.cc QueryWord/343/*_m.h
-	$(Q)-rm -f QueryWord/344/*_m.cc QueryWord/344/*_m.h
-	$(Q)-rm -f QueryWord/345/*_m.cc QueryWord/345/*_m.h
-	$(Q)-rm -f QueryWord/346/*_m.cc QueryWord/346/*_m.h
-	$(Q)-rm -f QueryWord/347/*_m.cc QueryWord/347/*_m.h
-	$(Q)-rm -f QueryWord/348/*_m.cc QueryWord/348/*_m.h
-	$(Q)-rm -f QueryWord/349/*_m.cc QueryWord/349/*_m.h
-	$(Q)-rm -f QueryWord/35/*_m.cc QueryWord/35/*_m.h
-	$(Q)-rm -f QueryWord/350/*_m.cc QueryWord/350/*_m.h
-	$(Q)-rm -f QueryWord/351/*_m.cc QueryWord/351/*_m.h
-	$(Q)-rm -f QueryWord/352/*_m.cc QueryWord/352/*_m.h
-	$(Q)-rm -f QueryWord/353/*_m.cc QueryWord/353/*_m.h
-	$(Q)-rm -f QueryWord/354/*_m.cc QueryWord/354/*_m.h
-	$(Q)-rm -f QueryWord/355/*_m.cc QueryWord/355/*_m.h
-	$(Q)-rm -f QueryWord/356/*_m.cc QueryWord/356/*_m.h
-	$(Q)-rm -f QueryWord/357/*_m.cc QueryWord/357/*_m.h
-	$(Q)-rm -f QueryWord/358/*_m.cc QueryWord/358/*_m.h
-	$(Q)-rm -f QueryWord/359/*_m.cc QueryWord/359/*_m.h
-	$(Q)-rm -f QueryWord/36/*_m.cc QueryWord/36/*_m.h
-	$(Q)-rm -f QueryWord/360/*_m.cc QueryWord/360/*_m.h
-	$(Q)-rm -f QueryWord/361/*_m.cc QueryWord/361/*_m.h
-	$(Q)-rm -f QueryWord/362/*_m.cc QueryWord/362/*_m.h
-	$(Q)-rm -f QueryWord/363/*_m.cc QueryWord/363/*_m.h
-	$(Q)-rm -f QueryWord/364/*_m.cc QueryWord/364/*_m.h
-	$(Q)-rm -f QueryWord/365/*_m.cc QueryWord/365/*_m.h
-	$(Q)-rm -f QueryWord/366/*_m.cc QueryWord/366/*_m.h
-	$(Q)-rm -f QueryWord/367/*_m.cc QueryWord/367/*_m.h
-	$(Q)-rm -f QueryWord/368/*_m.cc QueryWord/368/*_m.h
-	$(Q)-rm -f QueryWord/369/*_m.cc QueryWord/369/*_m.h
-	$(Q)-rm -f QueryWord/37/*_m.cc QueryWord/37/*_m.h
-	$(Q)-rm -f QueryWord/370/*_m.cc QueryWord/370/*_m.h
-	$(Q)-rm -f QueryWord/371/*_m.cc QueryWord/371/*_m.h
-	$(Q)-rm -f QueryWord/372/*_m.cc QueryWord/372/*_m.h
-	$(Q)-rm -f QueryWord/373/*_m.cc QueryWord/373/*_m.h
-	$(Q)-rm -f QueryWord/374/*_m.cc QueryWord/374/*_m.h
-	$(Q)-rm -f QueryWord/375/*_m.cc QueryWord/375/*_m.h
-	$(Q)-rm -f QueryWord/376/*_m.cc QueryWord/376/*_m.h
-	$(Q)-rm -f QueryWord/377/*_m.cc QueryWord/377/*_m.h
-	$(Q)-rm -f QueryWord/378/*_m.cc QueryWord/378/*_m.h
-	$(Q)-rm -f QueryWord/379/*_m.cc QueryWord/379/*_m.h
-	$(Q)-rm -f QueryWord/38/*_m.cc QueryWord/38/*_m.h
-	$(Q)-rm -f QueryWord/380/*_m.cc QueryWord/380/*_m.h
-	$(Q)-rm -f QueryWord/381/*_m.cc QueryWord/381/*_m.h
-	$(Q)-rm -f QueryWord/382/*_m.cc QueryWord/382/*_m.h
-	$(Q)-rm -f QueryWord/383/*_m.cc QueryWord/383/*_m.h
-	$(Q)-rm -f QueryWord/384/*_m.cc QueryWord/384/*_m.h
-	$(Q)-rm -f QueryWord/385/*_m.cc QueryWord/385/*_m.h
-	$(Q)-rm -f QueryWord/386/*_m.cc QueryWord/386/*_m.h
-	$(Q)-rm -f QueryWord/387/*_m.cc QueryWord/387/*_m.h
-	$(Q)-rm -f QueryWord/388/*_m.cc QueryWord/388/*_m.h
-	$(Q)-rm -f QueryWord/389/*_m.cc QueryWord/389/*_m.h
-	$(Q)-rm -f QueryWord/39/*_m.cc QueryWord/39/*_m.h
-	$(Q)-rm -f QueryWord/390/*_m.cc QueryWord/390/*_m.h
-	$(Q)-rm -f QueryWord/391/*_m.cc QueryWord/391/*_m.h
-	$(Q)-rm -f QueryWord/392/*_m.cc QueryWord/392/*_m.h
-	$(Q)-rm -f QueryWord/393/*_m.cc QueryWord/393/*_m.h
-	$(Q)-rm -f QueryWord/394/*_m.cc QueryWord/394/*_m.h
-	$(Q)-rm -f QueryWord/395/*_m.cc QueryWord/395/*_m.h
-	$(Q)-rm -f QueryWord/396/*_m.cc QueryWord/396/*_m.h
-	$(Q)-rm -f QueryWord/397/*_m.cc QueryWord/397/*_m.h
-	$(Q)-rm -f QueryWord/398/*_m.cc QueryWord/398/*_m.h
-	$(Q)-rm -f QueryWord/399/*_m.cc QueryWord/399/*_m.h
-	$(Q)-rm -f QueryWord/4/*_m.cc QueryWord/4/*_m.h
-	$(Q)-rm -f QueryWord/40/*_m.cc QueryWord/40/*_m.h
-	$(Q)-rm -f QueryWord/400/*_m.cc QueryWord/400/*_m.h
-	$(Q)-rm -f QueryWord/401/*_m.cc QueryWord/401/*_m.h
-	$(Q)-rm -f QueryWord/402/*_m.cc QueryWord/402/*_m.h
-	$(Q)-rm -f QueryWord/403/*_m.cc QueryWord/403/*_m.h
-	$(Q)-rm -f QueryWord/404/*_m.cc QueryWord/404/*_m.h
-	$(Q)-rm -f QueryWord/405/*_m.cc QueryWord/405/*_m.h
-	$(Q)-rm -f QueryWord/406/*_m.cc QueryWord/406/*_m.h
-	$(Q)-rm -f QueryWord/407/*_m.cc QueryWord/407/*_m.h
-	$(Q)-rm -f QueryWord/408/*_m.cc QueryWord/408/*_m.h
-	$(Q)-rm -f QueryWord/409/*_m.cc QueryWord/409/*_m.h
-	$(Q)-rm -f QueryWord/41/*_m.cc QueryWord/41/*_m.h
-	$(Q)-rm -f QueryWord/410/*_m.cc QueryWord/410/*_m.h
-	$(Q)-rm -f QueryWord/411/*_m.cc QueryWord/411/*_m.h
-	$(Q)-rm -f QueryWord/412/*_m.cc QueryWord/412/*_m.h
-	$(Q)-rm -f QueryWord/413/*_m.cc QueryWord/413/*_m.h
-	$(Q)-rm -f QueryWord/414/*_m.cc QueryWord/414/*_m.h
-	$(Q)-rm -f QueryWord/415/*_m.cc QueryWord/415/*_m.h
-	$(Q)-rm -f QueryWord/416/*_m.cc QueryWord/416/*_m.h
-	$(Q)-rm -f QueryWord/417/*_m.cc QueryWord/417/*_m.h
-	$(Q)-rm -f QueryWord/418/*_m.cc QueryWord/418/*_m.h
-	$(Q)-rm -f QueryWord/419/*_m.cc QueryWord/419/*_m.h
-	$(Q)-rm -f QueryWord/42/*_m.cc QueryWord/42/*_m.h
-	$(Q)-rm -f QueryWord/420/*_m.cc QueryWord/420/*_m.h
-	$(Q)-rm -f QueryWord/421/*_m.cc QueryWord/421/*_m.h
-	$(Q)-rm -f QueryWord/422/*_m.cc QueryWord/422/*_m.h
-	$(Q)-rm -f QueryWord/423/*_m.cc QueryWord/423/*_m.h
-	$(Q)-rm -f QueryWord/424/*_m.cc QueryWord/424/*_m.h
-	$(Q)-rm -f QueryWord/425/*_m.cc QueryWord/425/*_m.h
-	$(Q)-rm -f QueryWord/426/*_m.cc QueryWord/426/*_m.h
-	$(Q)-rm -f QueryWord/427/*_m.cc QueryWord/427/*_m.h
-	$(Q)-rm -f QueryWord/428/*_m.cc QueryWord/428/*_m.h
-	$(Q)-rm -f QueryWord/429/*_m.cc QueryWord/429/*_m.h
-	$(Q)-rm -f QueryWord/43/*_m.cc QueryWord/43/*_m.h
-	$(Q)-rm -f QueryWord/430/*_m.cc QueryWord/430/*_m.h
-	$(Q)-rm -f QueryWord/431/*_m.cc QueryWord/431/*_m.h
-	$(Q)-rm -f QueryWord/432/*_m.cc QueryWord/432/*_m.h
-	$(Q)-rm -f QueryWord/433/*_m.cc QueryWord/433/*_m.h
-	$(Q)-rm -f QueryWord/434/*_m.cc QueryWord/434/*_m.h
-	$(Q)-rm -f QueryWord/435/*_m.cc QueryWord/435/*_m.h
-	$(Q)-rm -f QueryWord/436/*_m.cc QueryWord/436/*_m.h
-	$(Q)-rm -f QueryWord/437/*_m.cc QueryWord/437/*_m.h
-	$(Q)-rm -f QueryWord/438/*_m.cc QueryWord/438/*_m.h
-	$(Q)-rm -f QueryWord/439/*_m.cc QueryWord/439/*_m.h
-	$(Q)-rm -f QueryWord/44/*_m.cc QueryWord/44/*_m.h
-	$(Q)-rm -f QueryWord/440/*_m.cc QueryWord/440/*_m.h
-	$(Q)-rm -f QueryWord/441/*_m.cc QueryWord/441/*_m.h
-	$(Q)-rm -f QueryWord/442/*_m.cc QueryWord/442/*_m.h
-	$(Q)-rm -f QueryWord/443/*_m.cc QueryWord/443/*_m.h
-	$(Q)-rm -f QueryWord/444/*_m.cc QueryWord/444/*_m.h
-	$(Q)-rm -f QueryWord/445/*_m.cc QueryWord/445/*_m.h
-	$(Q)-rm -f QueryWord/446/*_m.cc QueryWord/446/*_m.h
-	$(Q)-rm -f QueryWord/447/*_m.cc QueryWord/447/*_m.h
-	$(Q)-rm -f QueryWord/448/*_m.cc QueryWord/448/*_m.h
-	$(Q)-rm -f QueryWord/449/*_m.cc QueryWord/449/*_m.h
-	$(Q)-rm -f QueryWord/45/*_m.cc QueryWord/45/*_m.h
-	$(Q)-rm -f QueryWord/450/*_m.cc QueryWord/450/*_m.h
-	$(Q)-rm -f QueryWord/451/*_m.cc QueryWord/451/*_m.h
-	$(Q)-rm -f QueryWord/452/*_m.cc QueryWord/452/*_m.h
-	$(Q)-rm -f QueryWord/453/*_m.cc QueryWord/453/*_m.h
-	$(Q)-rm -f QueryWord/454/*_m.cc QueryWord/454/*_m.h
-	$(Q)-rm -f QueryWord/455/*_m.cc QueryWord/455/*_m.h
-	$(Q)-rm -f QueryWord/456/*_m.cc QueryWord/456/*_m.h
-	$(Q)-rm -f QueryWord/457/*_m.cc QueryWord/457/*_m.h
-	$(Q)-rm -f QueryWord/458/*_m.cc QueryWord/458/*_m.h
-	$(Q)-rm -f QueryWord/459/*_m.cc QueryWord/459/*_m.h
-	$(Q)-rm -f QueryWord/46/*_m.cc QueryWord/46/*_m.h
-	$(Q)-rm -f QueryWord/460/*_m.cc QueryWord/460/*_m.h
-	$(Q)-rm -f QueryWord/461/*_m.cc QueryWord/461/*_m.h
-	$(Q)-rm -f QueryWord/462/*_m.cc QueryWord/462/*_m.h
-	$(Q)-rm -f QueryWord/463/*_m.cc QueryWord/463/*_m.h
-	$(Q)-rm -f QueryWord/464/*_m.cc QueryWord/464/*_m.h
-	$(Q)-rm -f QueryWord/465/*_m.cc QueryWord/465/*_m.h
-	$(Q)-rm -f QueryWord/466/*_m.cc QueryWord/466/*_m.h
-	$(Q)-rm -f QueryWord/467/*_m.cc QueryWord/467/*_m.h
-	$(Q)-rm -f QueryWord/468/*_m.cc QueryWord/468/*_m.h
-	$(Q)-rm -f QueryWord/469/*_m.cc QueryWord/469/*_m.h
-	$(Q)-rm -f QueryWord/47/*_m.cc QueryWord/47/*_m.h
-	$(Q)-rm -f QueryWord/470/*_m.cc QueryWord/470/*_m.h
-	$(Q)-rm -f QueryWord/471/*_m.cc QueryWord/471/*_m.h
-	$(Q)-rm -f QueryWord/472/*_m.cc QueryWord/472/*_m.h
-	$(Q)-rm -f QueryWord/473/*_m.cc QueryWord/473/*_m.h
-	$(Q)-rm -f QueryWord/474/*_m.cc QueryWord/474/*_m.h
-	$(Q)-rm -f QueryWord/475/*_m.cc QueryWord/475/*_m.h
-	$(Q)-rm -f QueryWord/476/*_m.cc QueryWord/476/*_m.h
-	$(Q)-rm -f QueryWord/477/*_m.cc QueryWord/477/*_m.h
-	$(Q)-rm -f QueryWord/478/*_m.cc QueryWord/478/*_m.h
-	$(Q)-rm -f QueryWord/479/*_m.cc QueryWord/479/*_m.h
-	$(Q)-rm -f QueryWord/48/*_m.cc QueryWord/48/*_m.h
-	$(Q)-rm -f QueryWord/480/*_m.cc QueryWord/480/*_m.h
-	$(Q)-rm -f QueryWord/481/*_m.cc QueryWord/481/*_m.h
-	$(Q)-rm -f QueryWord/482/*_m.cc QueryWord/482/*_m.h
-	$(Q)-rm -f QueryWord/483/*_m.cc QueryWord/483/*_m.h
-	$(Q)-rm -f QueryWord/484/*_m.cc QueryWord/484/*_m.h
-	$(Q)-rm -f QueryWord/485/*_m.cc QueryWord/485/*_m.h
-	$(Q)-rm -f QueryWord/486/*_m.cc QueryWord/486/*_m.h
-	$(Q)-rm -f QueryWord/487/*_m.cc QueryWord/487/*_m.h
-	$(Q)-rm -f QueryWord/488/*_m.cc QueryWord/488/*_m.h
-	$(Q)-rm -f QueryWord/489/*_m.cc QueryWord/489/*_m.h
-	$(Q)-rm -f QueryWord/49/*_m.cc QueryWord/49/*_m.h
-	$(Q)-rm -f QueryWord/490/*_m.cc QueryWord/490/*_m.h
-	$(Q)-rm -f QueryWord/491/*_m.cc QueryWord/491/*_m.h
-	$(Q)-rm -f QueryWord/492/*_m.cc QueryWord/492/*_m.h
-	$(Q)-rm -f QueryWord/493/*_m.cc QueryWord/493/*_m.h
-	$(Q)-rm -f QueryWord/494/*_m.cc QueryWord/494/*_m.h
-	$(Q)-rm -f QueryWord/495/*_m.cc QueryWord/495/*_m.h
-	$(Q)-rm -f QueryWord/496/*_m.cc QueryWord/496/*_m.h
-	$(Q)-rm -f QueryWord/497/*_m.cc QueryWord/497/*_m.h
-	$(Q)-rm -f QueryWord/498/*_m.cc QueryWord/498/*_m.h
-	$(Q)-rm -f QueryWord/499/*_m.cc QueryWord/499/*_m.h
-	$(Q)-rm -f QueryWord/5/*_m.cc QueryWord/5/*_m.h
-	$(Q)-rm -f QueryWord/50/*_m.cc QueryWord/50/*_m.h
-	$(Q)-rm -f QueryWord/500/*_m.cc QueryWord/500/*_m.h
-	$(Q)-rm -f QueryWord/501/*_m.cc QueryWord/501/*_m.h
-	$(Q)-rm -f QueryWord/502/*_m.cc QueryWord/502/*_m.h
-	$(Q)-rm -f QueryWord/503/*_m.cc QueryWord/503/*_m.h
-	$(Q)-rm -f QueryWord/504/*_m.cc QueryWord/504/*_m.h
-	$(Q)-rm -f QueryWord/505/*_m.cc QueryWord/505/*_m.h
-	$(Q)-rm -f QueryWord/506/*_m.cc QueryWord/506/*_m.h
-	$(Q)-rm -f QueryWord/507/*_m.cc QueryWord/507/*_m.h
-	$(Q)-rm -f QueryWord/508/*_m.cc QueryWord/508/*_m.h
-	$(Q)-rm -f QueryWord/509/*_m.cc QueryWord/509/*_m.h
-	$(Q)-rm -f QueryWord/51/*_m.cc QueryWord/51/*_m.h
-	$(Q)-rm -f QueryWord/510/*_m.cc QueryWord/510/*_m.h
-	$(Q)-rm -f QueryWord/511/*_m.cc QueryWord/511/*_m.h
-	$(Q)-rm -f QueryWord/512/*_m.cc QueryWord/512/*_m.h
-	$(Q)-rm -f QueryWord/513/*_m.cc QueryWord/513/*_m.h
-	$(Q)-rm -f QueryWord/514/*_m.cc QueryWord/514/*_m.h
-	$(Q)-rm -f QueryWord/515/*_m.cc QueryWord/515/*_m.h
-	$(Q)-rm -f QueryWord/516/*_m.cc QueryWord/516/*_m.h
-	$(Q)-rm -f QueryWord/517/*_m.cc QueryWord/517/*_m.h
-	$(Q)-rm -f QueryWord/518/*_m.cc QueryWord/518/*_m.h
-	$(Q)-rm -f QueryWord/519/*_m.cc QueryWord/519/*_m.h
-	$(Q)-rm -f QueryWord/52/*_m.cc QueryWord/52/*_m.h
-	$(Q)-rm -f QueryWord/520/*_m.cc QueryWord/520/*_m.h
-	$(Q)-rm -f QueryWord/521/*_m.cc QueryWord/521/*_m.h
-	$(Q)-rm -f QueryWord/522/*_m.cc QueryWord/522/*_m.h
-	$(Q)-rm -f QueryWord/523/*_m.cc QueryWord/523/*_m.h
-	$(Q)-rm -f QueryWord/524/*_m.cc QueryWord/524/*_m.h
-	$(Q)-rm -f QueryWord/525/*_m.cc QueryWord/525/*_m.h
-	$(Q)-rm -f QueryWord/526/*_m.cc QueryWord/526/*_m.h
-	$(Q)-rm -f QueryWord/527/*_m.cc QueryWord/527/*_m.h
-	$(Q)-rm -f QueryWord/528/*_m.cc QueryWord/528/*_m.h
-	$(Q)-rm -f QueryWord/529/*_m.cc QueryWord/529/*_m.h
-	$(Q)-rm -f QueryWord/53/*_m.cc QueryWord/53/*_m.h
-	$(Q)-rm -f QueryWord/530/*_m.cc QueryWord/530/*_m.h
-	$(Q)-rm -f QueryWord/531/*_m.cc QueryWord/531/*_m.h
-	$(Q)-rm -f QueryWord/532/*_m.cc QueryWord/532/*_m.h
-	$(Q)-rm -f QueryWord/533/*_m.cc QueryWord/533/*_m.h
-	$(Q)-rm -f QueryWord/534/*_m.cc QueryWord/534/*_m.h
-	$(Q)-rm -f QueryWord/535/*_m.cc QueryWord/535/*_m.h
-	$(Q)-rm -f QueryWord/536/*_m.cc QueryWord/536/*_m.h
-	$(Q)-rm -f QueryWord/537/*_m.cc QueryWord/537/*_m.h
-	$(Q)-rm -f QueryWord/538/*_m.cc QueryWord/538/*_m.h
-	$(Q)-rm -f QueryWord/539/*_m.cc QueryWord/539/*_m.h
-	$(Q)-rm -f QueryWord/54/*_m.cc QueryWord/54/*_m.h
-	$(Q)-rm -f QueryWord/540/*_m.cc QueryWord/540/*_m.h
-	$(Q)-rm -f QueryWord/541/*_m.cc QueryWord/541/*_m.h
-	$(Q)-rm -f QueryWord/542/*_m.cc QueryWord/542/*_m.h
-	$(Q)-rm -f QueryWord/543/*_m.cc QueryWord/543/*_m.h
-	$(Q)-rm -f QueryWord/544/*_m.cc QueryWord/544/*_m.h
-	$(Q)-rm -f QueryWord/545/*_m.cc QueryWord/545/*_m.h
-	$(Q)-rm -f QueryWord/546/*_m.cc QueryWord/546/*_m.h
-	$(Q)-rm -f QueryWord/547/*_m.cc QueryWord/547/*_m.h
-	$(Q)-rm -f QueryWord/548/*_m.cc QueryWord/548/*_m.h
-	$(Q)-rm -f QueryWord/549/*_m.cc QueryWord/549/*_m.h
-	$(Q)-rm -f QueryWord/55/*_m.cc QueryWord/55/*_m.h
-	$(Q)-rm -f QueryWord/550/*_m.cc QueryWord/550/*_m.h
-	$(Q)-rm -f QueryWord/551/*_m.cc QueryWord/551/*_m.h
-	$(Q)-rm -f QueryWord/552/*_m.cc QueryWord/552/*_m.h
-	$(Q)-rm -f QueryWord/553/*_m.cc QueryWord/553/*_m.h
-	$(Q)-rm -f QueryWord/554/*_m.cc QueryWord/554/*_m.h
-	$(Q)-rm -f QueryWord/555/*_m.cc QueryWord/555/*_m.h
-	$(Q)-rm -f QueryWord/556/*_m.cc QueryWord/556/*_m.h
-	$(Q)-rm -f QueryWord/557/*_m.cc QueryWord/557/*_m.h
-	$(Q)-rm -f QueryWord/558/*_m.cc QueryWord/558/*_m.h
-	$(Q)-rm -f QueryWord/559/*_m.cc QueryWord/559/*_m.h
-	$(Q)-rm -f QueryWord/56/*_m.cc QueryWord/56/*_m.h
-	$(Q)-rm -f QueryWord/560/*_m.cc QueryWord/560/*_m.h
-	$(Q)-rm -f QueryWord/561/*_m.cc QueryWord/561/*_m.h
-	$(Q)-rm -f QueryWord/562/*_m.cc QueryWord/562/*_m.h
-	$(Q)-rm -f QueryWord/563/*_m.cc QueryWord/563/*_m.h
-	$(Q)-rm -f QueryWord/564/*_m.cc QueryWord/564/*_m.h
-	$(Q)-rm -f QueryWord/565/*_m.cc QueryWord/565/*_m.h
-	$(Q)-rm -f QueryWord/566/*_m.cc QueryWord/566/*_m.h
-	$(Q)-rm -f QueryWord/567/*_m.cc QueryWord/567/*_m.h
-	$(Q)-rm -f QueryWord/568/*_m.cc QueryWord/568/*_m.h
-	$(Q)-rm -f QueryWord/569/*_m.cc QueryWord/569/*_m.h
-	$(Q)-rm -f QueryWord/57/*_m.cc QueryWord/57/*_m.h
-	$(Q)-rm -f QueryWord/570/*_m.cc QueryWord/570/*_m.h
-	$(Q)-rm -f QueryWord/571/*_m.cc QueryWord/571/*_m.h
-	$(Q)-rm -f QueryWord/572/*_m.cc QueryWord/572/*_m.h
-	$(Q)-rm -f QueryWord/573/*_m.cc QueryWord/573/*_m.h
-	$(Q)-rm -f QueryWord/574/*_m.cc QueryWord/574/*_m.h
-	$(Q)-rm -f QueryWord/575/*_m.cc QueryWord/575/*_m.h
-	$(Q)-rm -f QueryWord/576/*_m.cc QueryWord/576/*_m.h
-	$(Q)-rm -f QueryWord/577/*_m.cc QueryWord/577/*_m.h
-	$(Q)-rm -f QueryWord/578/*_m.cc QueryWord/578/*_m.h
-	$(Q)-rm -f QueryWord/579/*_m.cc QueryWord/579/*_m.h
-	$(Q)-rm -f QueryWord/58/*_m.cc QueryWord/58/*_m.h
-	$(Q)-rm -f QueryWord/580/*_m.cc QueryWord/580/*_m.h
-	$(Q)-rm -f QueryWord/581/*_m.cc QueryWord/581/*_m.h
-	$(Q)-rm -f QueryWord/582/*_m.cc QueryWord/582/*_m.h
-	$(Q)-rm -f QueryWord/583/*_m.cc QueryWord/583/*_m.h
-	$(Q)-rm -f QueryWord/584/*_m.cc QueryWord/584/*_m.h
-	$(Q)-rm -f QueryWord/585/*_m.cc QueryWord/585/*_m.h
-	$(Q)-rm -f QueryWord/586/*_m.cc QueryWord/586/*_m.h
-	$(Q)-rm -f QueryWord/587/*_m.cc QueryWord/587/*_m.h
-	$(Q)-rm -f QueryWord/588/*_m.cc QueryWord/588/*_m.h
-	$(Q)-rm -f QueryWord/589/*_m.cc QueryWord/589/*_m.h
-	$(Q)-rm -f QueryWord/59/*_m.cc QueryWord/59/*_m.h
-	$(Q)-rm -f QueryWord/590/*_m.cc QueryWord/590/*_m.h
-	$(Q)-rm -f QueryWord/591/*_m.cc QueryWord/591/*_m.h
-	$(Q)-rm -f QueryWord/592/*_m.cc QueryWord/592/*_m.h
-	$(Q)-rm -f QueryWord/593/*_m.cc QueryWord/593/*_m.h
-	$(Q)-rm -f QueryWord/594/*_m.cc QueryWord/594/*_m.h
-	$(Q)-rm -f QueryWord/595/*_m.cc QueryWord/595/*_m.h
-	$(Q)-rm -f QueryWord/596/*_m.cc QueryWord/596/*_m.h
-	$(Q)-rm -f QueryWord/597/*_m.cc QueryWord/597/*_m.h
-	$(Q)-rm -f QueryWord/598/*_m.cc QueryWord/598/*_m.h
-	$(Q)-rm -f QueryWord/599/*_m.cc QueryWord/599/*_m.h
-	$(Q)-rm -f QueryWord/6/*_m.cc QueryWord/6/*_m.h
-	$(Q)-rm -f QueryWord/60/*_m.cc QueryWord/60/*_m.h
-	$(Q)-rm -f QueryWord/61/*_m.cc QueryWord/61/*_m.h
-	$(Q)-rm -f QueryWord/62/*_m.cc QueryWord/62/*_m.h
-	$(Q)-rm -f QueryWord/63/*_m.cc QueryWord/63/*_m.h
-	$(Q)-rm -f QueryWord/64/*_m.cc QueryWord/64/*_m.h
-	$(Q)-rm -f QueryWord/65/*_m.cc QueryWord/65/*_m.h
-	$(Q)-rm -f QueryWord/66/*_m.cc QueryWord/66/*_m.h
-	$(Q)-rm -f QueryWord/67/*_m.cc QueryWord/67/*_m.h
-	$(Q)-rm -f QueryWord/68/*_m.cc QueryWord/68/*_m.h
-	$(Q)-rm -f QueryWord/69/*_m.cc QueryWord/69/*_m.h
-	$(Q)-rm -f QueryWord/7/*_m.cc QueryWord/7/*_m.h
-	$(Q)-rm -f QueryWord/70/*_m.cc QueryWord/70/*_m.h
-	$(Q)-rm -f QueryWord/71/*_m.cc QueryWord/71/*_m.h
-	$(Q)-rm -f QueryWord/72/*_m.cc QueryWord/72/*_m.h
-	$(Q)-rm -f QueryWord/73/*_m.cc QueryWord/73/*_m.h
-	$(Q)-rm -f QueryWord/74/*_m.cc QueryWord/74/*_m.h
-	$(Q)-rm -f QueryWord/75/*_m.cc QueryWord/75/*_m.h
-	$(Q)-rm -f QueryWord/76/*_m.cc QueryWord/76/*_m.h
-	$(Q)-rm -f QueryWord/77/*_m.cc QueryWord/77/*_m.h
-	$(Q)-rm -f QueryWord/78/*_m.cc QueryWord/78/*_m.h
-	$(Q)-rm -f QueryWord/79/*_m.cc QueryWord/79/*_m.h
-	$(Q)-rm -f QueryWord/8/*_m.cc QueryWord/8/*_m.h
-	$(Q)-rm -f QueryWord/80/*_m.cc QueryWord/80/*_m.h
-	$(Q)-rm -f QueryWord/81/*_m.cc QueryWord/81/*_m.h
-	$(Q)-rm -f QueryWord/82/*_m.cc QueryWord/82/*_m.h
-	$(Q)-rm -f QueryWord/83/*_m.cc QueryWord/83/*_m.h
-	$(Q)-rm -f QueryWord/84/*_m.cc QueryWord/84/*_m.h
-	$(Q)-rm -f QueryWord/85/*_m.cc QueryWord/85/*_m.h
-	$(Q)-rm -f QueryWord/86/*_m.cc QueryWord/86/*_m.h
-	$(Q)-rm -f QueryWord/87/*_m.cc QueryWord/87/*_m.h
-	$(Q)-rm -f QueryWord/88/*_m.cc QueryWord/88/*_m.h
-	$(Q)-rm -f QueryWord/89/*_m.cc QueryWord/89/*_m.h
-	$(Q)-rm -f QueryWord/9/*_m.cc QueryWord/9/*_m.h
-	$(Q)-rm -f QueryWord/90/*_m.cc QueryWord/90/*_m.h
-	$(Q)-rm -f QueryWord/91/*_m.cc QueryWord/91/*_m.h
-	$(Q)-rm -f QueryWord/92/*_m.cc QueryWord/92/*_m.h
-	$(Q)-rm -f QueryWord/93/*_m.cc QueryWord/93/*_m.h
-	$(Q)-rm -f QueryWord/94/*_m.cc QueryWord/94/*_m.h
-	$(Q)-rm -f QueryWord/95/*_m.cc QueryWord/95/*_m.h
-	$(Q)-rm -f QueryWord/96/*_m.cc QueryWord/96/*_m.h
-	$(Q)-rm -f QueryWord/97/*_m.cc QueryWord/97/*_m.h
-	$(Q)-rm -f QueryWord/98/*_m.cc QueryWord/98/*_m.h
-	$(Q)-rm -f QueryWord/99/*_m.cc QueryWord/99/*_m.h
+	$(Q)-rm -f QueryResults/*_m.cc QueryResults/*_m.h
+	$(Q)-rm -f QueryResults/0/*_m.cc QueryResults/0/*_m.h
+	$(Q)-rm -f QueryResults/1/*_m.cc QueryResults/1/*_m.h
+	$(Q)-rm -f QueryResults/10/*_m.cc QueryResults/10/*_m.h
+	$(Q)-rm -f QueryResults/100/*_m.cc QueryResults/100/*_m.h
+	$(Q)-rm -f QueryResults/101/*_m.cc QueryResults/101/*_m.h
+	$(Q)-rm -f QueryResults/102/*_m.cc QueryResults/102/*_m.h
+	$(Q)-rm -f QueryResults/103/*_m.cc QueryResults/103/*_m.h
+	$(Q)-rm -f QueryResults/104/*_m.cc QueryResults/104/*_m.h
+	$(Q)-rm -f QueryResults/105/*_m.cc QueryResults/105/*_m.h
+	$(Q)-rm -f QueryResults/106/*_m.cc QueryResults/106/*_m.h
+	$(Q)-rm -f QueryResults/107/*_m.cc QueryResults/107/*_m.h
+	$(Q)-rm -f QueryResults/108/*_m.cc QueryResults/108/*_m.h
+	$(Q)-rm -f QueryResults/109/*_m.cc QueryResults/109/*_m.h
+	$(Q)-rm -f QueryResults/11/*_m.cc QueryResults/11/*_m.h
+	$(Q)-rm -f QueryResults/110/*_m.cc QueryResults/110/*_m.h
+	$(Q)-rm -f QueryResults/111/*_m.cc QueryResults/111/*_m.h
+	$(Q)-rm -f QueryResults/112/*_m.cc QueryResults/112/*_m.h
+	$(Q)-rm -f QueryResults/113/*_m.cc QueryResults/113/*_m.h
+	$(Q)-rm -f QueryResults/114/*_m.cc QueryResults/114/*_m.h
+	$(Q)-rm -f QueryResults/115/*_m.cc QueryResults/115/*_m.h
+	$(Q)-rm -f QueryResults/116/*_m.cc QueryResults/116/*_m.h
+	$(Q)-rm -f QueryResults/117/*_m.cc QueryResults/117/*_m.h
+	$(Q)-rm -f QueryResults/118/*_m.cc QueryResults/118/*_m.h
+	$(Q)-rm -f QueryResults/119/*_m.cc QueryResults/119/*_m.h
+	$(Q)-rm -f QueryResults/12/*_m.cc QueryResults/12/*_m.h
+	$(Q)-rm -f QueryResults/120/*_m.cc QueryResults/120/*_m.h
+	$(Q)-rm -f QueryResults/121/*_m.cc QueryResults/121/*_m.h
+	$(Q)-rm -f QueryResults/122/*_m.cc QueryResults/122/*_m.h
+	$(Q)-rm -f QueryResults/123/*_m.cc QueryResults/123/*_m.h
+	$(Q)-rm -f QueryResults/124/*_m.cc QueryResults/124/*_m.h
+	$(Q)-rm -f QueryResults/125/*_m.cc QueryResults/125/*_m.h
+	$(Q)-rm -f QueryResults/126/*_m.cc QueryResults/126/*_m.h
+	$(Q)-rm -f QueryResults/127/*_m.cc QueryResults/127/*_m.h
+	$(Q)-rm -f QueryResults/128/*_m.cc QueryResults/128/*_m.h
+	$(Q)-rm -f QueryResults/129/*_m.cc QueryResults/129/*_m.h
+	$(Q)-rm -f QueryResults/13/*_m.cc QueryResults/13/*_m.h
+	$(Q)-rm -f QueryResults/130/*_m.cc QueryResults/130/*_m.h
+	$(Q)-rm -f QueryResults/131/*_m.cc QueryResults/131/*_m.h
+	$(Q)-rm -f QueryResults/132/*_m.cc QueryResults/132/*_m.h
+	$(Q)-rm -f QueryResults/133/*_m.cc QueryResults/133/*_m.h
+	$(Q)-rm -f QueryResults/134/*_m.cc QueryResults/134/*_m.h
+	$(Q)-rm -f QueryResults/135/*_m.cc QueryResults/135/*_m.h
+	$(Q)-rm -f QueryResults/136/*_m.cc QueryResults/136/*_m.h
+	$(Q)-rm -f QueryResults/137/*_m.cc QueryResults/137/*_m.h
+	$(Q)-rm -f QueryResults/138/*_m.cc QueryResults/138/*_m.h
+	$(Q)-rm -f QueryResults/139/*_m.cc QueryResults/139/*_m.h
+	$(Q)-rm -f QueryResults/14/*_m.cc QueryResults/14/*_m.h
+	$(Q)-rm -f QueryResults/140/*_m.cc QueryResults/140/*_m.h
+	$(Q)-rm -f QueryResults/141/*_m.cc QueryResults/141/*_m.h
+	$(Q)-rm -f QueryResults/142/*_m.cc QueryResults/142/*_m.h
+	$(Q)-rm -f QueryResults/143/*_m.cc QueryResults/143/*_m.h
+	$(Q)-rm -f QueryResults/144/*_m.cc QueryResults/144/*_m.h
+	$(Q)-rm -f QueryResults/145/*_m.cc QueryResults/145/*_m.h
+	$(Q)-rm -f QueryResults/146/*_m.cc QueryResults/146/*_m.h
+	$(Q)-rm -f QueryResults/147/*_m.cc QueryResults/147/*_m.h
+	$(Q)-rm -f QueryResults/148/*_m.cc QueryResults/148/*_m.h
+	$(Q)-rm -f QueryResults/149/*_m.cc QueryResults/149/*_m.h
+	$(Q)-rm -f QueryResults/15/*_m.cc QueryResults/15/*_m.h
+	$(Q)-rm -f QueryResults/150/*_m.cc QueryResults/150/*_m.h
+	$(Q)-rm -f QueryResults/151/*_m.cc QueryResults/151/*_m.h
+	$(Q)-rm -f QueryResults/152/*_m.cc QueryResults/152/*_m.h
+	$(Q)-rm -f QueryResults/153/*_m.cc QueryResults/153/*_m.h
+	$(Q)-rm -f QueryResults/154/*_m.cc QueryResults/154/*_m.h
+	$(Q)-rm -f QueryResults/155/*_m.cc QueryResults/155/*_m.h
+	$(Q)-rm -f QueryResults/156/*_m.cc QueryResults/156/*_m.h
+	$(Q)-rm -f QueryResults/157/*_m.cc QueryResults/157/*_m.h
+	$(Q)-rm -f QueryResults/158/*_m.cc QueryResults/158/*_m.h
+	$(Q)-rm -f QueryResults/159/*_m.cc QueryResults/159/*_m.h
+	$(Q)-rm -f QueryResults/16/*_m.cc QueryResults/16/*_m.h
+	$(Q)-rm -f QueryResults/160/*_m.cc QueryResults/160/*_m.h
+	$(Q)-rm -f QueryResults/161/*_m.cc QueryResults/161/*_m.h
+	$(Q)-rm -f QueryResults/162/*_m.cc QueryResults/162/*_m.h
+	$(Q)-rm -f QueryResults/163/*_m.cc QueryResults/163/*_m.h
+	$(Q)-rm -f QueryResults/164/*_m.cc QueryResults/164/*_m.h
+	$(Q)-rm -f QueryResults/165/*_m.cc QueryResults/165/*_m.h
+	$(Q)-rm -f QueryResults/166/*_m.cc QueryResults/166/*_m.h
+	$(Q)-rm -f QueryResults/167/*_m.cc QueryResults/167/*_m.h
+	$(Q)-rm -f QueryResults/168/*_m.cc QueryResults/168/*_m.h
+	$(Q)-rm -f QueryResults/169/*_m.cc QueryResults/169/*_m.h
+	$(Q)-rm -f QueryResults/17/*_m.cc QueryResults/17/*_m.h
+	$(Q)-rm -f QueryResults/170/*_m.cc QueryResults/170/*_m.h
+	$(Q)-rm -f QueryResults/171/*_m.cc QueryResults/171/*_m.h
+	$(Q)-rm -f QueryResults/172/*_m.cc QueryResults/172/*_m.h
+	$(Q)-rm -f QueryResults/173/*_m.cc QueryResults/173/*_m.h
+	$(Q)-rm -f QueryResults/174/*_m.cc QueryResults/174/*_m.h
+	$(Q)-rm -f QueryResults/175/*_m.cc QueryResults/175/*_m.h
+	$(Q)-rm -f QueryResults/176/*_m.cc QueryResults/176/*_m.h
+	$(Q)-rm -f QueryResults/177/*_m.cc QueryResults/177/*_m.h
+	$(Q)-rm -f QueryResults/178/*_m.cc QueryResults/178/*_m.h
+	$(Q)-rm -f QueryResults/179/*_m.cc QueryResults/179/*_m.h
+	$(Q)-rm -f QueryResults/18/*_m.cc QueryResults/18/*_m.h
+	$(Q)-rm -f QueryResults/180/*_m.cc QueryResults/180/*_m.h
+	$(Q)-rm -f QueryResults/181/*_m.cc QueryResults/181/*_m.h
+	$(Q)-rm -f QueryResults/182/*_m.cc QueryResults/182/*_m.h
+	$(Q)-rm -f QueryResults/183/*_m.cc QueryResults/183/*_m.h
+	$(Q)-rm -f QueryResults/184/*_m.cc QueryResults/184/*_m.h
+	$(Q)-rm -f QueryResults/185/*_m.cc QueryResults/185/*_m.h
+	$(Q)-rm -f QueryResults/186/*_m.cc QueryResults/186/*_m.h
+	$(Q)-rm -f QueryResults/187/*_m.cc QueryResults/187/*_m.h
+	$(Q)-rm -f QueryResults/188/*_m.cc QueryResults/188/*_m.h
+	$(Q)-rm -f QueryResults/189/*_m.cc QueryResults/189/*_m.h
+	$(Q)-rm -f QueryResults/19/*_m.cc QueryResults/19/*_m.h
+	$(Q)-rm -f QueryResults/190/*_m.cc QueryResults/190/*_m.h
+	$(Q)-rm -f QueryResults/191/*_m.cc QueryResults/191/*_m.h
+	$(Q)-rm -f QueryResults/192/*_m.cc QueryResults/192/*_m.h
+	$(Q)-rm -f QueryResults/193/*_m.cc QueryResults/193/*_m.h
+	$(Q)-rm -f QueryResults/194/*_m.cc QueryResults/194/*_m.h
+	$(Q)-rm -f QueryResults/195/*_m.cc QueryResults/195/*_m.h
+	$(Q)-rm -f QueryResults/196/*_m.cc QueryResults/196/*_m.h
+	$(Q)-rm -f QueryResults/197/*_m.cc QueryResults/197/*_m.h
+	$(Q)-rm -f QueryResults/198/*_m.cc QueryResults/198/*_m.h
+	$(Q)-rm -f QueryResults/199/*_m.cc QueryResults/199/*_m.h
+	$(Q)-rm -f QueryResults/2/*_m.cc QueryResults/2/*_m.h
+	$(Q)-rm -f QueryResults/20/*_m.cc QueryResults/20/*_m.h
+	$(Q)-rm -f QueryResults/200/*_m.cc QueryResults/200/*_m.h
+	$(Q)-rm -f QueryResults/201/*_m.cc QueryResults/201/*_m.h
+	$(Q)-rm -f QueryResults/202/*_m.cc QueryResults/202/*_m.h
+	$(Q)-rm -f QueryResults/203/*_m.cc QueryResults/203/*_m.h
+	$(Q)-rm -f QueryResults/204/*_m.cc QueryResults/204/*_m.h
+	$(Q)-rm -f QueryResults/205/*_m.cc QueryResults/205/*_m.h
+	$(Q)-rm -f QueryResults/206/*_m.cc QueryResults/206/*_m.h
+	$(Q)-rm -f QueryResults/207/*_m.cc QueryResults/207/*_m.h
+	$(Q)-rm -f QueryResults/208/*_m.cc QueryResults/208/*_m.h
+	$(Q)-rm -f QueryResults/209/*_m.cc QueryResults/209/*_m.h
+	$(Q)-rm -f QueryResults/21/*_m.cc QueryResults/21/*_m.h
+	$(Q)-rm -f QueryResults/210/*_m.cc QueryResults/210/*_m.h
+	$(Q)-rm -f QueryResults/211/*_m.cc QueryResults/211/*_m.h
+	$(Q)-rm -f QueryResults/212/*_m.cc QueryResults/212/*_m.h
+	$(Q)-rm -f QueryResults/213/*_m.cc QueryResults/213/*_m.h
+	$(Q)-rm -f QueryResults/214/*_m.cc QueryResults/214/*_m.h
+	$(Q)-rm -f QueryResults/215/*_m.cc QueryResults/215/*_m.h
+	$(Q)-rm -f QueryResults/216/*_m.cc QueryResults/216/*_m.h
+	$(Q)-rm -f QueryResults/217/*_m.cc QueryResults/217/*_m.h
+	$(Q)-rm -f QueryResults/218/*_m.cc QueryResults/218/*_m.h
+	$(Q)-rm -f QueryResults/219/*_m.cc QueryResults/219/*_m.h
+	$(Q)-rm -f QueryResults/22/*_m.cc QueryResults/22/*_m.h
+	$(Q)-rm -f QueryResults/220/*_m.cc QueryResults/220/*_m.h
+	$(Q)-rm -f QueryResults/221/*_m.cc QueryResults/221/*_m.h
+	$(Q)-rm -f QueryResults/222/*_m.cc QueryResults/222/*_m.h
+	$(Q)-rm -f QueryResults/223/*_m.cc QueryResults/223/*_m.h
+	$(Q)-rm -f QueryResults/224/*_m.cc QueryResults/224/*_m.h
+	$(Q)-rm -f QueryResults/225/*_m.cc QueryResults/225/*_m.h
+	$(Q)-rm -f QueryResults/226/*_m.cc QueryResults/226/*_m.h
+	$(Q)-rm -f QueryResults/227/*_m.cc QueryResults/227/*_m.h
+	$(Q)-rm -f QueryResults/228/*_m.cc QueryResults/228/*_m.h
+	$(Q)-rm -f QueryResults/229/*_m.cc QueryResults/229/*_m.h
+	$(Q)-rm -f QueryResults/23/*_m.cc QueryResults/23/*_m.h
+	$(Q)-rm -f QueryResults/230/*_m.cc QueryResults/230/*_m.h
+	$(Q)-rm -f QueryResults/231/*_m.cc QueryResults/231/*_m.h
+	$(Q)-rm -f QueryResults/232/*_m.cc QueryResults/232/*_m.h
+	$(Q)-rm -f QueryResults/233/*_m.cc QueryResults/233/*_m.h
+	$(Q)-rm -f QueryResults/234/*_m.cc QueryResults/234/*_m.h
+	$(Q)-rm -f QueryResults/235/*_m.cc QueryResults/235/*_m.h
+	$(Q)-rm -f QueryResults/236/*_m.cc QueryResults/236/*_m.h
+	$(Q)-rm -f QueryResults/237/*_m.cc QueryResults/237/*_m.h
+	$(Q)-rm -f QueryResults/238/*_m.cc QueryResults/238/*_m.h
+	$(Q)-rm -f QueryResults/239/*_m.cc QueryResults/239/*_m.h
+	$(Q)-rm -f QueryResults/24/*_m.cc QueryResults/24/*_m.h
+	$(Q)-rm -f QueryResults/240/*_m.cc QueryResults/240/*_m.h
+	$(Q)-rm -f QueryResults/241/*_m.cc QueryResults/241/*_m.h
+	$(Q)-rm -f QueryResults/242/*_m.cc QueryResults/242/*_m.h
+	$(Q)-rm -f QueryResults/243/*_m.cc QueryResults/243/*_m.h
+	$(Q)-rm -f QueryResults/244/*_m.cc QueryResults/244/*_m.h
+	$(Q)-rm -f QueryResults/245/*_m.cc QueryResults/245/*_m.h
+	$(Q)-rm -f QueryResults/246/*_m.cc QueryResults/246/*_m.h
+	$(Q)-rm -f QueryResults/247/*_m.cc QueryResults/247/*_m.h
+	$(Q)-rm -f QueryResults/248/*_m.cc QueryResults/248/*_m.h
+	$(Q)-rm -f QueryResults/249/*_m.cc QueryResults/249/*_m.h
+	$(Q)-rm -f QueryResults/25/*_m.cc QueryResults/25/*_m.h
+	$(Q)-rm -f QueryResults/250/*_m.cc QueryResults/250/*_m.h
+	$(Q)-rm -f QueryResults/251/*_m.cc QueryResults/251/*_m.h
+	$(Q)-rm -f QueryResults/252/*_m.cc QueryResults/252/*_m.h
+	$(Q)-rm -f QueryResults/253/*_m.cc QueryResults/253/*_m.h
+	$(Q)-rm -f QueryResults/254/*_m.cc QueryResults/254/*_m.h
+	$(Q)-rm -f QueryResults/255/*_m.cc QueryResults/255/*_m.h
+	$(Q)-rm -f QueryResults/256/*_m.cc QueryResults/256/*_m.h
+	$(Q)-rm -f QueryResults/257/*_m.cc QueryResults/257/*_m.h
+	$(Q)-rm -f QueryResults/258/*_m.cc QueryResults/258/*_m.h
+	$(Q)-rm -f QueryResults/259/*_m.cc QueryResults/259/*_m.h
+	$(Q)-rm -f QueryResults/26/*_m.cc QueryResults/26/*_m.h
+	$(Q)-rm -f QueryResults/260/*_m.cc QueryResults/260/*_m.h
+	$(Q)-rm -f QueryResults/261/*_m.cc QueryResults/261/*_m.h
+	$(Q)-rm -f QueryResults/262/*_m.cc QueryResults/262/*_m.h
+	$(Q)-rm -f QueryResults/263/*_m.cc QueryResults/263/*_m.h
+	$(Q)-rm -f QueryResults/264/*_m.cc QueryResults/264/*_m.h
+	$(Q)-rm -f QueryResults/265/*_m.cc QueryResults/265/*_m.h
+	$(Q)-rm -f QueryResults/266/*_m.cc QueryResults/266/*_m.h
+	$(Q)-rm -f QueryResults/267/*_m.cc QueryResults/267/*_m.h
+	$(Q)-rm -f QueryResults/268/*_m.cc QueryResults/268/*_m.h
+	$(Q)-rm -f QueryResults/269/*_m.cc QueryResults/269/*_m.h
+	$(Q)-rm -f QueryResults/27/*_m.cc QueryResults/27/*_m.h
+	$(Q)-rm -f QueryResults/270/*_m.cc QueryResults/270/*_m.h
+	$(Q)-rm -f QueryResults/271/*_m.cc QueryResults/271/*_m.h
+	$(Q)-rm -f QueryResults/272/*_m.cc QueryResults/272/*_m.h
+	$(Q)-rm -f QueryResults/273/*_m.cc QueryResults/273/*_m.h
+	$(Q)-rm -f QueryResults/274/*_m.cc QueryResults/274/*_m.h
+	$(Q)-rm -f QueryResults/275/*_m.cc QueryResults/275/*_m.h
+	$(Q)-rm -f QueryResults/276/*_m.cc QueryResults/276/*_m.h
+	$(Q)-rm -f QueryResults/277/*_m.cc QueryResults/277/*_m.h
+	$(Q)-rm -f QueryResults/278/*_m.cc QueryResults/278/*_m.h
+	$(Q)-rm -f QueryResults/279/*_m.cc QueryResults/279/*_m.h
+	$(Q)-rm -f QueryResults/28/*_m.cc QueryResults/28/*_m.h
+	$(Q)-rm -f QueryResults/280/*_m.cc QueryResults/280/*_m.h
+	$(Q)-rm -f QueryResults/281/*_m.cc QueryResults/281/*_m.h
+	$(Q)-rm -f QueryResults/282/*_m.cc QueryResults/282/*_m.h
+	$(Q)-rm -f QueryResults/283/*_m.cc QueryResults/283/*_m.h
+	$(Q)-rm -f QueryResults/284/*_m.cc QueryResults/284/*_m.h
+	$(Q)-rm -f QueryResults/285/*_m.cc QueryResults/285/*_m.h
+	$(Q)-rm -f QueryResults/286/*_m.cc QueryResults/286/*_m.h
+	$(Q)-rm -f QueryResults/287/*_m.cc QueryResults/287/*_m.h
+	$(Q)-rm -f QueryResults/288/*_m.cc QueryResults/288/*_m.h
+	$(Q)-rm -f QueryResults/289/*_m.cc QueryResults/289/*_m.h
+	$(Q)-rm -f QueryResults/29/*_m.cc QueryResults/29/*_m.h
+	$(Q)-rm -f QueryResults/290/*_m.cc QueryResults/290/*_m.h
+	$(Q)-rm -f QueryResults/291/*_m.cc QueryResults/291/*_m.h
+	$(Q)-rm -f QueryResults/292/*_m.cc QueryResults/292/*_m.h
+	$(Q)-rm -f QueryResults/293/*_m.cc QueryResults/293/*_m.h
+	$(Q)-rm -f QueryResults/294/*_m.cc QueryResults/294/*_m.h
+	$(Q)-rm -f QueryResults/295/*_m.cc QueryResults/295/*_m.h
+	$(Q)-rm -f QueryResults/296/*_m.cc QueryResults/296/*_m.h
+	$(Q)-rm -f QueryResults/297/*_m.cc QueryResults/297/*_m.h
+	$(Q)-rm -f QueryResults/298/*_m.cc QueryResults/298/*_m.h
+	$(Q)-rm -f QueryResults/299/*_m.cc QueryResults/299/*_m.h
+	$(Q)-rm -f QueryResults/3/*_m.cc QueryResults/3/*_m.h
+	$(Q)-rm -f QueryResults/30/*_m.cc QueryResults/30/*_m.h
+	$(Q)-rm -f QueryResults/300/*_m.cc QueryResults/300/*_m.h
+	$(Q)-rm -f QueryResults/301/*_m.cc QueryResults/301/*_m.h
+	$(Q)-rm -f QueryResults/302/*_m.cc QueryResults/302/*_m.h
+	$(Q)-rm -f QueryResults/303/*_m.cc QueryResults/303/*_m.h
+	$(Q)-rm -f QueryResults/304/*_m.cc QueryResults/304/*_m.h
+	$(Q)-rm -f QueryResults/305/*_m.cc QueryResults/305/*_m.h
+	$(Q)-rm -f QueryResults/306/*_m.cc QueryResults/306/*_m.h
+	$(Q)-rm -f QueryResults/307/*_m.cc QueryResults/307/*_m.h
+	$(Q)-rm -f QueryResults/308/*_m.cc QueryResults/308/*_m.h
+	$(Q)-rm -f QueryResults/309/*_m.cc QueryResults/309/*_m.h
+	$(Q)-rm -f QueryResults/31/*_m.cc QueryResults/31/*_m.h
+	$(Q)-rm -f QueryResults/310/*_m.cc QueryResults/310/*_m.h
+	$(Q)-rm -f QueryResults/311/*_m.cc QueryResults/311/*_m.h
+	$(Q)-rm -f QueryResults/312/*_m.cc QueryResults/312/*_m.h
+	$(Q)-rm -f QueryResults/313/*_m.cc QueryResults/313/*_m.h
+	$(Q)-rm -f QueryResults/314/*_m.cc QueryResults/314/*_m.h
+	$(Q)-rm -f QueryResults/315/*_m.cc QueryResults/315/*_m.h
+	$(Q)-rm -f QueryResults/316/*_m.cc QueryResults/316/*_m.h
+	$(Q)-rm -f QueryResults/317/*_m.cc QueryResults/317/*_m.h
+	$(Q)-rm -f QueryResults/318/*_m.cc QueryResults/318/*_m.h
+	$(Q)-rm -f QueryResults/319/*_m.cc QueryResults/319/*_m.h
+	$(Q)-rm -f QueryResults/32/*_m.cc QueryResults/32/*_m.h
+	$(Q)-rm -f QueryResults/320/*_m.cc QueryResults/320/*_m.h
+	$(Q)-rm -f QueryResults/321/*_m.cc QueryResults/321/*_m.h
+	$(Q)-rm -f QueryResults/322/*_m.cc QueryResults/322/*_m.h
+	$(Q)-rm -f QueryResults/323/*_m.cc QueryResults/323/*_m.h
+	$(Q)-rm -f QueryResults/324/*_m.cc QueryResults/324/*_m.h
+	$(Q)-rm -f QueryResults/325/*_m.cc QueryResults/325/*_m.h
+	$(Q)-rm -f QueryResults/326/*_m.cc QueryResults/326/*_m.h
+	$(Q)-rm -f QueryResults/327/*_m.cc QueryResults/327/*_m.h
+	$(Q)-rm -f QueryResults/328/*_m.cc QueryResults/328/*_m.h
+	$(Q)-rm -f QueryResults/329/*_m.cc QueryResults/329/*_m.h
+	$(Q)-rm -f QueryResults/33/*_m.cc QueryResults/33/*_m.h
+	$(Q)-rm -f QueryResults/330/*_m.cc QueryResults/330/*_m.h
+	$(Q)-rm -f QueryResults/331/*_m.cc QueryResults/331/*_m.h
+	$(Q)-rm -f QueryResults/332/*_m.cc QueryResults/332/*_m.h
+	$(Q)-rm -f QueryResults/333/*_m.cc QueryResults/333/*_m.h
+	$(Q)-rm -f QueryResults/334/*_m.cc QueryResults/334/*_m.h
+	$(Q)-rm -f QueryResults/335/*_m.cc QueryResults/335/*_m.h
+	$(Q)-rm -f QueryResults/336/*_m.cc QueryResults/336/*_m.h
+	$(Q)-rm -f QueryResults/337/*_m.cc QueryResults/337/*_m.h
+	$(Q)-rm -f QueryResults/338/*_m.cc QueryResults/338/*_m.h
+	$(Q)-rm -f QueryResults/339/*_m.cc QueryResults/339/*_m.h
+	$(Q)-rm -f QueryResults/34/*_m.cc QueryResults/34/*_m.h
+	$(Q)-rm -f QueryResults/340/*_m.cc QueryResults/340/*_m.h
+	$(Q)-rm -f QueryResults/341/*_m.cc QueryResults/341/*_m.h
+	$(Q)-rm -f QueryResults/342/*_m.cc QueryResults/342/*_m.h
+	$(Q)-rm -f QueryResults/343/*_m.cc QueryResults/343/*_m.h
+	$(Q)-rm -f QueryResults/344/*_m.cc QueryResults/344/*_m.h
+	$(Q)-rm -f QueryResults/345/*_m.cc QueryResults/345/*_m.h
+	$(Q)-rm -f QueryResults/346/*_m.cc QueryResults/346/*_m.h
+	$(Q)-rm -f QueryResults/347/*_m.cc QueryResults/347/*_m.h
+	$(Q)-rm -f QueryResults/348/*_m.cc QueryResults/348/*_m.h
+	$(Q)-rm -f QueryResults/349/*_m.cc QueryResults/349/*_m.h
+	$(Q)-rm -f QueryResults/35/*_m.cc QueryResults/35/*_m.h
+	$(Q)-rm -f QueryResults/350/*_m.cc QueryResults/350/*_m.h
+	$(Q)-rm -f QueryResults/351/*_m.cc QueryResults/351/*_m.h
+	$(Q)-rm -f QueryResults/352/*_m.cc QueryResults/352/*_m.h
+	$(Q)-rm -f QueryResults/353/*_m.cc QueryResults/353/*_m.h
+	$(Q)-rm -f QueryResults/354/*_m.cc QueryResults/354/*_m.h
+	$(Q)-rm -f QueryResults/355/*_m.cc QueryResults/355/*_m.h
+	$(Q)-rm -f QueryResults/356/*_m.cc QueryResults/356/*_m.h
+	$(Q)-rm -f QueryResults/357/*_m.cc QueryResults/357/*_m.h
+	$(Q)-rm -f QueryResults/358/*_m.cc QueryResults/358/*_m.h
+	$(Q)-rm -f QueryResults/359/*_m.cc QueryResults/359/*_m.h
+	$(Q)-rm -f QueryResults/36/*_m.cc QueryResults/36/*_m.h
+	$(Q)-rm -f QueryResults/360/*_m.cc QueryResults/360/*_m.h
+	$(Q)-rm -f QueryResults/361/*_m.cc QueryResults/361/*_m.h
+	$(Q)-rm -f QueryResults/362/*_m.cc QueryResults/362/*_m.h
+	$(Q)-rm -f QueryResults/363/*_m.cc QueryResults/363/*_m.h
+	$(Q)-rm -f QueryResults/364/*_m.cc QueryResults/364/*_m.h
+	$(Q)-rm -f QueryResults/365/*_m.cc QueryResults/365/*_m.h
+	$(Q)-rm -f QueryResults/366/*_m.cc QueryResults/366/*_m.h
+	$(Q)-rm -f QueryResults/367/*_m.cc QueryResults/367/*_m.h
+	$(Q)-rm -f QueryResults/368/*_m.cc QueryResults/368/*_m.h
+	$(Q)-rm -f QueryResults/369/*_m.cc QueryResults/369/*_m.h
+	$(Q)-rm -f QueryResults/37/*_m.cc QueryResults/37/*_m.h
+	$(Q)-rm -f QueryResults/370/*_m.cc QueryResults/370/*_m.h
+	$(Q)-rm -f QueryResults/371/*_m.cc QueryResults/371/*_m.h
+	$(Q)-rm -f QueryResults/372/*_m.cc QueryResults/372/*_m.h
+	$(Q)-rm -f QueryResults/373/*_m.cc QueryResults/373/*_m.h
+	$(Q)-rm -f QueryResults/374/*_m.cc QueryResults/374/*_m.h
+	$(Q)-rm -f QueryResults/375/*_m.cc QueryResults/375/*_m.h
+	$(Q)-rm -f QueryResults/376/*_m.cc QueryResults/376/*_m.h
+	$(Q)-rm -f QueryResults/377/*_m.cc QueryResults/377/*_m.h
+	$(Q)-rm -f QueryResults/378/*_m.cc QueryResults/378/*_m.h
+	$(Q)-rm -f QueryResults/379/*_m.cc QueryResults/379/*_m.h
+	$(Q)-rm -f QueryResults/38/*_m.cc QueryResults/38/*_m.h
+	$(Q)-rm -f QueryResults/380/*_m.cc QueryResults/380/*_m.h
+	$(Q)-rm -f QueryResults/381/*_m.cc QueryResults/381/*_m.h
+	$(Q)-rm -f QueryResults/382/*_m.cc QueryResults/382/*_m.h
+	$(Q)-rm -f QueryResults/383/*_m.cc QueryResults/383/*_m.h
+	$(Q)-rm -f QueryResults/384/*_m.cc QueryResults/384/*_m.h
+	$(Q)-rm -f QueryResults/385/*_m.cc QueryResults/385/*_m.h
+	$(Q)-rm -f QueryResults/386/*_m.cc QueryResults/386/*_m.h
+	$(Q)-rm -f QueryResults/387/*_m.cc QueryResults/387/*_m.h
+	$(Q)-rm -f QueryResults/388/*_m.cc QueryResults/388/*_m.h
+	$(Q)-rm -f QueryResults/389/*_m.cc QueryResults/389/*_m.h
+	$(Q)-rm -f QueryResults/39/*_m.cc QueryResults/39/*_m.h
+	$(Q)-rm -f QueryResults/390/*_m.cc QueryResults/390/*_m.h
+	$(Q)-rm -f QueryResults/391/*_m.cc QueryResults/391/*_m.h
+	$(Q)-rm -f QueryResults/392/*_m.cc QueryResults/392/*_m.h
+	$(Q)-rm -f QueryResults/393/*_m.cc QueryResults/393/*_m.h
+	$(Q)-rm -f QueryResults/394/*_m.cc QueryResults/394/*_m.h
+	$(Q)-rm -f QueryResults/395/*_m.cc QueryResults/395/*_m.h
+	$(Q)-rm -f QueryResults/396/*_m.cc QueryResults/396/*_m.h
+	$(Q)-rm -f QueryResults/397/*_m.cc QueryResults/397/*_m.h
+	$(Q)-rm -f QueryResults/398/*_m.cc QueryResults/398/*_m.h
+	$(Q)-rm -f QueryResults/399/*_m.cc QueryResults/399/*_m.h
+	$(Q)-rm -f QueryResults/4/*_m.cc QueryResults/4/*_m.h
+	$(Q)-rm -f QueryResults/40/*_m.cc QueryResults/40/*_m.h
+	$(Q)-rm -f QueryResults/400/*_m.cc QueryResults/400/*_m.h
+	$(Q)-rm -f QueryResults/401/*_m.cc QueryResults/401/*_m.h
+	$(Q)-rm -f QueryResults/402/*_m.cc QueryResults/402/*_m.h
+	$(Q)-rm -f QueryResults/403/*_m.cc QueryResults/403/*_m.h
+	$(Q)-rm -f QueryResults/404/*_m.cc QueryResults/404/*_m.h
+	$(Q)-rm -f QueryResults/405/*_m.cc QueryResults/405/*_m.h
+	$(Q)-rm -f QueryResults/406/*_m.cc QueryResults/406/*_m.h
+	$(Q)-rm -f QueryResults/407/*_m.cc QueryResults/407/*_m.h
+	$(Q)-rm -f QueryResults/408/*_m.cc QueryResults/408/*_m.h
+	$(Q)-rm -f QueryResults/409/*_m.cc QueryResults/409/*_m.h
+	$(Q)-rm -f QueryResults/41/*_m.cc QueryResults/41/*_m.h
+	$(Q)-rm -f QueryResults/410/*_m.cc QueryResults/410/*_m.h
+	$(Q)-rm -f QueryResults/411/*_m.cc QueryResults/411/*_m.h
+	$(Q)-rm -f QueryResults/412/*_m.cc QueryResults/412/*_m.h
+	$(Q)-rm -f QueryResults/413/*_m.cc QueryResults/413/*_m.h
+	$(Q)-rm -f QueryResults/414/*_m.cc QueryResults/414/*_m.h
+	$(Q)-rm -f QueryResults/415/*_m.cc QueryResults/415/*_m.h
+	$(Q)-rm -f QueryResults/416/*_m.cc QueryResults/416/*_m.h
+	$(Q)-rm -f QueryResults/417/*_m.cc QueryResults/417/*_m.h
+	$(Q)-rm -f QueryResults/418/*_m.cc QueryResults/418/*_m.h
+	$(Q)-rm -f QueryResults/419/*_m.cc QueryResults/419/*_m.h
+	$(Q)-rm -f QueryResults/42/*_m.cc QueryResults/42/*_m.h
+	$(Q)-rm -f QueryResults/420/*_m.cc QueryResults/420/*_m.h
+	$(Q)-rm -f QueryResults/421/*_m.cc QueryResults/421/*_m.h
+	$(Q)-rm -f QueryResults/422/*_m.cc QueryResults/422/*_m.h
+	$(Q)-rm -f QueryResults/423/*_m.cc QueryResults/423/*_m.h
+	$(Q)-rm -f QueryResults/424/*_m.cc QueryResults/424/*_m.h
+	$(Q)-rm -f QueryResults/425/*_m.cc QueryResults/425/*_m.h
+	$(Q)-rm -f QueryResults/426/*_m.cc QueryResults/426/*_m.h
+	$(Q)-rm -f QueryResults/427/*_m.cc QueryResults/427/*_m.h
+	$(Q)-rm -f QueryResults/428/*_m.cc QueryResults/428/*_m.h
+	$(Q)-rm -f QueryResults/429/*_m.cc QueryResults/429/*_m.h
+	$(Q)-rm -f QueryResults/43/*_m.cc QueryResults/43/*_m.h
+	$(Q)-rm -f QueryResults/430/*_m.cc QueryResults/430/*_m.h
+	$(Q)-rm -f QueryResults/431/*_m.cc QueryResults/431/*_m.h
+	$(Q)-rm -f QueryResults/432/*_m.cc QueryResults/432/*_m.h
+	$(Q)-rm -f QueryResults/433/*_m.cc QueryResults/433/*_m.h
+	$(Q)-rm -f QueryResults/434/*_m.cc QueryResults/434/*_m.h
+	$(Q)-rm -f QueryResults/435/*_m.cc QueryResults/435/*_m.h
+	$(Q)-rm -f QueryResults/436/*_m.cc QueryResults/436/*_m.h
+	$(Q)-rm -f QueryResults/437/*_m.cc QueryResults/437/*_m.h
+	$(Q)-rm -f QueryResults/438/*_m.cc QueryResults/438/*_m.h
+	$(Q)-rm -f QueryResults/439/*_m.cc QueryResults/439/*_m.h
+	$(Q)-rm -f QueryResults/44/*_m.cc QueryResults/44/*_m.h
+	$(Q)-rm -f QueryResults/440/*_m.cc QueryResults/440/*_m.h
+	$(Q)-rm -f QueryResults/441/*_m.cc QueryResults/441/*_m.h
+	$(Q)-rm -f QueryResults/442/*_m.cc QueryResults/442/*_m.h
+	$(Q)-rm -f QueryResults/443/*_m.cc QueryResults/443/*_m.h
+	$(Q)-rm -f QueryResults/444/*_m.cc QueryResults/444/*_m.h
+	$(Q)-rm -f QueryResults/445/*_m.cc QueryResults/445/*_m.h
+	$(Q)-rm -f QueryResults/446/*_m.cc QueryResults/446/*_m.h
+	$(Q)-rm -f QueryResults/447/*_m.cc QueryResults/447/*_m.h
+	$(Q)-rm -f QueryResults/448/*_m.cc QueryResults/448/*_m.h
+	$(Q)-rm -f QueryResults/449/*_m.cc QueryResults/449/*_m.h
+	$(Q)-rm -f QueryResults/45/*_m.cc QueryResults/45/*_m.h
+	$(Q)-rm -f QueryResults/450/*_m.cc QueryResults/450/*_m.h
+	$(Q)-rm -f QueryResults/451/*_m.cc QueryResults/451/*_m.h
+	$(Q)-rm -f QueryResults/452/*_m.cc QueryResults/452/*_m.h
+	$(Q)-rm -f QueryResults/453/*_m.cc QueryResults/453/*_m.h
+	$(Q)-rm -f QueryResults/454/*_m.cc QueryResults/454/*_m.h
+	$(Q)-rm -f QueryResults/455/*_m.cc QueryResults/455/*_m.h
+	$(Q)-rm -f QueryResults/456/*_m.cc QueryResults/456/*_m.h
+	$(Q)-rm -f QueryResults/457/*_m.cc QueryResults/457/*_m.h
+	$(Q)-rm -f QueryResults/458/*_m.cc QueryResults/458/*_m.h
+	$(Q)-rm -f QueryResults/459/*_m.cc QueryResults/459/*_m.h
+	$(Q)-rm -f QueryResults/46/*_m.cc QueryResults/46/*_m.h
+	$(Q)-rm -f QueryResults/460/*_m.cc QueryResults/460/*_m.h
+	$(Q)-rm -f QueryResults/461/*_m.cc QueryResults/461/*_m.h
+	$(Q)-rm -f QueryResults/462/*_m.cc QueryResults/462/*_m.h
+	$(Q)-rm -f QueryResults/463/*_m.cc QueryResults/463/*_m.h
+	$(Q)-rm -f QueryResults/464/*_m.cc QueryResults/464/*_m.h
+	$(Q)-rm -f QueryResults/465/*_m.cc QueryResults/465/*_m.h
+	$(Q)-rm -f QueryResults/466/*_m.cc QueryResults/466/*_m.h
+	$(Q)-rm -f QueryResults/467/*_m.cc QueryResults/467/*_m.h
+	$(Q)-rm -f QueryResults/468/*_m.cc QueryResults/468/*_m.h
+	$(Q)-rm -f QueryResults/469/*_m.cc QueryResults/469/*_m.h
+	$(Q)-rm -f QueryResults/47/*_m.cc QueryResults/47/*_m.h
+	$(Q)-rm -f QueryResults/470/*_m.cc QueryResults/470/*_m.h
+	$(Q)-rm -f QueryResults/471/*_m.cc QueryResults/471/*_m.h
+	$(Q)-rm -f QueryResults/472/*_m.cc QueryResults/472/*_m.h
+	$(Q)-rm -f QueryResults/473/*_m.cc QueryResults/473/*_m.h
+	$(Q)-rm -f QueryResults/474/*_m.cc QueryResults/474/*_m.h
+	$(Q)-rm -f QueryResults/475/*_m.cc QueryResults/475/*_m.h
+	$(Q)-rm -f QueryResults/476/*_m.cc QueryResults/476/*_m.h
+	$(Q)-rm -f QueryResults/477/*_m.cc QueryResults/477/*_m.h
+	$(Q)-rm -f QueryResults/478/*_m.cc QueryResults/478/*_m.h
+	$(Q)-rm -f QueryResults/479/*_m.cc QueryResults/479/*_m.h
+	$(Q)-rm -f QueryResults/48/*_m.cc QueryResults/48/*_m.h
+	$(Q)-rm -f QueryResults/480/*_m.cc QueryResults/480/*_m.h
+	$(Q)-rm -f QueryResults/481/*_m.cc QueryResults/481/*_m.h
+	$(Q)-rm -f QueryResults/482/*_m.cc QueryResults/482/*_m.h
+	$(Q)-rm -f QueryResults/483/*_m.cc QueryResults/483/*_m.h
+	$(Q)-rm -f QueryResults/484/*_m.cc QueryResults/484/*_m.h
+	$(Q)-rm -f QueryResults/485/*_m.cc QueryResults/485/*_m.h
+	$(Q)-rm -f QueryResults/486/*_m.cc QueryResults/486/*_m.h
+	$(Q)-rm -f QueryResults/487/*_m.cc QueryResults/487/*_m.h
+	$(Q)-rm -f QueryResults/488/*_m.cc QueryResults/488/*_m.h
+	$(Q)-rm -f QueryResults/489/*_m.cc QueryResults/489/*_m.h
+	$(Q)-rm -f QueryResults/49/*_m.cc QueryResults/49/*_m.h
+	$(Q)-rm -f QueryResults/490/*_m.cc QueryResults/490/*_m.h
+	$(Q)-rm -f QueryResults/491/*_m.cc QueryResults/491/*_m.h
+	$(Q)-rm -f QueryResults/492/*_m.cc QueryResults/492/*_m.h
+	$(Q)-rm -f QueryResults/493/*_m.cc QueryResults/493/*_m.h
+	$(Q)-rm -f QueryResults/494/*_m.cc QueryResults/494/*_m.h
+	$(Q)-rm -f QueryResults/495/*_m.cc QueryResults/495/*_m.h
+	$(Q)-rm -f QueryResults/496/*_m.cc QueryResults/496/*_m.h
+	$(Q)-rm -f QueryResults/497/*_m.cc QueryResults/497/*_m.h
+	$(Q)-rm -f QueryResults/498/*_m.cc QueryResults/498/*_m.h
+	$(Q)-rm -f QueryResults/499/*_m.cc QueryResults/499/*_m.h
+	$(Q)-rm -f QueryResults/5/*_m.cc QueryResults/5/*_m.h
+	$(Q)-rm -f QueryResults/50/*_m.cc QueryResults/50/*_m.h
+	$(Q)-rm -f QueryResults/500/*_m.cc QueryResults/500/*_m.h
+	$(Q)-rm -f QueryResults/501/*_m.cc QueryResults/501/*_m.h
+	$(Q)-rm -f QueryResults/502/*_m.cc QueryResults/502/*_m.h
+	$(Q)-rm -f QueryResults/503/*_m.cc QueryResults/503/*_m.h
+	$(Q)-rm -f QueryResults/504/*_m.cc QueryResults/504/*_m.h
+	$(Q)-rm -f QueryResults/505/*_m.cc QueryResults/505/*_m.h
+	$(Q)-rm -f QueryResults/506/*_m.cc QueryResults/506/*_m.h
+	$(Q)-rm -f QueryResults/507/*_m.cc QueryResults/507/*_m.h
+	$(Q)-rm -f QueryResults/508/*_m.cc QueryResults/508/*_m.h
+	$(Q)-rm -f QueryResults/509/*_m.cc QueryResults/509/*_m.h
+	$(Q)-rm -f QueryResults/51/*_m.cc QueryResults/51/*_m.h
+	$(Q)-rm -f QueryResults/510/*_m.cc QueryResults/510/*_m.h
+	$(Q)-rm -f QueryResults/511/*_m.cc QueryResults/511/*_m.h
+	$(Q)-rm -f QueryResults/512/*_m.cc QueryResults/512/*_m.h
+	$(Q)-rm -f QueryResults/513/*_m.cc QueryResults/513/*_m.h
+	$(Q)-rm -f QueryResults/514/*_m.cc QueryResults/514/*_m.h
+	$(Q)-rm -f QueryResults/515/*_m.cc QueryResults/515/*_m.h
+	$(Q)-rm -f QueryResults/516/*_m.cc QueryResults/516/*_m.h
+	$(Q)-rm -f QueryResults/517/*_m.cc QueryResults/517/*_m.h
+	$(Q)-rm -f QueryResults/518/*_m.cc QueryResults/518/*_m.h
+	$(Q)-rm -f QueryResults/519/*_m.cc QueryResults/519/*_m.h
+	$(Q)-rm -f QueryResults/52/*_m.cc QueryResults/52/*_m.h
+	$(Q)-rm -f QueryResults/520/*_m.cc QueryResults/520/*_m.h
+	$(Q)-rm -f QueryResults/521/*_m.cc QueryResults/521/*_m.h
+	$(Q)-rm -f QueryResults/522/*_m.cc QueryResults/522/*_m.h
+	$(Q)-rm -f QueryResults/523/*_m.cc QueryResults/523/*_m.h
+	$(Q)-rm -f QueryResults/524/*_m.cc QueryResults/524/*_m.h
+	$(Q)-rm -f QueryResults/525/*_m.cc QueryResults/525/*_m.h
+	$(Q)-rm -f QueryResults/526/*_m.cc QueryResults/526/*_m.h
+	$(Q)-rm -f QueryResults/527/*_m.cc QueryResults/527/*_m.h
+	$(Q)-rm -f QueryResults/528/*_m.cc QueryResults/528/*_m.h
+	$(Q)-rm -f QueryResults/529/*_m.cc QueryResults/529/*_m.h
+	$(Q)-rm -f QueryResults/53/*_m.cc QueryResults/53/*_m.h
+	$(Q)-rm -f QueryResults/530/*_m.cc QueryResults/530/*_m.h
+	$(Q)-rm -f QueryResults/531/*_m.cc QueryResults/531/*_m.h
+	$(Q)-rm -f QueryResults/532/*_m.cc QueryResults/532/*_m.h
+	$(Q)-rm -f QueryResults/533/*_m.cc QueryResults/533/*_m.h
+	$(Q)-rm -f QueryResults/534/*_m.cc QueryResults/534/*_m.h
+	$(Q)-rm -f QueryResults/535/*_m.cc QueryResults/535/*_m.h
+	$(Q)-rm -f QueryResults/536/*_m.cc QueryResults/536/*_m.h
+	$(Q)-rm -f QueryResults/537/*_m.cc QueryResults/537/*_m.h
+	$(Q)-rm -f QueryResults/538/*_m.cc QueryResults/538/*_m.h
+	$(Q)-rm -f QueryResults/539/*_m.cc QueryResults/539/*_m.h
+	$(Q)-rm -f QueryResults/54/*_m.cc QueryResults/54/*_m.h
+	$(Q)-rm -f QueryResults/540/*_m.cc QueryResults/540/*_m.h
+	$(Q)-rm -f QueryResults/541/*_m.cc QueryResults/541/*_m.h
+	$(Q)-rm -f QueryResults/542/*_m.cc QueryResults/542/*_m.h
+	$(Q)-rm -f QueryResults/543/*_m.cc QueryResults/543/*_m.h
+	$(Q)-rm -f QueryResults/544/*_m.cc QueryResults/544/*_m.h
+	$(Q)-rm -f QueryResults/545/*_m.cc QueryResults/545/*_m.h
+	$(Q)-rm -f QueryResults/546/*_m.cc QueryResults/546/*_m.h
+	$(Q)-rm -f QueryResults/547/*_m.cc QueryResults/547/*_m.h
+	$(Q)-rm -f QueryResults/548/*_m.cc QueryResults/548/*_m.h
+	$(Q)-rm -f QueryResults/549/*_m.cc QueryResults/549/*_m.h
+	$(Q)-rm -f QueryResults/55/*_m.cc QueryResults/55/*_m.h
+	$(Q)-rm -f QueryResults/550/*_m.cc QueryResults/550/*_m.h
+	$(Q)-rm -f QueryResults/551/*_m.cc QueryResults/551/*_m.h
+	$(Q)-rm -f QueryResults/552/*_m.cc QueryResults/552/*_m.h
+	$(Q)-rm -f QueryResults/553/*_m.cc QueryResults/553/*_m.h
+	$(Q)-rm -f QueryResults/554/*_m.cc QueryResults/554/*_m.h
+	$(Q)-rm -f QueryResults/555/*_m.cc QueryResults/555/*_m.h
+	$(Q)-rm -f QueryResults/556/*_m.cc QueryResults/556/*_m.h
+	$(Q)-rm -f QueryResults/557/*_m.cc QueryResults/557/*_m.h
+	$(Q)-rm -f QueryResults/558/*_m.cc QueryResults/558/*_m.h
+	$(Q)-rm -f QueryResults/559/*_m.cc QueryResults/559/*_m.h
+	$(Q)-rm -f QueryResults/56/*_m.cc QueryResults/56/*_m.h
+	$(Q)-rm -f QueryResults/560/*_m.cc QueryResults/560/*_m.h
+	$(Q)-rm -f QueryResults/561/*_m.cc QueryResults/561/*_m.h
+	$(Q)-rm -f QueryResults/562/*_m.cc QueryResults/562/*_m.h
+	$(Q)-rm -f QueryResults/563/*_m.cc QueryResults/563/*_m.h
+	$(Q)-rm -f QueryResults/564/*_m.cc QueryResults/564/*_m.h
+	$(Q)-rm -f QueryResults/565/*_m.cc QueryResults/565/*_m.h
+	$(Q)-rm -f QueryResults/566/*_m.cc QueryResults/566/*_m.h
+	$(Q)-rm -f QueryResults/567/*_m.cc QueryResults/567/*_m.h
+	$(Q)-rm -f QueryResults/568/*_m.cc QueryResults/568/*_m.h
+	$(Q)-rm -f QueryResults/569/*_m.cc QueryResults/569/*_m.h
+	$(Q)-rm -f QueryResults/57/*_m.cc QueryResults/57/*_m.h
+	$(Q)-rm -f QueryResults/570/*_m.cc QueryResults/570/*_m.h
+	$(Q)-rm -f QueryResults/571/*_m.cc QueryResults/571/*_m.h
+	$(Q)-rm -f QueryResults/572/*_m.cc QueryResults/572/*_m.h
+	$(Q)-rm -f QueryResults/573/*_m.cc QueryResults/573/*_m.h
+	$(Q)-rm -f QueryResults/574/*_m.cc QueryResults/574/*_m.h
+	$(Q)-rm -f QueryResults/575/*_m.cc QueryResults/575/*_m.h
+	$(Q)-rm -f QueryResults/576/*_m.cc QueryResults/576/*_m.h
+	$(Q)-rm -f QueryResults/577/*_m.cc QueryResults/577/*_m.h
+	$(Q)-rm -f QueryResults/578/*_m.cc QueryResults/578/*_m.h
+	$(Q)-rm -f QueryResults/579/*_m.cc QueryResults/579/*_m.h
+	$(Q)-rm -f QueryResults/58/*_m.cc QueryResults/58/*_m.h
+	$(Q)-rm -f QueryResults/580/*_m.cc QueryResults/580/*_m.h
+	$(Q)-rm -f QueryResults/581/*_m.cc QueryResults/581/*_m.h
+	$(Q)-rm -f QueryResults/582/*_m.cc QueryResults/582/*_m.h
+	$(Q)-rm -f QueryResults/583/*_m.cc QueryResults/583/*_m.h
+	$(Q)-rm -f QueryResults/584/*_m.cc QueryResults/584/*_m.h
+	$(Q)-rm -f QueryResults/585/*_m.cc QueryResults/585/*_m.h
+	$(Q)-rm -f QueryResults/586/*_m.cc QueryResults/586/*_m.h
+	$(Q)-rm -f QueryResults/587/*_m.cc QueryResults/587/*_m.h
+	$(Q)-rm -f QueryResults/588/*_m.cc QueryResults/588/*_m.h
+	$(Q)-rm -f QueryResults/589/*_m.cc QueryResults/589/*_m.h
+	$(Q)-rm -f QueryResults/59/*_m.cc QueryResults/59/*_m.h
+	$(Q)-rm -f QueryResults/590/*_m.cc QueryResults/590/*_m.h
+	$(Q)-rm -f QueryResults/591/*_m.cc QueryResults/591/*_m.h
+	$(Q)-rm -f QueryResults/592/*_m.cc QueryResults/592/*_m.h
+	$(Q)-rm -f QueryResults/593/*_m.cc QueryResults/593/*_m.h
+	$(Q)-rm -f QueryResults/594/*_m.cc QueryResults/594/*_m.h
+	$(Q)-rm -f QueryResults/595/*_m.cc QueryResults/595/*_m.h
+	$(Q)-rm -f QueryResults/596/*_m.cc QueryResults/596/*_m.h
+	$(Q)-rm -f QueryResults/597/*_m.cc QueryResults/597/*_m.h
+	$(Q)-rm -f QueryResults/598/*_m.cc QueryResults/598/*_m.h
+	$(Q)-rm -f QueryResults/599/*_m.cc QueryResults/599/*_m.h
+	$(Q)-rm -f QueryResults/6/*_m.cc QueryResults/6/*_m.h
+	$(Q)-rm -f QueryResults/60/*_m.cc QueryResults/60/*_m.h
+	$(Q)-rm -f QueryResults/61/*_m.cc QueryResults/61/*_m.h
+	$(Q)-rm -f QueryResults/62/*_m.cc QueryResults/62/*_m.h
+	$(Q)-rm -f QueryResults/63/*_m.cc QueryResults/63/*_m.h
+	$(Q)-rm -f QueryResults/64/*_m.cc QueryResults/64/*_m.h
+	$(Q)-rm -f QueryResults/65/*_m.cc QueryResults/65/*_m.h
+	$(Q)-rm -f QueryResults/66/*_m.cc QueryResults/66/*_m.h
+	$(Q)-rm -f QueryResults/67/*_m.cc QueryResults/67/*_m.h
+	$(Q)-rm -f QueryResults/68/*_m.cc QueryResults/68/*_m.h
+	$(Q)-rm -f QueryResults/69/*_m.cc QueryResults/69/*_m.h
+	$(Q)-rm -f QueryResults/7/*_m.cc QueryResults/7/*_m.h
+	$(Q)-rm -f QueryResults/70/*_m.cc QueryResults/70/*_m.h
+	$(Q)-rm -f QueryResults/71/*_m.cc QueryResults/71/*_m.h
+	$(Q)-rm -f QueryResults/72/*_m.cc QueryResults/72/*_m.h
+	$(Q)-rm -f QueryResults/73/*_m.cc QueryResults/73/*_m.h
+	$(Q)-rm -f QueryResults/74/*_m.cc QueryResults/74/*_m.h
+	$(Q)-rm -f QueryResults/75/*_m.cc QueryResults/75/*_m.h
+	$(Q)-rm -f QueryResults/76/*_m.cc QueryResults/76/*_m.h
+	$(Q)-rm -f QueryResults/77/*_m.cc QueryResults/77/*_m.h
+	$(Q)-rm -f QueryResults/78/*_m.cc QueryResults/78/*_m.h
+	$(Q)-rm -f QueryResults/79/*_m.cc QueryResults/79/*_m.h
+	$(Q)-rm -f QueryResults/8/*_m.cc QueryResults/8/*_m.h
+	$(Q)-rm -f QueryResults/80/*_m.cc QueryResults/80/*_m.h
+	$(Q)-rm -f QueryResults/81/*_m.cc QueryResults/81/*_m.h
+	$(Q)-rm -f QueryResults/82/*_m.cc QueryResults/82/*_m.h
+	$(Q)-rm -f QueryResults/83/*_m.cc QueryResults/83/*_m.h
+	$(Q)-rm -f QueryResults/84/*_m.cc QueryResults/84/*_m.h
+	$(Q)-rm -f QueryResults/85/*_m.cc QueryResults/85/*_m.h
+	$(Q)-rm -f QueryResults/86/*_m.cc QueryResults/86/*_m.h
+	$(Q)-rm -f QueryResults/87/*_m.cc QueryResults/87/*_m.h
+	$(Q)-rm -f QueryResults/88/*_m.cc QueryResults/88/*_m.h
+	$(Q)-rm -f QueryResults/89/*_m.cc QueryResults/89/*_m.h
+	$(Q)-rm -f QueryResults/9/*_m.cc QueryResults/9/*_m.h
+	$(Q)-rm -f QueryResults/90/*_m.cc QueryResults/90/*_m.h
+	$(Q)-rm -f QueryResults/91/*_m.cc QueryResults/91/*_m.h
+	$(Q)-rm -f QueryResults/92/*_m.cc QueryResults/92/*_m.h
+	$(Q)-rm -f QueryResults/93/*_m.cc QueryResults/93/*_m.h
+	$(Q)-rm -f QueryResults/94/*_m.cc QueryResults/94/*_m.h
+	$(Q)-rm -f QueryResults/95/*_m.cc QueryResults/95/*_m.h
+	$(Q)-rm -f QueryResults/96/*_m.cc QueryResults/96/*_m.h
+	$(Q)-rm -f QueryResults/97/*_m.cc QueryResults/97/*_m.h
+	$(Q)-rm -f QueryResults/98/*_m.cc QueryResults/98/*_m.h
+	$(Q)-rm -f QueryResults/99/*_m.cc QueryResults/99/*_m.h
 	$(Q)-rm -f json/*_m.cc json/*_m.h
 	$(Q)-rm -f results/*_m.cc results/*_m.h
+	$(Q)-rm -f results/100/*_m.cc results/100/*_m.h
+	$(Q)-rm -f results/1000/*_m.cc results/1000/*_m.h
+	$(Q)-rm -f results/10_1000/*_m.cc results/10_1000/*_m.h
+	$(Q)-rm -f results/10_200/*_m.cc results/10_200/*_m.h
+	$(Q)-rm -f results/10_3000/*_m.cc results/10_3000/*_m.h
+	$(Q)-rm -f results/10mps/*_m.cc results/10mps/*_m.h
+	$(Q)-rm -f results/17mps/*_m.cc results/17mps/*_m.h
+	$(Q)-rm -f results/1mps/*_m.cc results/1mps/*_m.h
+	$(Q)-rm -f results/200/*_m.cc results/200/*_m.h
+	$(Q)-rm -f results/300/*_m.cc results/300/*_m.h
+	$(Q)-rm -f results/3mps/*_m.cc results/3mps/*_m.h
+	$(Q)-rm -f results/400/*_m.cc results/400/*_m.h
+	$(Q)-rm -f results/50/*_m.cc results/50/*_m.h
+	$(Q)-rm -f results/500/*_m.cc results/500/*_m.h
+	$(Q)-rm -f results/50n/*_m.cc results/50n/*_m.h
+	$(Q)-rm -f results/5mps/*_m.cc results/5mps/*_m.h
+	$(Q)-rm -f results/600/*_m.cc results/600/*_m.h
+	$(Q)-rm -f results/600_100/*_m.cc results/600_100/*_m.h
+	$(Q)-rm -f results/600_200/*_m.cc results/600_200/*_m.h
+	$(Q)-rm -f results/600_30/*_m.cc results/600_30/*_m.h
+	$(Q)-rm -f results/600_lamda/*_m.cc results/600_lamda/*_m.h
+	$(Q)-rm -f results/600_queryNumber/*_m.cc results/600_queryNumber/*_m.h
+	$(Q)-rm -f results/600_reviews/*_m.cc results/600_reviews/*_m.h
+	$(Q)-rm -f results/700/*_m.cc results/700/*_m.h
+	$(Q)-rm -f results/800/*_m.cc results/800/*_m.h
+	$(Q)-rm -f results/900/*_m.cc results/900/*_m.h
+	$(Q)-rm -f results/querytime/*_m.cc results/querytime/*_m.h
 
 cleanall: clean
 	$(Q)-rm -rf $(PROJECT_OUTPUT_DIR)
 
 depend:
 	$(qecho) Creating dependencies...
-	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc QueryWord/*.cc QueryWord/0/*.cc QueryWord/1/*.cc QueryWord/10/*.cc QueryWord/100/*.cc QueryWord/101/*.cc QueryWord/102/*.cc QueryWord/103/*.cc QueryWord/104/*.cc QueryWord/105/*.cc QueryWord/106/*.cc QueryWord/107/*.cc QueryWord/108/*.cc QueryWord/109/*.cc QueryWord/11/*.cc QueryWord/110/*.cc QueryWord/111/*.cc QueryWord/112/*.cc QueryWord/113/*.cc QueryWord/114/*.cc QueryWord/115/*.cc QueryWord/116/*.cc QueryWord/117/*.cc QueryWord/118/*.cc QueryWord/119/*.cc QueryWord/12/*.cc QueryWord/120/*.cc QueryWord/121/*.cc QueryWord/122/*.cc QueryWord/123/*.cc QueryWord/124/*.cc QueryWord/125/*.cc QueryWord/126/*.cc QueryWord/127/*.cc QueryWord/128/*.cc QueryWord/129/*.cc QueryWord/13/*.cc QueryWord/130/*.cc QueryWord/131/*.cc QueryWord/132/*.cc QueryWord/133/*.cc QueryWord/134/*.cc QueryWord/135/*.cc QueryWord/136/*.cc QueryWord/137/*.cc QueryWord/138/*.cc QueryWord/139/*.cc QueryWord/14/*.cc QueryWord/140/*.cc QueryWord/141/*.cc QueryWord/142/*.cc QueryWord/143/*.cc QueryWord/144/*.cc QueryWord/145/*.cc QueryWord/146/*.cc QueryWord/147/*.cc QueryWord/148/*.cc QueryWord/149/*.cc QueryWord/15/*.cc QueryWord/150/*.cc QueryWord/151/*.cc QueryWord/152/*.cc QueryWord/153/*.cc QueryWord/154/*.cc QueryWord/155/*.cc QueryWord/156/*.cc QueryWord/157/*.cc QueryWord/158/*.cc QueryWord/159/*.cc QueryWord/16/*.cc QueryWord/160/*.cc QueryWord/161/*.cc QueryWord/162/*.cc QueryWord/163/*.cc QueryWord/164/*.cc QueryWord/165/*.cc QueryWord/166/*.cc QueryWord/167/*.cc QueryWord/168/*.cc QueryWord/169/*.cc QueryWord/17/*.cc QueryWord/170/*.cc QueryWord/171/*.cc QueryWord/172/*.cc QueryWord/173/*.cc QueryWord/174/*.cc QueryWord/175/*.cc QueryWord/176/*.cc QueryWord/177/*.cc QueryWord/178/*.cc QueryWord/179/*.cc QueryWord/18/*.cc QueryWord/180/*.cc QueryWord/181/*.cc QueryWord/182/*.cc QueryWord/183/*.cc QueryWord/184/*.cc QueryWord/185/*.cc QueryWord/186/*.cc QueryWord/187/*.cc QueryWord/188/*.cc QueryWord/189/*.cc QueryWord/19/*.cc QueryWord/190/*.cc QueryWord/191/*.cc QueryWord/192/*.cc QueryWord/193/*.cc QueryWord/194/*.cc QueryWord/195/*.cc QueryWord/196/*.cc QueryWord/197/*.cc QueryWord/198/*.cc QueryWord/199/*.cc QueryWord/2/*.cc QueryWord/20/*.cc QueryWord/200/*.cc QueryWord/201/*.cc QueryWord/202/*.cc QueryWord/203/*.cc QueryWord/204/*.cc QueryWord/205/*.cc QueryWord/206/*.cc QueryWord/207/*.cc QueryWord/208/*.cc QueryWord/209/*.cc QueryWord/21/*.cc QueryWord/210/*.cc QueryWord/211/*.cc QueryWord/212/*.cc QueryWord/213/*.cc QueryWord/214/*.cc QueryWord/215/*.cc QueryWord/216/*.cc QueryWord/217/*.cc QueryWord/218/*.cc QueryWord/219/*.cc QueryWord/22/*.cc QueryWord/220/*.cc QueryWord/221/*.cc QueryWord/222/*.cc QueryWord/223/*.cc QueryWord/224/*.cc QueryWord/225/*.cc QueryWord/226/*.cc QueryWord/227/*.cc QueryWord/228/*.cc QueryWord/229/*.cc QueryWord/23/*.cc QueryWord/230/*.cc QueryWord/231/*.cc QueryWord/232/*.cc QueryWord/233/*.cc QueryWord/234/*.cc QueryWord/235/*.cc QueryWord/236/*.cc QueryWord/237/*.cc QueryWord/238/*.cc QueryWord/239/*.cc QueryWord/24/*.cc QueryWord/240/*.cc QueryWord/241/*.cc QueryWord/242/*.cc QueryWord/243/*.cc QueryWord/244/*.cc QueryWord/245/*.cc QueryWord/246/*.cc QueryWord/247/*.cc QueryWord/248/*.cc QueryWord/249/*.cc QueryWord/25/*.cc QueryWord/250/*.cc QueryWord/251/*.cc QueryWord/252/*.cc QueryWord/253/*.cc QueryWord/254/*.cc QueryWord/255/*.cc QueryWord/256/*.cc QueryWord/257/*.cc QueryWord/258/*.cc QueryWord/259/*.cc QueryWord/26/*.cc QueryWord/260/*.cc QueryWord/261/*.cc QueryWord/262/*.cc QueryWord/263/*.cc QueryWord/264/*.cc QueryWord/265/*.cc QueryWord/266/*.cc QueryWord/267/*.cc QueryWord/268/*.cc QueryWord/269/*.cc QueryWord/27/*.cc QueryWord/270/*.cc QueryWord/271/*.cc QueryWord/272/*.cc QueryWord/273/*.cc QueryWord/274/*.cc QueryWord/275/*.cc QueryWord/276/*.cc QueryWord/277/*.cc QueryWord/278/*.cc QueryWord/279/*.cc QueryWord/28/*.cc QueryWord/280/*.cc QueryWord/281/*.cc QueryWord/282/*.cc QueryWord/283/*.cc QueryWord/284/*.cc QueryWord/285/*.cc QueryWord/286/*.cc QueryWord/287/*.cc QueryWord/288/*.cc QueryWord/289/*.cc QueryWord/29/*.cc QueryWord/290/*.cc QueryWord/291/*.cc QueryWord/292/*.cc QueryWord/293/*.cc QueryWord/294/*.cc QueryWord/295/*.cc QueryWord/296/*.cc QueryWord/297/*.cc QueryWord/298/*.cc QueryWord/299/*.cc QueryWord/3/*.cc QueryWord/30/*.cc QueryWord/300/*.cc QueryWord/301/*.cc QueryWord/302/*.cc QueryWord/303/*.cc QueryWord/304/*.cc QueryWord/305/*.cc QueryWord/306/*.cc QueryWord/307/*.cc QueryWord/308/*.cc QueryWord/309/*.cc QueryWord/31/*.cc QueryWord/310/*.cc QueryWord/311/*.cc QueryWord/312/*.cc QueryWord/313/*.cc QueryWord/314/*.cc QueryWord/315/*.cc QueryWord/316/*.cc QueryWord/317/*.cc QueryWord/318/*.cc QueryWord/319/*.cc QueryWord/32/*.cc QueryWord/320/*.cc QueryWord/321/*.cc QueryWord/322/*.cc QueryWord/323/*.cc QueryWord/324/*.cc QueryWord/325/*.cc QueryWord/326/*.cc QueryWord/327/*.cc QueryWord/328/*.cc QueryWord/329/*.cc QueryWord/33/*.cc QueryWord/330/*.cc QueryWord/331/*.cc QueryWord/332/*.cc QueryWord/333/*.cc QueryWord/334/*.cc QueryWord/335/*.cc QueryWord/336/*.cc QueryWord/337/*.cc QueryWord/338/*.cc QueryWord/339/*.cc QueryWord/34/*.cc QueryWord/340/*.cc QueryWord/341/*.cc QueryWord/342/*.cc QueryWord/343/*.cc QueryWord/344/*.cc QueryWord/345/*.cc QueryWord/346/*.cc QueryWord/347/*.cc QueryWord/348/*.cc QueryWord/349/*.cc QueryWord/35/*.cc QueryWord/350/*.cc QueryWord/351/*.cc QueryWord/352/*.cc QueryWord/353/*.cc QueryWord/354/*.cc QueryWord/355/*.cc QueryWord/356/*.cc QueryWord/357/*.cc QueryWord/358/*.cc QueryWord/359/*.cc QueryWord/36/*.cc QueryWord/360/*.cc QueryWord/361/*.cc QueryWord/362/*.cc QueryWord/363/*.cc QueryWord/364/*.cc QueryWord/365/*.cc QueryWord/366/*.cc QueryWord/367/*.cc QueryWord/368/*.cc QueryWord/369/*.cc QueryWord/37/*.cc QueryWord/370/*.cc QueryWord/371/*.cc QueryWord/372/*.cc QueryWord/373/*.cc QueryWord/374/*.cc QueryWord/375/*.cc QueryWord/376/*.cc QueryWord/377/*.cc QueryWord/378/*.cc QueryWord/379/*.cc QueryWord/38/*.cc QueryWord/380/*.cc QueryWord/381/*.cc QueryWord/382/*.cc QueryWord/383/*.cc QueryWord/384/*.cc QueryWord/385/*.cc QueryWord/386/*.cc QueryWord/387/*.cc QueryWord/388/*.cc QueryWord/389/*.cc QueryWord/39/*.cc QueryWord/390/*.cc QueryWord/391/*.cc QueryWord/392/*.cc QueryWord/393/*.cc QueryWord/394/*.cc QueryWord/395/*.cc QueryWord/396/*.cc QueryWord/397/*.cc QueryWord/398/*.cc QueryWord/399/*.cc QueryWord/4/*.cc QueryWord/40/*.cc QueryWord/400/*.cc QueryWord/401/*.cc QueryWord/402/*.cc QueryWord/403/*.cc QueryWord/404/*.cc QueryWord/405/*.cc QueryWord/406/*.cc QueryWord/407/*.cc QueryWord/408/*.cc QueryWord/409/*.cc QueryWord/41/*.cc QueryWord/410/*.cc QueryWord/411/*.cc QueryWord/412/*.cc QueryWord/413/*.cc QueryWord/414/*.cc QueryWord/415/*.cc QueryWord/416/*.cc QueryWord/417/*.cc QueryWord/418/*.cc QueryWord/419/*.cc QueryWord/42/*.cc QueryWord/420/*.cc QueryWord/421/*.cc QueryWord/422/*.cc QueryWord/423/*.cc QueryWord/424/*.cc QueryWord/425/*.cc QueryWord/426/*.cc QueryWord/427/*.cc QueryWord/428/*.cc QueryWord/429/*.cc QueryWord/43/*.cc QueryWord/430/*.cc QueryWord/431/*.cc QueryWord/432/*.cc QueryWord/433/*.cc QueryWord/434/*.cc QueryWord/435/*.cc QueryWord/436/*.cc QueryWord/437/*.cc QueryWord/438/*.cc QueryWord/439/*.cc QueryWord/44/*.cc QueryWord/440/*.cc QueryWord/441/*.cc QueryWord/442/*.cc QueryWord/443/*.cc QueryWord/444/*.cc QueryWord/445/*.cc QueryWord/446/*.cc QueryWord/447/*.cc QueryWord/448/*.cc QueryWord/449/*.cc QueryWord/45/*.cc QueryWord/450/*.cc QueryWord/451/*.cc QueryWord/452/*.cc QueryWord/453/*.cc QueryWord/454/*.cc QueryWord/455/*.cc QueryWord/456/*.cc QueryWord/457/*.cc QueryWord/458/*.cc QueryWord/459/*.cc QueryWord/46/*.cc QueryWord/460/*.cc QueryWord/461/*.cc QueryWord/462/*.cc QueryWord/463/*.cc QueryWord/464/*.cc QueryWord/465/*.cc QueryWord/466/*.cc QueryWord/467/*.cc QueryWord/468/*.cc QueryWord/469/*.cc QueryWord/47/*.cc QueryWord/470/*.cc QueryWord/471/*.cc QueryWord/472/*.cc QueryWord/473/*.cc QueryWord/474/*.cc QueryWord/475/*.cc QueryWord/476/*.cc QueryWord/477/*.cc QueryWord/478/*.cc QueryWord/479/*.cc QueryWord/48/*.cc QueryWord/480/*.cc QueryWord/481/*.cc QueryWord/482/*.cc QueryWord/483/*.cc QueryWord/484/*.cc QueryWord/485/*.cc QueryWord/486/*.cc QueryWord/487/*.cc QueryWord/488/*.cc QueryWord/489/*.cc QueryWord/49/*.cc QueryWord/490/*.cc QueryWord/491/*.cc QueryWord/492/*.cc QueryWord/493/*.cc QueryWord/494/*.cc QueryWord/495/*.cc QueryWord/496/*.cc QueryWord/497/*.cc QueryWord/498/*.cc QueryWord/499/*.cc QueryWord/5/*.cc QueryWord/50/*.cc QueryWord/500/*.cc QueryWord/501/*.cc QueryWord/502/*.cc QueryWord/503/*.cc QueryWord/504/*.cc QueryWord/505/*.cc QueryWord/506/*.cc QueryWord/507/*.cc QueryWord/508/*.cc QueryWord/509/*.cc QueryWord/51/*.cc QueryWord/510/*.cc QueryWord/511/*.cc QueryWord/512/*.cc QueryWord/513/*.cc QueryWord/514/*.cc QueryWord/515/*.cc QueryWord/516/*.cc QueryWord/517/*.cc QueryWord/518/*.cc QueryWord/519/*.cc QueryWord/52/*.cc QueryWord/520/*.cc QueryWord/521/*.cc QueryWord/522/*.cc QueryWord/523/*.cc QueryWord/524/*.cc QueryWord/525/*.cc QueryWord/526/*.cc QueryWord/527/*.cc QueryWord/528/*.cc QueryWord/529/*.cc QueryWord/53/*.cc QueryWord/530/*.cc QueryWord/531/*.cc QueryWord/532/*.cc QueryWord/533/*.cc QueryWord/534/*.cc QueryWord/535/*.cc QueryWord/536/*.cc QueryWord/537/*.cc QueryWord/538/*.cc QueryWord/539/*.cc QueryWord/54/*.cc QueryWord/540/*.cc QueryWord/541/*.cc QueryWord/542/*.cc QueryWord/543/*.cc QueryWord/544/*.cc QueryWord/545/*.cc QueryWord/546/*.cc QueryWord/547/*.cc QueryWord/548/*.cc QueryWord/549/*.cc QueryWord/55/*.cc QueryWord/550/*.cc QueryWord/551/*.cc QueryWord/552/*.cc QueryWord/553/*.cc QueryWord/554/*.cc QueryWord/555/*.cc QueryWord/556/*.cc QueryWord/557/*.cc QueryWord/558/*.cc QueryWord/559/*.cc QueryWord/56/*.cc QueryWord/560/*.cc QueryWord/561/*.cc QueryWord/562/*.cc QueryWord/563/*.cc QueryWord/564/*.cc QueryWord/565/*.cc QueryWord/566/*.cc QueryWord/567/*.cc QueryWord/568/*.cc QueryWord/569/*.cc QueryWord/57/*.cc QueryWord/570/*.cc QueryWord/571/*.cc QueryWord/572/*.cc QueryWord/573/*.cc QueryWord/574/*.cc QueryWord/575/*.cc QueryWord/576/*.cc QueryWord/577/*.cc QueryWord/578/*.cc QueryWord/579/*.cc QueryWord/58/*.cc QueryWord/580/*.cc QueryWord/581/*.cc QueryWord/582/*.cc QueryWord/583/*.cc QueryWord/584/*.cc QueryWord/585/*.cc QueryWord/586/*.cc QueryWord/587/*.cc QueryWord/588/*.cc QueryWord/589/*.cc QueryWord/59/*.cc QueryWord/590/*.cc QueryWord/591/*.cc QueryWord/592/*.cc QueryWord/593/*.cc QueryWord/594/*.cc QueryWord/595/*.cc QueryWord/596/*.cc QueryWord/597/*.cc QueryWord/598/*.cc QueryWord/599/*.cc QueryWord/6/*.cc QueryWord/60/*.cc QueryWord/61/*.cc QueryWord/62/*.cc QueryWord/63/*.cc QueryWord/64/*.cc QueryWord/65/*.cc QueryWord/66/*.cc QueryWord/67/*.cc QueryWord/68/*.cc QueryWord/69/*.cc QueryWord/7/*.cc QueryWord/70/*.cc QueryWord/71/*.cc QueryWord/72/*.cc QueryWord/73/*.cc QueryWord/74/*.cc QueryWord/75/*.cc QueryWord/76/*.cc QueryWord/77/*.cc QueryWord/78/*.cc QueryWord/79/*.cc QueryWord/8/*.cc QueryWord/80/*.cc QueryWord/81/*.cc QueryWord/82/*.cc QueryWord/83/*.cc QueryWord/84/*.cc QueryWord/85/*.cc QueryWord/86/*.cc QueryWord/87/*.cc QueryWord/88/*.cc QueryWord/89/*.cc QueryWord/9/*.cc QueryWord/90/*.cc QueryWord/91/*.cc QueryWord/92/*.cc QueryWord/93/*.cc QueryWord/94/*.cc QueryWord/95/*.cc QueryWord/96/*.cc QueryWord/97/*.cc QueryWord/98/*.cc QueryWord/99/*.cc json/*.cc results/*.cc
+	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc QueryResults/*.cc QueryResults/0/*.cc QueryResults/1/*.cc QueryResults/10/*.cc QueryResults/100/*.cc QueryResults/101/*.cc QueryResults/102/*.cc QueryResults/103/*.cc QueryResults/104/*.cc QueryResults/105/*.cc QueryResults/106/*.cc QueryResults/107/*.cc QueryResults/108/*.cc QueryResults/109/*.cc QueryResults/11/*.cc QueryResults/110/*.cc QueryResults/111/*.cc QueryResults/112/*.cc QueryResults/113/*.cc QueryResults/114/*.cc QueryResults/115/*.cc QueryResults/116/*.cc QueryResults/117/*.cc QueryResults/118/*.cc QueryResults/119/*.cc QueryResults/12/*.cc QueryResults/120/*.cc QueryResults/121/*.cc QueryResults/122/*.cc QueryResults/123/*.cc QueryResults/124/*.cc QueryResults/125/*.cc QueryResults/126/*.cc QueryResults/127/*.cc QueryResults/128/*.cc QueryResults/129/*.cc QueryResults/13/*.cc QueryResults/130/*.cc QueryResults/131/*.cc QueryResults/132/*.cc QueryResults/133/*.cc QueryResults/134/*.cc QueryResults/135/*.cc QueryResults/136/*.cc QueryResults/137/*.cc QueryResults/138/*.cc QueryResults/139/*.cc QueryResults/14/*.cc QueryResults/140/*.cc QueryResults/141/*.cc QueryResults/142/*.cc QueryResults/143/*.cc QueryResults/144/*.cc QueryResults/145/*.cc QueryResults/146/*.cc QueryResults/147/*.cc QueryResults/148/*.cc QueryResults/149/*.cc QueryResults/15/*.cc QueryResults/150/*.cc QueryResults/151/*.cc QueryResults/152/*.cc QueryResults/153/*.cc QueryResults/154/*.cc QueryResults/155/*.cc QueryResults/156/*.cc QueryResults/157/*.cc QueryResults/158/*.cc QueryResults/159/*.cc QueryResults/16/*.cc QueryResults/160/*.cc QueryResults/161/*.cc QueryResults/162/*.cc QueryResults/163/*.cc QueryResults/164/*.cc QueryResults/165/*.cc QueryResults/166/*.cc QueryResults/167/*.cc QueryResults/168/*.cc QueryResults/169/*.cc QueryResults/17/*.cc QueryResults/170/*.cc QueryResults/171/*.cc QueryResults/172/*.cc QueryResults/173/*.cc QueryResults/174/*.cc QueryResults/175/*.cc QueryResults/176/*.cc QueryResults/177/*.cc QueryResults/178/*.cc QueryResults/179/*.cc QueryResults/18/*.cc QueryResults/180/*.cc QueryResults/181/*.cc QueryResults/182/*.cc QueryResults/183/*.cc QueryResults/184/*.cc QueryResults/185/*.cc QueryResults/186/*.cc QueryResults/187/*.cc QueryResults/188/*.cc QueryResults/189/*.cc QueryResults/19/*.cc QueryResults/190/*.cc QueryResults/191/*.cc QueryResults/192/*.cc QueryResults/193/*.cc QueryResults/194/*.cc QueryResults/195/*.cc QueryResults/196/*.cc QueryResults/197/*.cc QueryResults/198/*.cc QueryResults/199/*.cc QueryResults/2/*.cc QueryResults/20/*.cc QueryResults/200/*.cc QueryResults/201/*.cc QueryResults/202/*.cc QueryResults/203/*.cc QueryResults/204/*.cc QueryResults/205/*.cc QueryResults/206/*.cc QueryResults/207/*.cc QueryResults/208/*.cc QueryResults/209/*.cc QueryResults/21/*.cc QueryResults/210/*.cc QueryResults/211/*.cc QueryResults/212/*.cc QueryResults/213/*.cc QueryResults/214/*.cc QueryResults/215/*.cc QueryResults/216/*.cc QueryResults/217/*.cc QueryResults/218/*.cc QueryResults/219/*.cc QueryResults/22/*.cc QueryResults/220/*.cc QueryResults/221/*.cc QueryResults/222/*.cc QueryResults/223/*.cc QueryResults/224/*.cc QueryResults/225/*.cc QueryResults/226/*.cc QueryResults/227/*.cc QueryResults/228/*.cc QueryResults/229/*.cc QueryResults/23/*.cc QueryResults/230/*.cc QueryResults/231/*.cc QueryResults/232/*.cc QueryResults/233/*.cc QueryResults/234/*.cc QueryResults/235/*.cc QueryResults/236/*.cc QueryResults/237/*.cc QueryResults/238/*.cc QueryResults/239/*.cc QueryResults/24/*.cc QueryResults/240/*.cc QueryResults/241/*.cc QueryResults/242/*.cc QueryResults/243/*.cc QueryResults/244/*.cc QueryResults/245/*.cc QueryResults/246/*.cc QueryResults/247/*.cc QueryResults/248/*.cc QueryResults/249/*.cc QueryResults/25/*.cc QueryResults/250/*.cc QueryResults/251/*.cc QueryResults/252/*.cc QueryResults/253/*.cc QueryResults/254/*.cc QueryResults/255/*.cc QueryResults/256/*.cc QueryResults/257/*.cc QueryResults/258/*.cc QueryResults/259/*.cc QueryResults/26/*.cc QueryResults/260/*.cc QueryResults/261/*.cc QueryResults/262/*.cc QueryResults/263/*.cc QueryResults/264/*.cc QueryResults/265/*.cc QueryResults/266/*.cc QueryResults/267/*.cc QueryResults/268/*.cc QueryResults/269/*.cc QueryResults/27/*.cc QueryResults/270/*.cc QueryResults/271/*.cc QueryResults/272/*.cc QueryResults/273/*.cc QueryResults/274/*.cc QueryResults/275/*.cc QueryResults/276/*.cc QueryResults/277/*.cc QueryResults/278/*.cc QueryResults/279/*.cc QueryResults/28/*.cc QueryResults/280/*.cc QueryResults/281/*.cc QueryResults/282/*.cc QueryResults/283/*.cc QueryResults/284/*.cc QueryResults/285/*.cc QueryResults/286/*.cc QueryResults/287/*.cc QueryResults/288/*.cc QueryResults/289/*.cc QueryResults/29/*.cc QueryResults/290/*.cc QueryResults/291/*.cc QueryResults/292/*.cc QueryResults/293/*.cc QueryResults/294/*.cc QueryResults/295/*.cc QueryResults/296/*.cc QueryResults/297/*.cc QueryResults/298/*.cc QueryResults/299/*.cc QueryResults/3/*.cc QueryResults/30/*.cc QueryResults/300/*.cc QueryResults/301/*.cc QueryResults/302/*.cc QueryResults/303/*.cc QueryResults/304/*.cc QueryResults/305/*.cc QueryResults/306/*.cc QueryResults/307/*.cc QueryResults/308/*.cc QueryResults/309/*.cc QueryResults/31/*.cc QueryResults/310/*.cc QueryResults/311/*.cc QueryResults/312/*.cc QueryResults/313/*.cc QueryResults/314/*.cc QueryResults/315/*.cc QueryResults/316/*.cc QueryResults/317/*.cc QueryResults/318/*.cc QueryResults/319/*.cc QueryResults/32/*.cc QueryResults/320/*.cc QueryResults/321/*.cc QueryResults/322/*.cc QueryResults/323/*.cc QueryResults/324/*.cc QueryResults/325/*.cc QueryResults/326/*.cc QueryResults/327/*.cc QueryResults/328/*.cc QueryResults/329/*.cc QueryResults/33/*.cc QueryResults/330/*.cc QueryResults/331/*.cc QueryResults/332/*.cc QueryResults/333/*.cc QueryResults/334/*.cc QueryResults/335/*.cc QueryResults/336/*.cc QueryResults/337/*.cc QueryResults/338/*.cc QueryResults/339/*.cc QueryResults/34/*.cc QueryResults/340/*.cc QueryResults/341/*.cc QueryResults/342/*.cc QueryResults/343/*.cc QueryResults/344/*.cc QueryResults/345/*.cc QueryResults/346/*.cc QueryResults/347/*.cc QueryResults/348/*.cc QueryResults/349/*.cc QueryResults/35/*.cc QueryResults/350/*.cc QueryResults/351/*.cc QueryResults/352/*.cc QueryResults/353/*.cc QueryResults/354/*.cc QueryResults/355/*.cc QueryResults/356/*.cc QueryResults/357/*.cc QueryResults/358/*.cc QueryResults/359/*.cc QueryResults/36/*.cc QueryResults/360/*.cc QueryResults/361/*.cc QueryResults/362/*.cc QueryResults/363/*.cc QueryResults/364/*.cc QueryResults/365/*.cc QueryResults/366/*.cc QueryResults/367/*.cc QueryResults/368/*.cc QueryResults/369/*.cc QueryResults/37/*.cc QueryResults/370/*.cc QueryResults/371/*.cc QueryResults/372/*.cc QueryResults/373/*.cc QueryResults/374/*.cc QueryResults/375/*.cc QueryResults/376/*.cc QueryResults/377/*.cc QueryResults/378/*.cc QueryResults/379/*.cc QueryResults/38/*.cc QueryResults/380/*.cc QueryResults/381/*.cc QueryResults/382/*.cc QueryResults/383/*.cc QueryResults/384/*.cc QueryResults/385/*.cc QueryResults/386/*.cc QueryResults/387/*.cc QueryResults/388/*.cc QueryResults/389/*.cc QueryResults/39/*.cc QueryResults/390/*.cc QueryResults/391/*.cc QueryResults/392/*.cc QueryResults/393/*.cc QueryResults/394/*.cc QueryResults/395/*.cc QueryResults/396/*.cc QueryResults/397/*.cc QueryResults/398/*.cc QueryResults/399/*.cc QueryResults/4/*.cc QueryResults/40/*.cc QueryResults/400/*.cc QueryResults/401/*.cc QueryResults/402/*.cc QueryResults/403/*.cc QueryResults/404/*.cc QueryResults/405/*.cc QueryResults/406/*.cc QueryResults/407/*.cc QueryResults/408/*.cc QueryResults/409/*.cc QueryResults/41/*.cc QueryResults/410/*.cc QueryResults/411/*.cc QueryResults/412/*.cc QueryResults/413/*.cc QueryResults/414/*.cc QueryResults/415/*.cc QueryResults/416/*.cc QueryResults/417/*.cc QueryResults/418/*.cc QueryResults/419/*.cc QueryResults/42/*.cc QueryResults/420/*.cc QueryResults/421/*.cc QueryResults/422/*.cc QueryResults/423/*.cc QueryResults/424/*.cc QueryResults/425/*.cc QueryResults/426/*.cc QueryResults/427/*.cc QueryResults/428/*.cc QueryResults/429/*.cc QueryResults/43/*.cc QueryResults/430/*.cc QueryResults/431/*.cc QueryResults/432/*.cc QueryResults/433/*.cc QueryResults/434/*.cc QueryResults/435/*.cc QueryResults/436/*.cc QueryResults/437/*.cc QueryResults/438/*.cc QueryResults/439/*.cc QueryResults/44/*.cc QueryResults/440/*.cc QueryResults/441/*.cc QueryResults/442/*.cc QueryResults/443/*.cc QueryResults/444/*.cc QueryResults/445/*.cc QueryResults/446/*.cc QueryResults/447/*.cc QueryResults/448/*.cc QueryResults/449/*.cc QueryResults/45/*.cc QueryResults/450/*.cc QueryResults/451/*.cc QueryResults/452/*.cc QueryResults/453/*.cc QueryResults/454/*.cc QueryResults/455/*.cc QueryResults/456/*.cc QueryResults/457/*.cc QueryResults/458/*.cc QueryResults/459/*.cc QueryResults/46/*.cc QueryResults/460/*.cc QueryResults/461/*.cc QueryResults/462/*.cc QueryResults/463/*.cc QueryResults/464/*.cc QueryResults/465/*.cc QueryResults/466/*.cc QueryResults/467/*.cc QueryResults/468/*.cc QueryResults/469/*.cc QueryResults/47/*.cc QueryResults/470/*.cc QueryResults/471/*.cc QueryResults/472/*.cc QueryResults/473/*.cc QueryResults/474/*.cc QueryResults/475/*.cc QueryResults/476/*.cc QueryResults/477/*.cc QueryResults/478/*.cc QueryResults/479/*.cc QueryResults/48/*.cc QueryResults/480/*.cc QueryResults/481/*.cc QueryResults/482/*.cc QueryResults/483/*.cc QueryResults/484/*.cc QueryResults/485/*.cc QueryResults/486/*.cc QueryResults/487/*.cc QueryResults/488/*.cc QueryResults/489/*.cc QueryResults/49/*.cc QueryResults/490/*.cc QueryResults/491/*.cc QueryResults/492/*.cc QueryResults/493/*.cc QueryResults/494/*.cc QueryResults/495/*.cc QueryResults/496/*.cc QueryResults/497/*.cc QueryResults/498/*.cc QueryResults/499/*.cc QueryResults/5/*.cc QueryResults/50/*.cc QueryResults/500/*.cc QueryResults/501/*.cc QueryResults/502/*.cc QueryResults/503/*.cc QueryResults/504/*.cc QueryResults/505/*.cc QueryResults/506/*.cc QueryResults/507/*.cc QueryResults/508/*.cc QueryResults/509/*.cc QueryResults/51/*.cc QueryResults/510/*.cc QueryResults/511/*.cc QueryResults/512/*.cc QueryResults/513/*.cc QueryResults/514/*.cc QueryResults/515/*.cc QueryResults/516/*.cc QueryResults/517/*.cc QueryResults/518/*.cc QueryResults/519/*.cc QueryResults/52/*.cc QueryResults/520/*.cc QueryResults/521/*.cc QueryResults/522/*.cc QueryResults/523/*.cc QueryResults/524/*.cc QueryResults/525/*.cc QueryResults/526/*.cc QueryResults/527/*.cc QueryResults/528/*.cc QueryResults/529/*.cc QueryResults/53/*.cc QueryResults/530/*.cc QueryResults/531/*.cc QueryResults/532/*.cc QueryResults/533/*.cc QueryResults/534/*.cc QueryResults/535/*.cc QueryResults/536/*.cc QueryResults/537/*.cc QueryResults/538/*.cc QueryResults/539/*.cc QueryResults/54/*.cc QueryResults/540/*.cc QueryResults/541/*.cc QueryResults/542/*.cc QueryResults/543/*.cc QueryResults/544/*.cc QueryResults/545/*.cc QueryResults/546/*.cc QueryResults/547/*.cc QueryResults/548/*.cc QueryResults/549/*.cc QueryResults/55/*.cc QueryResults/550/*.cc QueryResults/551/*.cc QueryResults/552/*.cc QueryResults/553/*.cc QueryResults/554/*.cc QueryResults/555/*.cc QueryResults/556/*.cc QueryResults/557/*.cc QueryResults/558/*.cc QueryResults/559/*.cc QueryResults/56/*.cc QueryResults/560/*.cc QueryResults/561/*.cc QueryResults/562/*.cc QueryResults/563/*.cc QueryResults/564/*.cc QueryResults/565/*.cc QueryResults/566/*.cc QueryResults/567/*.cc QueryResults/568/*.cc QueryResults/569/*.cc QueryResults/57/*.cc QueryResults/570/*.cc QueryResults/571/*.cc QueryResults/572/*.cc QueryResults/573/*.cc QueryResults/574/*.cc QueryResults/575/*.cc QueryResults/576/*.cc QueryResults/577/*.cc QueryResults/578/*.cc QueryResults/579/*.cc QueryResults/58/*.cc QueryResults/580/*.cc QueryResults/581/*.cc QueryResults/582/*.cc QueryResults/583/*.cc QueryResults/584/*.cc QueryResults/585/*.cc QueryResults/586/*.cc QueryResults/587/*.cc QueryResults/588/*.cc QueryResults/589/*.cc QueryResults/59/*.cc QueryResults/590/*.cc QueryResults/591/*.cc QueryResults/592/*.cc QueryResults/593/*.cc QueryResults/594/*.cc QueryResults/595/*.cc QueryResults/596/*.cc QueryResults/597/*.cc QueryResults/598/*.cc QueryResults/599/*.cc QueryResults/6/*.cc QueryResults/60/*.cc QueryResults/61/*.cc QueryResults/62/*.cc QueryResults/63/*.cc QueryResults/64/*.cc QueryResults/65/*.cc QueryResults/66/*.cc QueryResults/67/*.cc QueryResults/68/*.cc QueryResults/69/*.cc QueryResults/7/*.cc QueryResults/70/*.cc QueryResults/71/*.cc QueryResults/72/*.cc QueryResults/73/*.cc QueryResults/74/*.cc QueryResults/75/*.cc QueryResults/76/*.cc QueryResults/77/*.cc QueryResults/78/*.cc QueryResults/79/*.cc QueryResults/8/*.cc QueryResults/80/*.cc QueryResults/81/*.cc QueryResults/82/*.cc QueryResults/83/*.cc QueryResults/84/*.cc QueryResults/85/*.cc QueryResults/86/*.cc QueryResults/87/*.cc QueryResults/88/*.cc QueryResults/89/*.cc QueryResults/9/*.cc QueryResults/90/*.cc QueryResults/91/*.cc QueryResults/92/*.cc QueryResults/93/*.cc QueryResults/94/*.cc QueryResults/95/*.cc QueryResults/96/*.cc QueryResults/97/*.cc QueryResults/98/*.cc QueryResults/99/*.cc json/*.cc results/*.cc results/100/*.cc results/1000/*.cc results/10_1000/*.cc results/10_200/*.cc results/10_3000/*.cc results/10mps/*.cc results/17mps/*.cc results/1mps/*.cc results/200/*.cc results/300/*.cc results/3mps/*.cc results/400/*.cc results/50/*.cc results/500/*.cc results/50n/*.cc results/5mps/*.cc results/600/*.cc results/600_100/*.cc results/600_200/*.cc results/600_30/*.cc results/600_lamda/*.cc results/600_queryNumber/*.cc results/600_reviews/*.cc results/700/*.cc results/800/*.cc results/900/*.cc results/querytime/*.cc
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 $O/BeaconReply_m.o: BeaconReply_m.cc \

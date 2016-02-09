@@ -241,7 +241,7 @@ double QueryScore::getTextScore(
                     int fdt;    // Within document frequency
                     ivsFile.read((char*) &fdt, sizeof(int));
                     if (docId == it_review->first) {
-                        score += (double) fdt / docFreq;
+                        score += (double) fdt  * (log ((double)docMap.size() / docFreq));
                         break;
                     }
                 }
@@ -253,7 +253,6 @@ double QueryScore::getTextScore(
             ivsFile.close();
         }
     }
-    score = score / N;
     return score;
 }
 
