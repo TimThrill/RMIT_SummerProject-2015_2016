@@ -5,6 +5,9 @@
  *      Author: cheetah
  */
 #include <string>
+#include <ctime>
+#include <ratio>
+#include <chrono>
 
 #include "MyApplicationLayer.h"
 #include "NetwControlInfo.h"
@@ -45,6 +48,7 @@ MyApplicationLayer::~MyApplicationLayer() {
     if (queryExpiredTimer) {
         cancelAndDelete(queryExpiredTimer);
     }
+    //processTimeFile.close();
     oResult.close();
     oKeywords.close();
 }
@@ -115,6 +119,8 @@ void MyApplicationLayer::initialize(int stage) {
         successfulQuery = 0;
         numSendPackage = 0;
         numReceivePackage = 0;
+	irProcessTime = 0;
+        rcvQueryNumber = 0;
 
         // Set indexing file path
         std::string lexiconPath = MAIN_INDEXING_PATH + std::to_string(node_id)
@@ -125,6 +131,9 @@ void MyApplicationLayer::initialize(int stage) {
                 + std::to_string(node_id) + "/ivlist";
         std::string jsonFilePath = REVIEW_JSON_DATASET
                 + std::to_string(node_id);
+	// file for recording ir processing time
+	//std::string processTimeFilePath = "/mnt/cong/irTime/processTimeFile_" + std::to_string(node_id);
+	//processTimeFile.open(processTimeFilePath, std::fstream::out);
         // Initial output file
         score = new QueryScore(lexiconPath, documentMapPath, invertedListPath,
                 jsonFilePath);
@@ -158,7 +167,13 @@ void MyApplicationLayer::handleQueryExpiredTimer() {
     // Query time expired, abort this query, record the data
     // Record processing time
     simtime_t processingTime = simTime() - startTime;
-    emit(finishSignal, processingTime);
+    emit(finishSignal, processingTime);	
+    if(rcvQueryNumber != 0)
+    {
+    	emit(queryScoreFinish, irProcessTime / rcvQueryNumber);
+    }
+    rcvQueryNumber = 0;
+    irProcessTime = 0;
 
     // Record query successful rate
     if (numSendPackage != 0) {
@@ -462,6 +477,12 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
             // All the query node finish their query, recording the simulation time
             simtime_t processingTime = simTime() - startTime;
             emit(finishSignal, processingTime);
+            if(rcvQueryNumber != 0)
+	    {
+    		emit(queryScoreFinish, irProcessTime / rcvQueryNumber);
+            }
+	    rcvQueryNumber = 0;
+            irProcessTime = 0;
 
             // Record query successful rate
             double querySuccessfulRate = numReceivePackage / numSendPackage;
@@ -505,6 +526,12 @@ void MyApplicationLayer::handleQueryReplyMessage(QueryReply* msg) {
             // All the query node finish their query, recording the simulation time
             simtime_t processingTime = simTime() - startTime;
             emit(finishSignal, processingTime);
+            if(rcvQueryNumber != 0)
+            {
+    		emit(queryScoreFinish, irProcessTime / rcvQueryNumber);
+            }
+            irProcessTime = 0;
+	    rcvQueryNumber = 0;
 
             // Record query successful rate
             double querySuccessfulRate = (double) numReceivePackage
@@ -548,9 +575,9 @@ void MyApplicationLayer::sendQuery(LAddress::L3Type& destAddr) {
     queryMessage->setMaxRange(MAX_RANGE);
 
     // Set query key words
-    std::string keyword1 = "asked";
-    std::string keyword2 = "busy";
-    std::string keyword3 = "card";
+    std::string keyword1 = "greate";
+    std::string keyword2 = "service";
+    std::string keyword3 = "parking";
     (queryMessage->getKeyWords()).keywords.push_back(keyword1);
     (queryMessage->getKeyWords()).keywords.push_back(keyword2);
     (queryMessage->getKeyWords()).keywords.push_back(keyword3);
@@ -671,10 +698,17 @@ void MyApplicationLayer::handleLowerMsg(cMessage* msg) {
 QueryReply* MyApplicationLayer::setQueryReplyMessage(
         QueryReply* queryReplyMessage, Query* queryMessage) {
     EV << "Set query reply message start, node_id: " << node_id << std::endl;
-
-    simtime_t startTime = simTime();
+    rcvQueryNumber++;
+    //auto startTime = std::chrono::steady_clock::now();
+    struct timeval start, end;
+    gettimeofday(&start, NULL);
     score->getRankingResult(queryReplyMessage, queryMessage);
-    emit(queryScoreFinish, simTime() - startTime);
+    //auto endTime = std::chrono::steady_clock::now();
+    gettimeofday(&end, NULL);
+    double elapsed = ((end.tv_sec - start.tv_sec) * 1000) + ((double)end.tv_usec / 1000 - (double)start.tv_usec / 1000);
+    //std::chrono::duration<double, std::milli> elapsed = (endaTime - startTime);
+    //irProcessTime += elapsed.count();
+    irProcessTime += elapsed;
 
     EV << "After set query reply: "
               << queryReplyMessage->getReplyBusinesses().size() << std::endl;

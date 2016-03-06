@@ -89,6 +89,8 @@ private:
     simsignal_t queryFinish;
     simtime_t queryStartTime;   // start time for query process from send query message
     bool firstQuery;
+	double irProcessTime;
+	int rcvQueryNumber;
 
     // Signal for beacon send
     simsignal_t beaconSend;
@@ -114,6 +116,7 @@ private:
 	// Ranking class
 	QueryScore *score;
     // Output file
+    std::fstream processTimeFile;
     std::fstream oResult;   // For query reply
     std::fstream oKeywords; // For query keywords
 
